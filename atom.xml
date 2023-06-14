@@ -6,7 +6,7 @@
   <link href="https://akymmio.github.io/atom.xml" rel="self"/>
   
   <link href="https://akymmio.github.io/"/>
-  <updated>2023-06-14T13:25:01.924Z</updated>
+  <updated>2023-06-14T13:35:04.176Z</updated>
   <id>https://akymmio.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://akymmio.github.io/2023/06/14/epoll/"/>
     <id>https://akymmio.github.io/2023/06/14/epoll/</id>
     <published>2023-06-14T07:06:17.746Z</published>
-    <updated>2023-06-14T13:25:01.924Z</updated>
+    <updated>2023-06-14T13:35:04.176Z</updated>
     
     <content type="html"><![CDATA[<h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><p>epoll的实现原理基于红黑树和双向链表</p><h2 id="四个重要的函数："><a href="#四个重要的函数：" class="headerlink" title="四个重要的函数："></a>四个重要的函数：</h2><pre><code>epoll_create();epoll_ctl();epoll_wait();epoll_event_callback();</code></pre><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">epoll涉及的结构体：</span><br><span class="line"></span><br><span class="line">struct epoll_event &#123;</span><br><span class="line">    __uint32_t events;  // 事件类型</span><br><span class="line">    epoll_data_t data;  // 与事件关联的数据</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">typedef union epoll_data &#123;</span><br><span class="line">    void *ptr;        // 指针类型的成员</span><br><span class="line">    int fd;           // 事件关联的文件描述符</span><br><span class="line">    __uint32_t u32;   // 无符号 32 位整数类型的成员</span><br><span class="line">    __uint64_t u64;   // 无符号 64 位整数类型的成员</span><br><span class="line">&#125; epoll_data_t;</span><br><span class="line"> </span><br></pre></td></tr></table></figure><p>事件类型：</p><ul><li>EPOLLIN：表示文件描述符可读</li><li>EPOLLOUT：表示文件描述符可</li><li>EPOLLPRI：表示有紧急数据可</li><li>EPOLLERR：表示发生错误</li><li>EPOLLHUP：表示发生挂起（连接关闭）。</li></ul>]]></content>
     
