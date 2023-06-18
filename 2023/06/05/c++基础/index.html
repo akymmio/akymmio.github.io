@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>c++Basic | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="位运算   符号 描述 运算规则    &amp; 与 两个为1，结果为1   | 或 两个为0，结果为0   ^ 异或 不同为1，相同为0   集合   术语 集合 位运算    交集 A∩B a&amp;b   并集 A∪B a|b   集合与元素&amp;emsp;&amp;emsp;&amp;emsp;s&#x3D;101100&amp;emsp;&amp;emsp;s-1&#x3D;10">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>c++Basic | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="位运算   符号 描述 运算规则    &amp; 与 两个为1，结果为1   | 或 两个为0，结果为0   ^ 异或 不同为1，相同为0   集合   术语 集合 位运算    交集 A∩B a&amp;b   并集 A∪B a|b   集合与元素   术语 集合 位运算    全集 U (1 &lt;&lt; n)−1   &amp;emsp;&amp;emsp;&amp;emsp;s&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++Basic">
 <meta property="og:url" content="https://akymmio.github.io/2023/06/05/c++%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="mio&#39;s blog">
-<meta property="og:description" content="位运算   符号 描述 运算规则    &amp; 与 两个为1，结果为1   | 或 两个为0，结果为0   ^ 异或 不同为1，相同为0   集合   术语 集合 位运算    交集 A∩B a&amp;b   并集 A∪B a|b   集合与元素&amp;emsp;&amp;emsp;&amp;emsp;s&#x3D;101100&amp;emsp;&amp;emsp;s-1&#x3D;10">
+<meta property="og:description" content="位运算   符号 描述 运算规则    &amp; 与 两个为1，结果为1   | 或 两个为0，结果为0   ^ 异或 不同为1，相同为0   集合   术语 集合 位运算    交集 A∩B a&amp;b   并集 A∪B a|b   集合与元素   术语 集合 位运算    全集 U (1 &lt;&lt; n)−1   &amp;emsp;&amp;emsp;&amp;emsp;s&amp;#x">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img1.imgtp.com/2023/06/10/tgoFrokG.jpg">
 <meta property="article:published_time" content="2023-06-05T14:57:28.755Z">
-<meta property="article:modified_time" content="2023-06-16T15:23:42.874Z">
+<meta property="article:modified_time" content="2023-06-18T12:02:23.552Z">
 <meta property="article:author" content="jiaxing">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img1.imgtp.com/2023/06/10/tgoFrokG.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2023/06/05/c++%E5%9F%BA%E7%A1%80/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
@@ -57,7 +57,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-06-16 23:23:42'
+  postUpdate: '2023-06-18 20:02:23'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -162,7 +162,7 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
-</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img1.imgtp.com/2023/06/10/tgoFrokG.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">c++Basic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-05T14:57:28.755Z" title="发表于 2023-06-05 22:57:28">2023-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-16T15:23:42.874Z" title="更新于 2023-06-16 23:23:42">2023-06-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/">c++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="c++Basic"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><table>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img1.imgtp.com/2023/06/10/tgoFrokG.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">c++Basic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-05T14:57:28.755Z" title="发表于 2023-06-05 22:57:28">2023-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-18T12:02:23.552Z" title="更新于 2023-06-18 20:02:23">2023-06-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/c/">c++</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="c++Basic"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><table>
 <thead>
 <tr>
 <th>符号</th>
@@ -191,21 +191,54 @@
 <tr>
 <th>术语</th>
 <th>集合</th>
-<th>位运算</th>
+<th align="center">位运算</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>交集</td>
 <td>A∩B</td>
-<td>a&amp;b</td>
+<td align="center">a&amp;b</td>
 </tr>
 <tr>
 <td>并集</td>
 <td>A∪B</td>
-<td>a|b</td>
+<td align="center">a|b</td>
 </tr>
 </tbody></table>
-<h1 id="集合与元素"><a href="#集合与元素" class="headerlink" title="集合与元素"></a>集合与元素</h1><p>&amp;emsp;&amp;emsp;&amp;emsp;s&#x3D;101100<br>&amp;emsp;&amp;emsp;s-1&#x3D;101011 &#x2F;&#x2F;最低位1-&gt;0,同时1右边的0都取反变为1<br>s&amp;(s-1)&#x3D;101000</p>
+<h1 id="集合与元素"><a href="#集合与元素" class="headerlink" title="集合与元素"></a>集合与元素</h1><table>
+<thead>
+<tr>
+<th>术语</th>
+<th align="center">集合</th>
+<th>位运算</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全集</td>
+<td align="center">U</td>
+<td>(1 &lt;&lt; n)−1</td>
+</tr>
+<tr>
+<td>&amp;emsp;&amp;emsp;&amp;emsp;s&#x3D;101100</td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td>&amp;emsp;&amp;emsp;s-1&#x3D;101011 &#x2F;&#x2F;最低位1-&gt;0,同时1右边的0都取反变为1</td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td>s&amp;(s-1)&#x3D;101000</td>
+<td align="center"></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>遍历集合：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">    if ((s &gt;&gt; i) &amp; 1) &#123; // i 在 s 中</span><br><span class="line">        // 处理 i 的逻辑</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>枚举集合：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (int s = 0; s &lt; (1 &lt;&lt; n); s++) &#123;</span><br><span class="line">     // 处理 s 的逻辑</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li>删除元素<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U^(i&lt;&lt;n)</span><br></pre></td></tr></table></figure></li>
+</ul>
 <h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><h3 id="1-const含义"><a href="#1-const含义" class="headerlink" title="1.const含义"></a>1.const含义</h3><ul>
 <li>常类型是指使用类型修饰符const说明的类型，常类型的变量或对象的值是不能被更新的。</li>
 </ul>
