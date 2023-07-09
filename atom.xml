@@ -6,7 +6,7 @@
   <link href="https://akymmio.github.io/atom.xml" rel="self"/>
   
   <link href="https://akymmio.github.io/"/>
-  <updated>2023-06-17T06:16:52.455Z</updated>
+  <updated>2023-07-08T14:12:32.168Z</updated>
   <id>https://akymmio.github.io/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python学习</title>
+    <link href="https://akymmio.github.io/2023/07/08/python%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://akymmio.github.io/2023/07/08/python%E5%AD%A6%E4%B9%A0/</id>
+    <published>2023-07-08T10:56:36.542Z</published>
+    <updated>2023-07-08T14:12:32.168Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ul><li>Number</li><li>String</li><li>Tuple(元组)</li><li>bool</li><li>List</li><li>Set(集合)</li><li>Dictionary(字典)<br>（前三个为可变数据，后三个为不可变数据）</li></ul><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p>int、float、bool、complex(复数)<br>type(a)、isinstance(a,int)查询变量所指的对象类型<br>del var 删除单个或多个对象</p><ul><li>多变量赋值 a,b&#x3D;1,2</li><li>除法：&#x2F;返回浮点数 &#x2F;&#x2F;返回整数</li></ul><h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><ul><li>Python中的字符串用单引号 ‘ 或双引号 “ 括起来</li><li>索引值以 0 为开始值，-1 为从末尾的开始位置。</li><li>字符串不能被改变</li><li>+连接  *复制</li></ul><h2 id="List列表"><a href="#List列表" class="headerlink" title="List列表"></a>List列表</h2><p>列表可以完成大多数集合类的数据结构实现</p><pre><code>变量[头下标：尾下标]list = [ &#39;abcd&#39;, 786 , 2.23, &#39;runoob&#39;, 70.2 ]</code></pre><ul><li>列表中的元素可以改变</li><li>可以使用+拼接</li><li>可以被索引和切片</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Number&lt;/li&gt;
+&lt;li&gt;String&lt;/li&gt;
+&lt;li&gt;Tuple(元组)&lt;/li&gt;
+&lt;li&gt;bool&lt;</summary>
+      
+    
+    
+    
+    <category term="python" scheme="https://akymmio.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>服务器开发的两种模式</title>
+    <link href="https://akymmio.github.io/2023/07/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://akymmio.github.io/2023/07/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/</id>
+    <published>2023-07-07T14:26:09.545Z</published>
+    <updated>2023-07-09T01:20:57.409Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="sock网络模型"><a href="#sock网络模型" class="headerlink" title="sock网络模型"></a>sock网络模型</h1><p>文件描述符的作用：每一个进程都有一个数据结构 task_struct，该结构体里有一个指向「文件描述符数组」的成员指针。该数组里列出这个进程打开的所有文件的文件描述符。数组的下标是文件描述符，是一个整数，而数组的内容是一个指针，指向内核中所有打开的文件的列表，也就是说内核可以通过文件描述符找到对应打开的文件。</p><p>然后每个文件都有一个 inode，Socket 文件的 inode 指向了内核中的 Socket 结构，在这个结构体里有两个队列，分别是发送队列和接收队列，这个两个队列里面保存的是一个个 struct sk_buff，用链表的组织形式串起来。</p><h1 id="阻塞、非阻塞、同步、异步-I-x2F-O"><a href="#阻塞、非阻塞、同步、异步-I-x2F-O" class="headerlink" title="阻塞、非阻塞、同步、异步 I&#x2F;O"></a>阻塞、非阻塞、同步、异步 I&#x2F;O</h1><h3 id="阻塞I-x2F-O："><a href="#阻塞I-x2F-O：" class="headerlink" title="阻塞I&#x2F;O："></a>阻塞I&#x2F;O：</h3><p>当用户程序执行 read ，线程会被阻塞，一直等到内核数据准备好，并把数据从内核缓冲区拷贝到应用程序的缓冲区中，当拷贝过程完成，read 才会返回。</p><h3 id="非阻塞-I-x2F-O"><a href="#非阻塞-I-x2F-O" class="headerlink" title="非阻塞 I&#x2F;O"></a>非阻塞 I&#x2F;O</h3><p>非阻塞的 read 请求在数据未准备好的情况下立即返回，可以继续往下执行，此时应用程序不断轮询内核，直到数据准备好，内核将数据拷贝到应用程序缓冲区，read 调用才可以获取到结果。</p><h3 id="同步、异步I-x2F-O"><a href="#同步、异步I-x2F-O" class="headerlink" title="同步、异步I&#x2F;O"></a>同步、异步I&#x2F;O</h3><p>无论 read 和 send 是阻塞 I&#x2F;O，还是非阻塞 I&#x2F;O 都是同步调用。因为在 read 调用时，内核将数据从内核空间拷贝到用户空间的过程都是需要等待的，也就是说这个过程是同步的，如果内核实现的拷贝效率不高，read 调用就会在这个同步过程中等待比较长的时间。</p><p>而异步 I&#x2F;O 是「内核数据准备好」和「数据从内核态拷贝到用户态」这两个过程都不用等待。<br>当我们发起 aio_read （异步 I&#x2F;O） 之后，就立即返回，内核自动将数据从内核空间拷贝到用户空间，这个拷贝过程同样是异步的，内核自动完成的，和前面的同步操作不一样，应用程序并不需要主动发起拷贝动作。过程如下图：</p><h1 id="Reactor模式："><a href="#Reactor模式：" class="headerlink" title="Reactor模式："></a>Reactor模式：</h1><h2 id="I-x2F-O多路复用技术："><a href="#I-x2F-O多路复用技术：" class="headerlink" title="I&#x2F;O多路复用技术："></a>I&#x2F;O多路复用技术：</h2><p>（只有当连接上有数据时才去发起读请求，非阻塞）用一个系统调用函数来监听我们所有关心的连接，也就说可以在一个监控线程里面监控很多的连接，线程可以通过一个系统调用函数从内核中获取多个事件。</p><p>select&#x2F;poll&#x2F;epoll 是如何获取网络事件的呢？<br>在获取事件时，先把我们要关心的连接传给内核，再由内核检测：</p><ul><li>如果没有事件发生，线程只需阻塞在这个系统调用，而无需像前面的线程池方案那样轮训调用 read 操作来判断是否有数据。</li><li>如果有事件发生，内核会返回产生了事件的连接，线程就会从阻塞状态返回，然后在用户态中再处理这些连接对应的业务即可。</li></ul><p>Reactor 模式主要由 Reactor 和处理资源池这两个核心部分组成，它俩负责的事情如下：</p><ul><li>Reactor 负责监听和分发事件，事件类型包含连接事件、读写事件；</li><li>处理资源池负责处理事件，如 read -&gt; 业务逻辑 -&gt; send；</li></ul><h2 id="单Reactor单线程-x2F-进程："><a href="#单Reactor单线程-x2F-进程：" class="headerlink" title="单Reactor单线程&#x2F;进程："></a>单Reactor单线程&#x2F;进程：</h2><ul><li>无法充分利用多核cpu的性能，一次处理一个事件，会有响应延迟</li><li>单 Reactor 单进程的方案不适用计算机密集型的场景，只适用于业务处理非常快速的场景。</li></ul><h2 id="单Reactor多线程-x2F-进程："><a href="#单Reactor多线程-x2F-进程：" class="headerlink" title="单Reactor多线程&#x2F;进程："></a>单Reactor多线程&#x2F;进程：</h2><p>充分利用多核cpu的性能，存在共享数据竞争（上互斥锁）</p><h2 id="多Reactor多进程-x2F-线程"><a href="#多Reactor多进程-x2F-线程" class="headerlink" title="多Reactor多进程&#x2F;线程"></a>多Reactor多进程&#x2F;线程</h2><p>解决单Reactor问题：一个 Reactor 对象承担所有事件的监听和响应，而且只在主线程中运行，在面对瞬间高并发的场景时，容易成为性能的瓶颈的地方。</p>]]></content>
+    
+    
+    <summary type="html">Reactor和Proactor</summary>
+    
+    
+    
+    
+    <category term="c++服务器" scheme="https://akymmio.github.io/tags/c-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>epoll原理</title>
@@ -40,7 +85,7 @@
     <link href="https://akymmio.github.io/2023/06/09/sort/"/>
     <id>https://akymmio.github.io/2023/06/09/sort/</id>
     <published>2023-06-09T07:02:41.484Z</published>
-    <updated>2023-06-29T06:41:30.025Z</updated>
+    <updated>2023-06-29T06:44:14.636Z</updated>
     
     <content type="html"><![CDATA[<table><thead><tr><th>排序算法</th><th>最好时间复杂度</th><th>平均时间复杂度</th><th>最坏时间复杂度</th><th>稳定性</th></tr></thead><tbody><tr><td>直接插入排序</td><td>O(n)</td><td>O(n^2^)</td><td>O(n^2^)</td><td>稳定</td></tr><tr><td>直接选择排序</td><td>O(n^2^)</td><td>O(n^2^)</td><td>O(n^2^)</td><td>不稳定</td></tr><tr><td>冒泡排序</td><td>O(n)</td><td>O(n^2^)</td><td>O(n^2^)</td><td>稳定</td></tr><tr><td>快速排序</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(n^2^)</td><td>不稳定</td></tr><tr><td>归并排序</td><td>O(nlogn)</td><td>O(nlogn)</td><td>O(nlogn)</td><td>稳定</td></tr></tbody></table>]]></content>
     
