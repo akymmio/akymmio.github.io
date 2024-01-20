@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>登录功能实现 | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&amp;#x767B;&amp;#x5F55;&amp;#x6821;&amp;#x9A8C; &amp;#x6839;&amp;#x636E;&amp;#x7528;&amp;#x6237;&amp;#x540D;&amp;#x548C;&amp;#x5BC6;&amp;#x7801;&amp;#xFF0C;&amp;#x5728;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x4E2D;&amp;#x67E5;&amp;#x627E;&amp;#x8BB0;&amp;#x5F55;&amp;#xFF0C;&amp;#x5B9E;&amp;#x73B0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="登录功能实现">
+<meta property="og:url" content="https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="&amp;#x767B;&amp;#x5F55;&amp;#x6821;&amp;#x9A8C; &amp;#x6839;&amp;#x636E;&amp;#x7528;&amp;#x6237;&amp;#x540D;&amp;#x548C;&amp;#x5BC6;&amp;#x7801;&amp;#xFF0C;&amp;#x5728;&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x4E2D;&amp;#x67E5;&amp;#x627E;&amp;#x8BB0;&amp;#x5F55;&amp;#xFF0C;&amp;#x5B9E;&amp;#x73B0">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311121931708.png">
+<meta property="article:published_time" content="2023-08-09T06:45:10.953Z">
+<meta property="article:modified_time" content="2023-11-29T13:20:36.774Z">
+<meta property="article:author" content="jiaxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311121931708.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '登录功能实现',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-11-29 21:20:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/akymmio/images/img/202311121931708.png')"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">登录功能实现</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-09T06:45:10.953Z" title="发表于 2023-08-09 14:45:10">2023-08-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-29T13:20:36.774Z" title="更新于 2023-11-29 21:20:36">2023-11-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="登录功能实现"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="&#x767B;&#x5F55;&#x6821;&#x9A8C;"><a href="#&#x767B;&#x5F55;&#x6821;&#x9A8C;" class="headerlink" title="&#x767B;&#x5F55;&#x6821;&#x9A8C;"></a>&#x767B;&#x5F55;&#x6821;&#x9A8C;</h1><hr>
+<p>&#x6839;&#x636E;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x67E5;&#x627E;&#x8BB0;&#x5F55;&#xFF0C;&#x5B9E;&#x73B0;&#x767B;&#x5F55;&#x529F;&#x80FD;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091523059.png"></p>
+<h2 id="&#x4F1A;&#x8BDD;&#x6280;&#x672F;"><a href="#&#x4F1A;&#x8BDD;&#x6280;&#x672F;" class="headerlink" title="&#x4F1A;&#x8BDD;&#x6280;&#x672F;"></a>&#x4F1A;&#x8BDD;&#x6280;&#x672F;</h2><ul>
+<li><p><strong>&#x4F1A;&#x8BDD;&#xFF1A;</strong> &#x7528;&#x6237;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;web&#x670D;&#x52A1;&#x5668;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5EFA;&#x7ACB;&#x4F1A;&#x8BDD;&#xFF0C;&#x76F4;&#x5230;&#x6709;&#x4E00;&#x65B9;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#xFF0C;&#x4F1A;&#x8BDD;&#x7ED3;&#x675F;&#x3002;&#x5728;&#x4E00;&#x6B21;&#x4F1A;&#x8BDD;&#x4E2D;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x591A;&#x6B21;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x3002;</p>
+</li>
+<li><p><strong>&#x4F1A;&#x8BDD;&#x8DDF;&#x8E2A;&#xFF1A;</strong> &#x7EF4;&#x62A4;&#x6D4F;&#x89C8;&#x5668;&#x72B6;&#x6001;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x9700;&#x8981;&#x591A;&#x6B21;&#x8BC6;&#x522B;&#x8BF7;&#x6C42;&#x662F;&#x5426;&#x6765;&#x81EA;&#x540C;&#x4E00;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x540C;&#x4E00;&#x6B21;&#x4F1A;&#x8BDD;&#x7684;&#x591A;&#x6B21;&#x8BF7;&#x6C42;&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;</p>
+<ul>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;cookie</li>
+<li>&#x670D;&#x52A1;&#x7AEF;&#xFF1A;session</li>
+<li>&#x4EE4;&#x724C;</li>
+</ul>
+</li>
+</ul>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091524298.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091524776.png"></p>
+<h2 id="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"><a href="#&#x89E3;&#x51B3;&#x65B9;&#x6CD5;" class="headerlink" title="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"></a>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</h2><p>1.session&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;<br>2.token&#x8BA4;&#x8BC1;</p>
+<h2 id="token"><a href="#token" class="headerlink" title="token"></a>token</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091524584.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091524990.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091524157.png"></p>
+<p> &#x8DE8;&#x57DF;&#xFF1A;&#x534F;&#x8BAE;&#x3001;ip/&#x57DF;&#x540D;&#x3001;&#x7AEF;&#x53E3; </p>
+<h2 id="JWT&#x4EE4;&#x724C;"><a href="#JWT&#x4EE4;&#x724C;" class="headerlink" title="JWT&#x4EE4;&#x724C;"></a>JWT&#x4EE4;&#x724C;</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525025.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525681.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525295.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525002.png"></p>
+<h2 id="&#x62D3;&#x5C55;"><a href="#&#x62D3;&#x5C55;" class="headerlink" title="&#x62D3;&#x5C55;"></a>&#x62D3;&#x5C55;</h2><h3 id="&#x53C2;&#x6570;&#x6821;&#x9A8C;"><a href="#&#x53C2;&#x6570;&#x6821;&#x9A8C;" class="headerlink" title="&#x53C2;&#x6570;&#x6821;&#x9A8C;"></a>&#x53C2;&#x6570;&#x6821;&#x9A8C;</h3><ul>
+<li>&#x5F15;&#x5165;validation&#x4F9D;&#x8D56;</li>
+<li>&#x5728;&#x53C2;&#x6570;&#x524D;&#x6DFB;&#x52A0;@Param&#x6CE8;&#x89E3;</li>
+<li>&#x5728;Controller&#x65B9;&#x6CD5;&#x4E0A;&#x6DFB;&#x52A0;@Validated&#x6CE8;&#x89E3;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Pattern(regexp = &quot;^\\S{5,16}$&quot;) String username</span><br></pre></td></tr></table></figure>
+
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><p>&#x63D0;&#x4F9B;&#x7EBF;&#x7A0B;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;<br>&#x5728;&#x62E6;&#x622A;&#x5668;&#x4E2D;&#x901A;&#x8FC7;token&#x6821;&#x9A8C;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5B58;&#x50A8;&#x5230;ThreadLocal&#x4E2D;<br>&#x5728;&#x8BF7;&#x6C42;&#x5B8C;&#x6210;&#x540E;&#x6E05;&#x7A7A;ThreadLocal</p>
+<h3 id="&#x53C2;&#x6570;&#x6821;&#x9A8C;-1"><a href="#&#x53C2;&#x6570;&#x6821;&#x9A8C;-1" class="headerlink" title="&#x53C2;&#x6570;&#x6821;&#x9A8C;"></a>&#x53C2;&#x6570;&#x6821;&#x9A8C;</h3><p><img src="/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/image-19.png" alt="Alt text"><br>&#x4F7F;&#x7528;@Validated&#x751F;&#x6548;</p>
+<h3 id="redis&#x5B58;&#x50A8;Token"><a href="#redis&#x5B58;&#x50A8;Token" class="headerlink" title="redis&#x5B58;&#x50A8;Token"></a>redis&#x5B58;&#x50A8;Token</h3><p>&#x5229;&#x7528;redis&#x7684;&#x4E3B;&#x52A8;&#x5931;&#x6548;&#xFF0C;&#x9632;&#x6B62;&#x5229;&#x7528;&#x8FC7;&#x671F;&#x7684;token<br>&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ul>
+<li>&#x767B;&#x5F55;&#xFF1A;&#x5728;&#x62E6;&#x622A;&#x5668;&#x4E2D;&#x9A8C;&#x8BC1;&#x4EE4;&#x724C;&#xFF0C;&#x9A8C;&#x8BC1;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5C06;&#x4EE4;&#x724C;&#x5B58;&#x50A8;&#x5230;redis&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;</li>
+<li>&#x4FEE;&#x6539;&#x5BC6;&#x7801;\&#x9000;&#x51FA;&#x767B;&#x5F55;&#xFF1A;&#x5220;&#x9664;token</li>
+</ul>
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525164.png"></p>
+<ul>
+<li>&#x5B9A;&#x4E49;&#xFF1A;&#x5B9E;&#x73B0;Filter&#x63A5;&#x53E3;doFilter()</li>
+<li>&#x914D;&#x7F6E;&#xFF1A;<ul>
+<li>&#x5B9E;&#x73B0;&#x7C7B;&#x4E0A;:@WebFilter(urlPatterns=&#x201D;/*&#x201D;)</li>
+<li>&#x542F;&#x52A8;&#x7C7B;&#x4E0A;:@ServletComponentScan<br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525964.png"></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525179.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091525800.png"></p>
+<h2 id="&#x767B;&#x5F55;&#x6821;&#x9A8C;-1"><a href="#&#x767B;&#x5F55;&#x6821;&#x9A8C;-1" class="headerlink" title="&#x767B;&#x5F55;&#x6821;&#x9A8C;"></a>&#x767B;&#x5F55;&#x6821;&#x9A8C;</h2><p><strong>HttpServletRequest</strong>&#x662F;Java Servlet API&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x7684;HTTP&#x8BF7;&#x6C42;&#x4FE1;&#x606F;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x53C2;&#x6570;&#xFF0C;&#x5305;&#x62EC;&#x8BF7;&#x6C42;&#x7684;URL&#x3001;HTTP&#x65B9;&#x6CD5;&#x3001;&#x8BF7;&#x6C42;&#x5934;&#x3001;&#x53C2;&#x6570;&#x7B49;&#x3002;</p>
+<p>&#x901A;&#x8FC7;HttpServletRequest&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;</p>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x7684;URL&#xFF1A;getRequestURL()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5B8C;&#x6574;&#x7684;&#x8BF7;&#x6C42;URL&#xFF0C;&#x5305;&#x62EC;&#x534F;&#x8BAE;&#x3001;&#x4E3B;&#x673A;&#x540D;&#x3001;&#x7AEF;&#x53E3;&#x53F7;&#x3001;&#x8DEF;&#x5F84;&#x548C;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x7684;URI&#xFF1A;getRequestURI()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x7684;URI&#xFF0C;&#x5373;&#x8DEF;&#x5F84;&#x90E8;&#x5206;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;getMethod()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;HTTP&#x8BF7;&#x6C42;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;GET&#x3001;POST&#x3001;PUT&#x7B49;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#xFF1A;getParameter()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x53C2;&#x6570;&#x540D;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;getParameterValues()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x591A;&#x4E2A;&#x503C;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x7684;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#xFF1A;getHeader()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x8BF7;&#x6C42;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#xFF0C;&#x5982;User-Agent&#x3001;Referer&#x7B49;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x7684;Cookie&#xFF1A;getCookies()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x4E2D;&#x7684;Cookie&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x8BF7;&#x6C42;&#x7684;Session&#xFF1A;getSession()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x4E0E;&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x5173;&#x8054;&#x7684;Session&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<h2 id="interceptor"><a href="#interceptor" class="headerlink" title="interceptor"></a>interceptor</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091526070.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091526111.png"><br>prehandle()&#x8FD4;&#x56DE;true&#x8868;&#x793A;&#x653E;&#x884C;<br>&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x7C7B;&#x653E;&#x5728;config&#x5305;&#x4E0B;</p>
+<p><strong>@Configuration:</strong> &#x5F53;&#x4E00;&#x4E2A;&#x7C7B;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;@Configuration&#x65F6;&#xFF0C;Spring&#x5BB9;&#x5668;&#x4F1A;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF0C;&#x5C06;&#x5176;&#x8BC6;&#x522B;&#x4E3A;&#x914D;&#x7F6E;&#x7C7B;<br>HandlerInterceptor:<br>WebMvcConfigurer:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091526782.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091526024.png"></p>
+<p>order()&#xFF1A;&#x62E6;&#x622A;&#x5668;&#x6267;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x503C;&#x8D8A;&#x5C0F;&#x8D8A;&#x5148;&#x6267;&#x884C;</p>
+<h2 id="api&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;"><a href="#api&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;" class="headerlink" title="api&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;"></a>api&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x9636;&#x6BB5;</h2><p>&#x8BF7;&#x6C42;&#x5934;&#x4E2D;&#x643A;&#x5E26;jwt&#x4EE4;&#x724C;&#x5230;&#x670D;&#x52A1;&#x7AEF;<br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311091555835.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/">https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/akymmio/images/img/202311121931708.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/11/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2023/08/07/%E9%98%BF%E9%87%8C%E4%BA%91oss/%E9%98%BF%E9%87%8C%E4%BA%91oss/" title="阿里云oss"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">阿里云oss</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/akymmio" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text">登录校验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E6%8A%80%E6%9C%AF"><span class="toc-number">1.1.</span> <span class="toc-text">会话技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session"><span class="toc-number">1.2.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#token"><span class="toc-number">1.4.</span> <span class="toc-text">token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JWT%E4%BB%A4%E7%89%8C"><span class="toc-number">1.5.</span> <span class="toc-text">JWT令牌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-number">1.6.</span> <span class="toc-text">拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.6.1.</span> <span class="toc-text">参数校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocal"><span class="toc-number">1.6.2.</span> <span class="toc-text">ThreadLocal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C-1"><span class="toc-number">1.6.3.</span> <span class="toc-text">参数校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redis%E5%AD%98%E5%82%A8Token"><span class="toc-number">1.6.4.</span> <span class="toc-text">redis存储Token</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter"><span class="toc-number">1.7.</span> <span class="toc-text">Filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C-1"><span class="toc-number">1.8.</span> <span class="toc-text">登录校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#interceptor"><span class="toc-number">1.9.</span> <span class="toc-text">interceptor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#api%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5"><span class="toc-number">1.10.</span> <span class="toc-text">api开发测试阶段</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/java/java%E9%9B%86%E5%90%88/" title="java集合">java集合</a><time datetime="2024-01-17T13:43:24.485Z" title="发表于 2024-01-17 21:43:24">2024-01-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E5%89%8D%E7%AB%AF/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/" title="处理请求参数">处理请求参数</a><time datetime="2024-01-05T14:20:06.229Z" title="发表于 2024-01-05 22:20:06">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" title="项目部署上线">项目部署上线</a><time datetime="2024-01-05T08:08:27.706Z" title="发表于 2024-01-05 16:08:27">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/29/%E5%89%8D%E7%AB%AF2/vue3/" title="vue3">vue3</a><time datetime="2023-12-29T06:36:28.895Z" title="发表于 2023-12-29 14:36:28">2023-12-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/24/%E5%89%8D%E7%AB%AF/vue2%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" title="vue2项目开发">vue2项目开发</a><time datetime="2023-12-24T07:37:01.257Z" title="发表于 2023-12-24 15:37:01">2023-12-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/'
+    this.page.identifier = '/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/'
+    this.page.title = '登录功能实现'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>java基础 | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&amp;#x8F93;&amp;#x5165;Scanner scanner &#x3D; new Scanner(System.in);int a &#x3D; scanner.nextInt();String s &#x3D; scanner.next(); &amp;#x9047;&amp;#x5230;&amp;#x7A7A;&amp;#x683C;&amp;#x8BFB;&amp;#x53D6;&amp;#x505C;&amp;#x6B62;&amp;#xFF0C;s &#x3D; scanner.nextLi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础">
+<meta property="og:url" content="https://akymmio.github.io/2023/08/19/java/java/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="&amp;#x8F93;&amp;#x5165;Scanner scanner &#x3D; new Scanner(System.in);int a &#x3D; scanner.nextInt();String s &#x3D; scanner.next(); &amp;#x9047;&amp;#x5230;&amp;#x7A7A;&amp;#x683C;&amp;#x8BFB;&amp;#x53D6;&amp;#x505C;&amp;#x6B62;&amp;#xFF0C;s &#x3D; scanner.nextLi">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg">
+<meta property="article:published_time" content="2023-08-19T14:27:01.863Z">
+<meta property="article:modified_time" content="2024-01-20T04:05:41.839Z">
+<meta property="article:author" content="jiaxing">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2023/08/19/java/java/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'java基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-01-20 12:05:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">java基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-19T14:27:01.863Z" title="发表于 2023-08-19 22:27:01">2023-08-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-20T04:05:41.839Z" title="更新于 2024-01-20 12:05:41">2024-01-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java基础"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="&#x8F93;&#x5165;"><a href="#&#x8F93;&#x5165;" class="headerlink" title="&#x8F93;&#x5165;"></a>&#x8F93;&#x5165;</h1><p>Scanner scanner = new Scanner(System.in);<br>int a = scanner.nextInt();<br>String s = scanner.next(); &#x9047;&#x5230;&#x7A7A;&#x683C;&#x8BFB;&#x53D6;&#x505C;&#x6B62;&#xFF0C;<br>s = scanner.nextLine()&#x9047;&#x5230;&#x56DE;&#x8F66;&#x505C;&#x6B62;</p>
+<p>&#x5728;&#x8F93;&#x5165;&#x4E4B;&#x524D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; hasNextXxx() &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF0C;&#x518D;&#x4F7F;&#x7528; nextXxx() &#x6765;&#x8BFB;&#x53D6;&#xFF1A;</p>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><p>&#x521B;&#x5EFA;String&#x5BF9;&#x8C61;&#xFF1A;</p>
+<ul>
+<li>&#x76F4;&#x63A5;&#x8D4B;&#x503C;: &#x5E38;&#x91CF;&#x6C60;&#xFF08;&#x590D;&#x7528;&#xFF09;</li>
+<li>new String(): &#x5806;&#x533A;</li>
+</ul>
+<p>&#x6784;&#x9020;&#x65B9;&#x6CD5;<br>String()<br>String(String)<br>String(char[])<br>String(byte[])</p>
+<p>StringBuilder:&#x5185;&#x5BB9;&#x53EF;&#x53D8;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5BF9;&#x8C61;(toString()&#x8F6C;&#x4E3A;String)<br>StringBuffer&#xFF1A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x5DEE;</p>
+<p>StringJoiner(&#x95F4;&#x9694;&#x7B26;&#x53F7;&#xFF0C;&#x5F00;&#x59CB;&#x7B26;&#x53F7;&#xFF0C;&#x7ED3;&#x675F;&#x7B26;&#x53F7;):&#x62FC;&#x63A5;&#x5B57;&#x7B26;&#x4E32;</p>
+<ul>
+<li>add()&#x6DFB;&#x52A0;&#x6570;&#x636E;</li>
+</ul>
+<h2 id="String&#x6BD4;&#x8F83;"><a href="#String&#x6BD4;&#x8F83;" class="headerlink" title="String&#x6BD4;&#x8F83;"></a>String&#x6BD4;&#x8F83;</h2><ul>
+<li>==<ul>
+<li>&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;&#x6BD4;&#x8F83;&#x6570;&#x503C;</li>
+<li>&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;&#x6BD4;&#x8F83;&#x5730;&#x5740;</li>
+</ul>
+</li>
+<li>equals()&#xFF1A;&#x6BD4;&#x8F83;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5185;&#x5BB9;(Object&#x4E2D;&#x6BD4;&#x8F83;&#x5730;&#x5740;&#xFF0C;&#x6CA1;&#x6709;&#x91CD;&#x5199;)</li>
+</ul>
+<p>next():&#x952E;&#x76D8;&#x5F55;&#x5165;&#x7684;&#x662F;new&#x51FA;&#x6765;&#x7684;<br>&#x6240;&#x4EE5;String&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x81EA;&#x5E26;&#x7684;&#x65B9;&#x6CD5;equals&#xFF08;&#xFF09;</p>
+<p>+&#xFF08;&#x62FC;&#x63A5;&#x7684;&#x65F6;&#x5019;&#x5B58;&#x5728;&#x53D8;&#x91CF;&#xFF09;&#xFF1A;&#x5E95;&#x5C42;&#x8C03;&#x7528;toString(),&#x800C;toString()&#x4F1A;new&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x8C61;&#xFF0C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;StringBuilder&#x548C;String&#x5BF9;&#x8C61;</p>
+<p><img src="/2023/08/19/java/java/image-28.png" alt=" "></p>
+<h1 id="&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;"><a href="#&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;" class="headerlink" title="&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;"></a>&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;</h1><p>&#x5FFD;&#x7565;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x590D;&#x6742;&#x8BED;&#x6CD5;&#xFF0C;&#x5F3A;&#x8C03;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8C01;&#x53BB;&#x505A;</p>
+<p>&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#xFF1A;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x7684;&#x63A5;&#x53E3;</p>
+<p>&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x5F62;&#x53C2;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public interface Runnable {</span><br><span class="line">    void run();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">public void execute(Runnable task) {</span><br><span class="line">    task.run();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">execute(new Runnable() {</span><br><span class="line">    @Override</span><br><span class="line">    public void run() {</span><br><span class="line">        System.out.println(&quot;Executing a task...&quot;);</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+
+<p>Lambda&#x662F;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x4E00;&#x6BB5;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x5199;&#x51FA;&#x66F4;&#x7B80;&#x6D01;&#x3001;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x4EE3;&#x7801;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Lambda&#xFF1A;&#x7B80;&#x5316;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#x7684;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x5199;&#x6CD5;</span><br><span class="line">&#xFF08;&#xFF09;-&gt;{ </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>&#x7701;&#x7565;&#xFF1A;</p>
+<ul>
+<li>&#x53C2;&#x6570;&#x7C7B;&#x578B;</li>
+<li>&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x7701;&#x7565;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3001;&#x62EC;&#x53F7;</li>
+<li>&#x65B9;&#x6CD5;&#x4F53;&#x53EA;&#x6709;&#x4E00;&#x65B9;&#xFF0C;&#x7701;&#x7565;&#x5927;&#x62EC;&#x53F7;&#x3001;&#x5206;&#x53F7;&#x3001;return&#xFF08;&#x540C;&#x65F6;&#xFF09;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(arr,(Integer a,Integer b)-&gt;{</span><br><span class="line">    return a-b;</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">Arrays.sort(arr,(a,b)-&gt;a-b);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h2><h1 id="&#x6CDB;&#x578B;"><a href="#&#x6CDB;&#x578B;" class="headerlink" title="&#x6CDB;&#x578B;"></a>&#x6CDB;&#x578B;</h1><p>&#x7EDF;&#x4E00;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x68C0;&#x67E5;&#x7C7B;&#x578B;<br>java&#x4E2D;&#x7684;&#x6CDB;&#x578B;&#x662F;&#x4F2A;&#x6CDB;&#x578B;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#xFF0C;&#x6CDB;&#x578B;&#x4F1A;&#x88AB;&#x64E6;&#x9664;&#xFF0C;&#x6CDB;&#x578B;&#x4FE1;&#x606F;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;Object&#x7C7B;&#x578B;</p>
+<ul>
+<li>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;&#x65E0;&#x6CD5;&#x8F6C;&#x4E3A;object&#xFF09;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>&#x6307;&#x5B9A;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x540E;&#xFF0C;&#x4F20;&#x9012;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x8BE5;&#x7C7B;&#x7C7B;&#x578B;&#x6216;&#x5B50;&#x7C7B;&#x7C7B;&#x578B;</li>
+<li>&#x4E0D;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x4E3A;Object</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x6CDB;&#x578B;&#x65B9;&#x6CD5;</span><br><span class="line">public &lt;T&gt; T show(T t){</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line">&#x6CDB;&#x578B;&#x7C7B;</span><br><span class="line">public class MyGenericClass&lt;T&gt;{</span><br><span class="line"></span><br><span class="line">    public void method(ArrayList&lt;T&gt; arrayList){</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">&#x6CDB;&#x578B;&#x63A5;&#x53E3;</span><br><span class="line">&#x5B9E;&#x73B0;&#x7C7B;&#x7ED9;&#x51FA;&#x5177;&#x4F53;&#x7C7B;&#x578B;</span><br><span class="line">public class MyGenericClass implements List&lt;String&gt;{}</span><br><span class="line">&#x5B9E;&#x73B0;&#x7C7B;&#x5EF6;&#x7EED;&#x6CDB;&#x578B;&#xFF0C;&#x521B;&#x5EFA;&#x5B9E;&#x73B0;&#x7C7B;&#x5BF9;&#x8C61;&#x65F6;&#x518D;&#x786E;&#x5B9A;&#x7C7B;&#x578B;</span><br><span class="line">public class MyGenericClass&lt;T&gt; implements List&lt;T&gt;{}</span><br></pre></td></tr></table></figure>
+
+<p><strong>&#x6CDB;&#x578B;&#x901A;&#x914D;&#x7B26;</strong></p>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x7C7B;&#xFF0C;&#x65B9;&#x6CD5;&#xFF0C;&#x63A5;&#x53E3;&#xFF0C;&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x6CDB;&#x578B;&#x7C7B;&#xFF0C;&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#xFF0C;&#x6CDB;&#x578B;&#x63A5;&#x53E3;</li>
+<li>&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x4F46;&#x662F;&#x4F20;&#x9012;&#x67D0;&#x4E2A;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x901A;&#x914D;&#x7B26;</li>
+</ul>
+<p>? &#x8868;&#x793A;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x7C7B;&#x578B;<br>? extends E&#xFF1A;&#x8868;&#x793A;&#x53C2;&#x6570;&#x5316;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;E&#x7C7B;&#x578B;&#x6216;&#x8005;E&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x7C7B;<br>? super E:&#x8868;&#x793A;&#x53C2;&#x6570;&#x5316;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;E&#x7C7B;&#x578B;&#x6216;&#x8005;E&#x7C7B;&#x578B;&#x7684;&#x7236;&#x7C7B;</p>
+<p>&#x6CDB;&#x578B;&#x4E0D;&#x5177;&#x5907;&#x7EE7;&#x627F;&#x6027;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static void method(ArrayList&lt;Animal&gt; list)</span><br></pre></td></tr></table></figure>
+
+<p>&#x6570;&#x636E;&#x5177;&#x5907;&#x7EE7;&#x627F;&#x6027;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Animal&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">list.add(new Dog());</span><br><span class="line">list.add(new Cat());</span><br></pre></td></tr></table></figure>
+
+<h1 id="&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x6570;&#x636E;&#x7C7B;&#x578B;</h1><h2 id="&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;</h2><p>&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x4F1A;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x4E3A;null&#xFF0C;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x5C1A;&#x672A;&#x6307;&#x5411;&#x4EFB;&#x4F55;&#x6709;&#x6548;&#x5BF9;&#x8C61;&#x3002;&#x5F53;&#x901A;&#x8FC7;new&#x64CD;&#x4F5C;&#x7B26;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x5C06;&#x6307;&#x5411;&#x8BE5;&#x5BF9;&#x8C61;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;<br>&#xFF08;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728;&#x5176;&#x4ED6;&#x7A7A;&#x95F4;&#x4E2D;&#xFF09;</p>
+<ul>
+<li>&#x7C7B;&#xFF08;&#x975E;&#x57FA;&#x672C;&#x7C7B;</li>
+<li>&#x63A5;&#x53E3;</li>
+<li>&#x6570;&#x7EC4;</li>
+<li>&#x679A;&#x4E3E;</li>
+<li>&#x6CE8;&#x89E3;</li>
+</ul>
+<p>this&#x7684;&#x672C;&#x8D28;&#xFF1A;&#x4EE3;&#x8868;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x8005;&#x7684;&#x5730;&#x5740;&#x503C;</p>
+<p>&#x5305;&#x88C5;&#x7C7B;&#xFF1A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5BF9;&#x5E94;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#xFF08;&#x96C6;&#x5408;&#x4E2D;&#x53EA;&#x80FD;&#x5B58;&#x50A8;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x3001;Object&#x4E0D;&#x80FD;&#x63A5;&#x6536;&#xFF09;</p>
+<h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><h2 id="&#x9759;&#x6001;&#x53D8;&#x91CF;"><a href="#&#x9759;&#x6001;&#x53D8;&#x91CF;" class="headerlink" title="&#x9759;&#x6001;&#x53D8;&#x91CF;"></a>&#x9759;&#x6001;&#x53D8;&#x91CF;</h2><p>&#x9759;&#x6001;&#x53D8;&#x91CF;&#xFF1A;&#x88AB;static&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;<br>&#x968F;&#x7740;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x800C;&#x52A0;&#x8F7D;&#xFF0C;&#x4F18;&#x5148;&#x4E8E;&#x5BF9;&#x8C61;&#x5B58;&#x5728;&#xFF0C;<br>&#x8BE5;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61; <strong>&#x5171;&#x4EAB;</strong><br>&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>&#x7C7B;&#x540D;&#x8C03;&#x7528;</li>
+<li>&#x5BF9;&#x8C61;&#x8C03;&#x7528;</li>
+</ul>
+<h2 id="&#x9759;&#x6001;&#x65B9;&#x6CD5;"><a href="#&#x9759;&#x6001;&#x65B9;&#x6CD5;" class="headerlink" title="&#x9759;&#x6001;&#x65B9;&#x6CD5;"></a>&#x9759;&#x6001;&#x65B9;&#x6CD5;</h2><p>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;&#x88AB;static&#x4FEE;&#x9970;&#x7684;&#x65B9;&#x6CD5;</p>
+<ul>
+<li>javabean&#xFF1A;&#x63CF;&#x8FF0;&#x4E8B;&#x52A1;&#x7684;&#x7C7B;</li>
+<li>&#x6D4B;&#x8BD5;&#x7C7B;&#xFF1A;&#x68C0;&#x6D4B;&#x5176;&#x4ED6;&#x7C7B;&#x662F;&#x5426;&#x6B63;&#x786E;</li>
+<li>&#x5DE5;&#x5177;&#x7C7B;&#xFF1A;&#x96C6;&#x4E2D;&#x5B58;&#x653E;&#x516C;&#x5171;&#x3001;&#x9759;&#x6001;&#x3001;&#x975E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#xFF08;&#x901A;&#x5E38;&#x79C1;&#x6709;&#x5316;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x963B;&#x6B62;&#x901A;&#x8FC7;&#x5E38;&#x89C4;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#xFF09;</li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<ul>
+<li>&#x9759;&#x6001;&#x8BBF;&#x95EE;&#x9759;&#x6001;&#xFF0C;&#x975E;&#x9759;&#x6001;&#x8BBF;&#x95EE;&#x6240;&#x6709;</li>
+<li>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E2D;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;this&#x548C;super</li>
+</ul>
+<p>&#x9759;&#x6001;&#x533A;&#xFF1A;&#x5806;&#x4E2D;&#x6709;&#x4E13;&#x95E8;&#x5B58;&#x653E;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;</p>
+<p><img src="/2023/08/19/java/java/image-33.png" alt="Alt text"></p>
+<h1 id="&#x65F6;&#x95F4;&#x7C7B;"><a href="#&#x65F6;&#x95F4;&#x7C7B;" class="headerlink" title="&#x65F6;&#x95F4;&#x7C7B;"></a>&#x65F6;&#x95F4;&#x7C7B;</h1><p>jdk8&#x65B0;&#x589E;&#x7684;&#x65F6;&#x95F4;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x64CD;&#x4F5C;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x65F6;&#x95F4;<br><img src="/2023/08/19/java/java/image-34.png" alt="Alt text"></p>
+<p>now() &#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x5BF9;&#x8C61;<br>of() &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x5BF9;&#x8C61;<br>get&#x5F00;&#x5934; &#x83B7;&#x53D6;&#x65F6;&#x5206;&#x79D2;&#x7B49;&#x4FE1;&#x606F;<br>with&#x5F00;&#x5934; &#x4FEE;&#x6539;&#x65F6;&#x95F4;<br>minus&#x5F00;&#x5934; &#x51CF;&#x53BB;&#x65F6;&#x95F4;<br>plus&#x5F00;&#x5934; &#x52A0;&#x4E0A;&#x65F6;&#x95F4;</p>
+<p>LocalDateTime&#x53EF;&#x4EE5;&#x8F6C;&#x6210;LocalData &#x6216; LocalTime</p>
+<h1 id="&#x591A;&#x6001;"><a href="#&#x591A;&#x6001;" class="headerlink" title="&#x591A;&#x6001;"></a>&#x591A;&#x6001;</h1><p>&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x5B50;&#x7C7B;&#x7684;&#x7279;&#x5B9A;&#x65B9;&#x6CD5;</p>
+<h1 id="&#x591A;&#x7EBF;&#x7A0B;"><a href="#&#x591A;&#x7EBF;&#x7A0B;" class="headerlink" title="&#x591A;&#x7EBF;&#x7A0B;"></a>&#x591A;&#x7EBF;&#x7A0B;</h1><p>&#x591A;&#x7EBF;&#x7A0B;&#xFF1A;</p>
+<p>&#x5E76;&#x884C;&#xFF1A;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x6267;&#x884C;<br>&#x5E76;&#x53D1;&#xFF1A;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x4EA4;&#x66FF;&#x6267;&#x884C;</p>
+<p><img src="/2023/08/19/java/java/image.png" alt="Alt text"></p>
+<p>java&#x4E2D;&#xFF0C;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x6709;10&#x4E2A;&#x7B49;&#x7EA7;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;5&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#xFF0C;&#x6267;&#x884C;&#x7684;&#x673A;&#x7387;&#x8D8A;&#x5927;</p>
+<p>java&#x91C7;&#x7528;&#x62A2;&#x5360;&#x5F0F;&#x8C03;&#x5EA6;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#xFF0C;&#x8D8A;&#x5BB9;&#x6613;&#x88AB;&#x6267;&#x884C;</p>
+<p><img src="/2023/08/19/java/java/image-1.png" alt="Alt text"></p>
+<p><img src="/2023/08/19/java/java/image-2.png" alt="Alt text"></p>
+<h2 id="&#x7EBF;&#x7A0B;&#x5B89;&#x5168;"><a href="#&#x7EBF;&#x7A0B;&#x5B89;&#x5168;" class="headerlink" title="&#x7EBF;&#x7A0B;&#x5B89;&#x5168;"></a>&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</h2><p>&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#xFF0C;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x6570;&#x636E;&#x9519;&#x4E71;&#x6216;&#x8005;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;</p>
+<ul>
+<li>&#x540C;&#x6B65;&#xFF1A;synchronized</li>
+<li>&#x9501;:lock</li>
+</ul>
+<h2 id="&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;"><a href="#&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;" class="headerlink" title="&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;"></a>&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;</h2><p><img src="/2023/08/19/java/java/image-3.png" alt="Alt text"><br>&#x8981;&#x7528;&#x9501;&#x5BF9;&#x8C61;&#x6765;&#x8C03;&#x7528;</p>
+<h2 id="&#x963B;&#x585E;&#x961F;&#x5217;"><a href="#&#x963B;&#x585E;&#x961F;&#x5217;" class="headerlink" title="&#x963B;&#x585E;&#x961F;&#x5217;"></a>&#x963B;&#x585E;&#x961F;&#x5217;</h2><p><img src="/2023/08/19/java/java/image-4.png" alt="Alt text"></p>
+<p><img src="/2023/08/19/java/java/image-5.png" alt="Alt text"><br>&#x516D;&#x4E2A;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x5C06;&#x7EBF;&#x7A0B;&#x4EA4;&#x7ED9;&#x4E86;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF09;</p>
+<p>&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x6709;&#x6808;&#xFF0C;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x5806;&#x4E2D;</p>
+<h2 id="Executor"><a href="#Executor" class="headerlink" title="Executor"></a>Executor</h2><p>Executor&#x6846;&#x67B6;&#x5305;&#x62EC;3&#x5927;&#x90E8;&#x5206;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;&#x4EFB;&#x52A1;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x5DE5;&#x4F5C;&#x5355;&#x5143;&#xFF0C;&#x5305;&#x62EC;&#x88AB;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#xFF1A;Runnable&#x63A5;&#x53E3;&#x6216;&#x8005;Callable&#x63A5;&#x53E3;&#xFF1B;</p>
+<p>&#xFF08;2&#xFF09;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x4EFB;&#x52A1;&#x5206;&#x6D3E;&#x7ED9;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x673A;&#x5236;&#xFF0C;&#x5305;&#x62EC;Executor&#x63A5;&#x53E3;&#x53CA;&#x7EE7;&#x627F;&#x81EA;Executor&#x63A5;&#x53E3;&#x7684;ExecutorService&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#xFF08;3&#xFF09;&#x5F02;&#x6B65;&#x8BA1;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5305;&#x62EC;Future&#x63A5;&#x53E3;&#x53CA;&#x5B9E;&#x73B0;&#x4E86;Future&#x63A5;&#x53E3;&#x7684;FutureTask&#x7C7B;&#x3002;</p>
+<p><img src="/2023/08/19/java/java/image-27.png" alt="Alt text"></p>
+<h3 id="&#x7EBF;&#x7A0B;&#x6C60;"><a href="#&#x7EBF;&#x7A0B;&#x6C60;" class="headerlink" title="&#x7EBF;&#x7A0B;&#x6C60;"></a>&#x7EBF;&#x7A0B;&#x6C60;</h3><p>&#x4F7F;&#x7528; Executors &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x6C60;&#x7B80;&#x5355;&#x65B9;&#x4FBF;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x4E00;&#x822C;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x9700;&#x6C42;&#xFF1B;&#x800C;&#x76F4;&#x63A5;&#x4F7F;&#x7528; ThreadPoolExecutor &#x7C7B;&#x5219;&#x66F4;&#x9002;&#x5408;&#x5BF9;&#x7EBF;&#x7A0B;&#x6C60;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x548C;&#x8BE6;&#x7EC6;&#x914D;&#x7F6E;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x63D0;&#x4EA4;&#x4EFB;&#x52A1; submit&#xFF08;&#xFF09;<br>&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;&#x6C60; shutdown&#xFF08;&#xFF09;<br>&#x521B;&#x5EFA;&#x65E0;&#x9650;&#x7EBF;&#x7A0B;&#x6C60; Executors.newCachedThreadPool<br>&#x521B;&#x5EFA;&#x6709;&#x9650;&#x7EBF;&#x7A0B;&#x6C60; Executors.newFixedThreadPool</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService pool=Executors.newCachedThreadPool&#xFF08;;</span><br></pre></td></tr></table></figure>
+
+<p>Executor &#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86; execute()&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x63A5;&#x6536;&#x4E00;&#x4E2A;Runnable&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x800C; ExecutorService &#x63A5;&#x53E3;&#x4E2D;&#x7684; submit()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;Runnable&#x548C;Callable&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<ul>
+<li>execute &#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#x6216;&#x8005;&#x53D6;&#x6D88;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#xFF1B;&#x800C; submit &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD4;&#x56DE;&#x7684; Future &#x5BF9;&#x8C61;&#x6765;&#x7BA1;&#x7406;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x3002;</li>
+<li>submit &#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F; Future &#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6216;&#x8005;&#x53D6;&#x6D88;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#xFF1B;&#x800C; execute &#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;</li>
+</ul>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;</h3><p><img src="/2023/08/19/java/java/image-6.png" alt="Alt text"><br><img src="/2023/08/19/java/java/image-7.png" alt="Alt text"><br>&#x4E03;&#x4E2A;&#x53C2;&#x6570;<br>&#x62D2;&#x7EDD;&#x7B56;&#x7565;&#x662F;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;</p>
+<pre><code>ThreadPoolExecutor pool=new ThreadPoolExecutor(
+                3,//&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;
+                6,//&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x91CF;
+                60,//&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;
+                TimeUnit.SECONDS,//&#x65F6;&#x95F4;&#x5355;&#x4F4D;
+                new ArrayBlockingQueue&lt;&gt;(3),//&#x4EFB;&#x52A1;&#x961F;&#x5217;
+                Executors.defaultThreadFactory(),// &#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;
+                new ThreadPoolExecutor.AbortPolicy()//&#x4EFB;&#x52A1;&#x62D2;&#x7EDD;&#x7B56;&#x7565;
+        );
+</code></pre>
+<h1 id="&#x53CD;&#x5C04;"><a href="#&#x53CD;&#x5C04;" class="headerlink" title="&#x53CD;&#x5C04;"></a>&#x53CD;&#x5C04;</h1><p>JAVA&#x53CD;&#x5C04;&#x673A;&#x5236;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x90FD;&#x80FD;&#x591F;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF1B;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x90FD;&#x80FD;&#x591F;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#xFF1B;&#x8FD9;&#x79CD;&#x52A8;&#x6001;&#x83B7;&#x53D6;&#x7684;&#x4FE1;&#x606F;&#x4EE5;&#x53CA;&#x52A8;&#x6001;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x529F;&#x80FD;&#x79F0;&#x4E3A;java&#x8BED;&#x8A00;&#x7684;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x4E24;&#x4E2A;&#x5E94;&#x7528;&#x573A;&#x666F;</p>
+<ul>
+<li>&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7ED3;&#x5408;&#xFF0C;&#x52A8;&#x6001;&#x7684;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</li>
+<li>&#x83B7;&#x53D6;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;</li>
+</ul>
+<p>&#x83B7;&#x53D6;class&#x5BF9;&#x8C61;&#xFF1A;</p>
+<ul>
+<li>&#x7F16;&#x8BD1;&#x9636;&#x6BB5; Class.forName(&#x201C;&#x5168;&#x7C7B;&#x540D;&#x201D;)  &#x6700;&#x4E3A;&#x5E38;&#x7528;</li>
+<li>&#x52A0;&#x8F7D;&#x9636;&#x6BB5; &#x7C7B;&#x540D;.class  &#x5F53;&#x4F5C;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x4F20;&#x9012;</li>
+<li>&#x8FD0;&#x884C;&#x9636;&#x6BB5; &#x5BF9;&#x8C61;.getClass() &#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x7C7B;&#x5BF9;&#x8C61;&#x65F6;</li>
+</ul>
+<p><img src="/2023/08/19/java/java/image-8.png" alt="Alt text"></p>
+<p>&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>setAccessible()&#x4FEE;&#x6539;Java&#x7684;&#x8BBF;&#x95EE;&#x9650;&#x5236;</li>
+<li>newInstance() &#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;Class&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5B9E;&#x4F8B;</li>
+</ul>
+<h1 id="&#x52A8;&#x6001;&#x4EE3;&#x7406;"><a href="#&#x52A8;&#x6001;&#x4EE3;&#x7406;" class="headerlink" title="&#x52A8;&#x6001;&#x4EE3;&#x7406;"></a>&#x52A8;&#x6001;&#x4EE3;&#x7406;</h1><p>&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x662F;&#x4E00;&#x79CD;&#x6280;&#x672F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x5730;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x751F;&#x6210;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x5F71;&#x54CD;&#x539F;&#x59CB;&#x4EE3;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x589E;&#x52A0;&#x989D;&#x5916;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5728;Java&#x4E2D;&#xFF0C;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4E3B;&#x8981;&#x4F7F;&#x7528;Java&#x53CD;&#x5C04;&#x673A;&#x5236;&#x5B9E;&#x73B0;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x5730;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E00;&#x7EC4;&#x7ED9;&#x5B9A;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x8BE5;&#x4EE3;&#x7406;&#x7C7B;&#x7EE7;&#x627F;&#x81EA;java.lang.reflect.Proxy&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5176;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528;java.lang.reflect.InvocationHandler&#x63A5;&#x53E3;&#x7684;invoke()&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p><img src="/2023/08/19/java/java/image-9.png" alt="Alt text"></p>
+<h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p><img src="/2023/08/19/java/java/image-25.png" alt="Alt text"><br><img src="/2023/08/19/java/java/image-13.png" alt="Alt text"><br><img src="/2023/08/19/java/java/image-14.png" alt="Alt text"><br><img src="/2023/08/19/java/java/image-15.png" alt="Alt text"><br><img src="/2023/08/19/java/java/image-16.png" alt="Alt text"></p>
+<p>UTF:unicode transformation format</p>
+<p><strong>&#x4E71;&#x7801;&#x539F;&#x56E0;&#xFF1A;</strong></p>
+<ul>
+<li>&#x672A;&#x8BFB;&#x53D6;&#x5B8C;&#x6574;&#x4E2A;&#x6C49;&#x5B57;</li>
+<li>&#x7F16;&#x7801;&#x548C;&#x89E3;&#x7801;&#x65B9;&#x5F0F;&#x4E0D;&#x7EDF;&#x4E00;</li>
+</ul>
+<p><strong>&#x4E0D;&#x4EA7;&#x751F;&#x4E71;&#x7801;&#xFF1A;</strong></p>
+<ul>
+<li>&#x4E0D;&#x8981;&#x7528;&#x5B57;&#x8282;&#x6D41;&#x8BFB;&#x53D6;&#x6587;&#x672C;&#x6587;&#x4EF6;</li>
+<li>&#x7EDF;&#x4E00;&#x7F16;&#x7801;&#x89E3;&#x7801;&#x65B9;&#x5F0F;</li>
+</ul>
+<p>&#x6362;&#x884C;&#x7B26;&#xFF1A;</p>
+<ul>
+<li>windows: \r\n</li>
+<li>unix: \n</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">//&#x4E00;&#x6B21;&#x4E00;&#x4E2A;&#x5B57;&#x8282;</span><br><span class="line">FileInputStream fis = new FileInputStream(&quot;D:\\test.txt&quot;);</span><br><span class="line">int b;</span><br><span class="line">while((b=fis.read())!=-1){</span><br><span class="line">}</span><br><span class="line">fis.close();</span><br><span class="line"></span><br><span class="line">//&#x4E00;&#x6B21;&#x591A;&#x4E2A;&#x5B57;&#x8282;</span><br><span class="line">byte[] bytes = new byte[1024];</span><br><span class="line">fis.read(bytes);</span><br><span class="line"></span><br><span class="line">//&#x6307;&#x5B9A;&#x8BFB;&#x53D6;</span><br><span class="line">while(fis.read(bytes,0,152)!= -1){</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">//&#x8BFB;&#x591A;&#x5C11;&#x5199;&#x591A;&#x5C11;</span><br><span class="line">while((len=fis.read(bytes))!=-1){</span><br><span class="line">    fos.write(bytes,0,len);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">//&#x884C;&#x8BFB;</span><br><span class="line">while((len=br.readLine(bytes))!=null){</span><br><span class="line">    fos.write(bytes,0,len);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h2 id="&#x5B57;&#x8282;&#x6D41;"><a href="#&#x5B57;&#x8282;&#x6D41;" class="headerlink" title="&#x5B57;&#x8282;&#x6D41;"></a>&#x5B57;&#x8282;&#x6D41;</h2><p><img src="/2023/08/19/java/java/image-10.png" alt="Alt text"></p>
+<p><img src="/2023/08/19/java/java/image-11.png" alt="Alt text"></p>
+<p><img src="/2023/08/19/java/java/image-26.png" alt="Alt text"></p>
+<h2 id="&#x7F16;&#x7801;&#x89E3;&#x7801;"><a href="#&#x7F16;&#x7801;&#x89E3;&#x7801;" class="headerlink" title="&#x7F16;&#x7801;&#x89E3;&#x7801;"></a>&#x7F16;&#x7801;&#x89E3;&#x7801;</h2><p>&#x5C06;&#x6570;&#x636E;&#x8F6C;&#x5316;&#x4E3A;&#x80FD;&#x5B58;&#x50A8;&#x5728;&#x786C;&#x76D8;&#x4E2D;&#x7684;&#x5B57;&#x8282;&#x6570;&#x636E;</p>
+<p>&#x7F16;&#x7801;&#xFF1A;getBytes()<br>&#x89E3;&#x7801;&#xFF1A;new String(bytes,[encoding])</p>
+<h2 id="&#x5B57;&#x7B26;&#x6D41;"><a href="#&#x5B57;&#x7B26;&#x6D41;" class="headerlink" title="&#x5B57;&#x7B26;&#x6D41;"></a>&#x5B57;&#x7B26;&#x6D41;</h2><p>&#x5BF9;&#x8C61;:<br>FileReader<br>FileWriter</p>
+<h3 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h3><p>&#x65B9;&#x6CD5;&#xFF1A;<br>read()&#xFF1A;&#x5C06;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x89E3;&#x7801;&#xFF0C;&#x5F3A;&#x8F6C;&#x4E09;&#x6B65;&#x5408;&#x5E76;&#xFF0C;&#x5C06;&#x5F3A;&#x8F6C;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x653E;&#x5230;&#x4E86;&#x6570;&#x7EC4;&#x4E2D;<br>read(char[] buffer)<br>&#x5E95;&#x5C42;&#x7EC6;&#x8282;:&#x65E0;&#x53C2;&#x65B9;&#x6CD5;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x9047;&#x5230;&#x4E2D;&#x6587;&#x8BFB;&#x53D6;&#x591A;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x7684;&#x7F16;&#x7801;&#x503C;&#xFF08;&#x5341;&#x8FDB;&#x5236;&#xFF09;&#x3002;&#x663E;&#x793A;&#x4E2D;&#x6587;&#x9700;&#x8981;char&#x5F3A;&#x8F6C;<br>&#x6709;&#x53C2;&#x7684;&#x4F1A;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x5408;&#x5E76;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cha[] chars=new char[1024];</span><br><span class="line">while((len=fr.read(chars))!=-1){</span><br><span class="line">    sout(new String(chars,0,len))</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h3 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h3><p>&#x65B9;&#x6CD5;&#xFF1A;<br>write(int c)&#xFF1A;&#x5C06;&#x5B57;&#x7B26;&#x5F3A;&#x8F6C;&#x6210;&#x5B57;&#x8282;&#xFF0C;&#x7136;&#x540E;&#x5199;&#x5165;<br>write(char[] buffer)<br>write(String)<br>write(char[] buffer,int start,int end)<br>write(String,int start,int end)</p>
+<p><img src="/2023/08/19/java/java/image-17.png" alt="Alt text"></p>
+<p><img src="/2023/08/19/java/java/image-18.png" alt="Alt text"><br>flush&#xFF08;&#xFF09;&#x5C06;&#x7F13;&#x51B2;&#x533A;&#x6570;&#x636E;&#x5237;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5F80;&#x6587;&#x4EF6;&#x4E2D;&#x5199;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="&#x7F13;&#x51B2;&#x6D41;"><a href="#&#x7F13;&#x51B2;&#x6D41;" class="headerlink" title="&#x7F13;&#x51B2;&#x6D41;"></a>&#x7F13;&#x51B2;&#x6D41;</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BufferWriter=new BufferedWriter(new FileWriter(&quot;&quot;));</span><br><span class="line">BufferReader=new BufferedReader(new FileReader(&quot;&quot;));</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/08/19/java/java/image-19.png" alt="Alt text"></p>
+<p><img src="/2023/08/19/java/java/image-20.png" alt="Alt text"><br>readLine&#xFF08;&#xFF09;&#xFF1A;&#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x6570;&#x636E;&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#x6362;&#x884C;&#xFF09;<br>newLine&#xFF08;&#xFF09;&#xFF1A; &#x8DE8;&#x5E73;&#x53F0;&#x5199;&#x5165;&#x6362;&#x884C;</p>
+<p>&#x5E38;&#x7528;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#xFF1A;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#xFF08;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x7F13;&#x51B2;&#xFF09;</p>
+<h2 id="&#x8F6C;&#x6362;&#x6D41;"><a href="#&#x8F6C;&#x6362;&#x6D41;" class="headerlink" title="&#x8F6C;&#x6362;&#x6D41;"></a>&#x8F6C;&#x6362;&#x6D41;</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream fileInputStream=new FileInputStream(&quot;helloworld\\src\\io\\a.txt&quot;);</span><br><span class="line">InputStreamReader isr=new InputStreamReader(fileInputStream);</span><br><span class="line">BufferedReader br=new BufferedReader(isr);</span><br><span class="line">String line=br.readLine()</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/08/19/java/java/image-21.png" alt="Alt text"></p>
+<h2 id="&#x5E8F;&#x5217;&#x5316;-x2F-&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6D41;"><a href="#&#x5E8F;&#x5217;&#x5316;-x2F-&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6D41;" class="headerlink" title="&#x5E8F;&#x5217;&#x5316;/&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6D41;"></a>&#x5E8F;&#x5217;&#x5316;/&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x6D41;</h2><ul>
+<li>ObjectOutputStream</li>
+<li>ObjectInputStream<br><img src="/2023/08/19/java/java/image-22.png" alt="Alt text"></li>
+</ul>
+<h2 id="&#x6253;&#x5370;&#x6D41;"><a href="#&#x6253;&#x5370;&#x6D41;" class="headerlink" title="&#x6253;&#x5370;&#x6D41;"></a>&#x6253;&#x5370;&#x6D41;</h2><p>&#x5B57;&#x8282;&#x6253;&#x5370;&#x6D41;&#xFF1A;PrintStream&#xFF0C;PrintWriter<br>&#x5B57;&#x7B26;&#x6253;&#x5370;&#x6D41;&#xFF08;&#x5B57;&#x7B26;&#x6D41;&#x5E95;&#x5C42;&#x6709;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x60F3;&#x8981;&#x81EA;&#x52A8;&#x5237;&#x65B0;&#x9700;&#x8981;&#x5F00;&#x542F;&#xFF09;&#xFF1A;<br><img src="/2023/08/19/java/java/image-23.png" alt="Alt text"></p>
+<p>public final class System<br>public static final PrintStream out<br>System.out</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PrintStream ps=System.out;</span><br><span class="line">ps.println(&quot;&#x4F60;&#x597D;&quot;);</span><br><span class="line"></span><br><span class="line">&#x7279;&#x6B8A;&#x7684;&#x6253;&#x5370;&#x6D41;&#xFF0C;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x4E0D;&#x80FD;&#x5173;&#x95ED;</span><br><span class="line">&#x83B7;&#x53D6;&#x6253;&#x5370;&#x6D41;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x6B64;&#x6253;&#x5370;&#x6D41;&#x5728;&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#x65F6;&#x5019;&#x7531;&#x865A;&#x62DF;&#x5668;&#x521B;&#x5EFA;&#xFF0C;&#x9ED8;&#x8BA4;&#x6307;&#x5411;&#x63A7;&#x5236;&#x53F0;</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/08/19/java/java/image-24.png" alt="Alt text"></p>
+<h2 id="&#x538B;&#x7F29;&#x6D41;"><a href="#&#x538B;&#x7F29;&#x6D41;" class="headerlink" title="&#x538B;&#x7F29;&#x6D41;"></a>&#x538B;&#x7F29;&#x6D41;</h2><p>&#x89E3;&#x538B;&#x6D41;&#xFF1A;&#x628A;&#x538B;&#x7F29;&#x5305;&#x91CC;&#x9762;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#xFF0C;&#x6309;&#x7167;&#x5C42;&#x7EA7;&#x62F7;&#x8D1D;&#x5230;&#x5F53;&#x524D;&#x76EE;&#x7684;&#x5730;&#x4E2D;</p>
+<ul>
+<li>ZipInputStream</li>
+<li>ZipOutputStream<br>&#x538B;&#x7F29;&#x5305;&#x91CC;&#x7684;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x548C;&#x6587;&#x4EF6;&#x5939;&#x662F;&#x4E00;&#x4E2A;zipentry&#x5BF9;&#x8C61;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ZipEntry entry&#xFF1B;</span><br><span class="line">entry.isDirectory()&#xFF1A;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x6587;&#x4EF6;&#x5939;</span><br><span class="line">closeEntry():&#x8868;&#x793A;&#x538B;&#x7F29;&#x5305;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5904;&#x7406;&#x5B8C;&#x6BD5;</span><br><span class="line">getName()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="&#x9519;&#x8BEF;&#x5904;&#x7406;"><a href="#&#x9519;&#x8BEF;&#x5904;&#x7406;" class="headerlink" title="&#x9519;&#x8BEF;&#x5904;&#x7406;"></a>&#x9519;&#x8BEF;&#x5904;&#x7406;</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2023/08/19/java/java/">https://akymmio.github.io/2023/08/19/java/java/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/02/Redis/redis/" title="redis"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">redis</div></div></a></div><div class="next-post pull-right"><a href="/2023/08/17/maven%E9%AB%98%E7%BA%A7/maven/" title="maven"><img class="cover" src="https://maven.apache.org/images/maven-logo-black-on-white.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">maven</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/01/17/java/java%E9%9B%86%E5%90%88/" title="java集合"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-17</div><div class="title">java集合</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/akymmio" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-number">1.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">2.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String%E6%AF%94%E8%BE%83"><span class="toc-number">2.1.</span> <span class="toc-text">String比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedHashMap"><span class="toc-number">3.1.</span> <span class="toc-text">LinkedHashMap</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text">引用数据类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#static"><span class="toc-number">6.</span> <span class="toc-text">static</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">6.1.</span> <span class="toc-text">静态变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">6.2.</span> <span class="toc-text">静态方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%B1%BB"><span class="toc-number">7.</span> <span class="toc-text">时间类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-number">8.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">9.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="toc-number">9.1.</span> <span class="toc-text">线程安全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85"><span class="toc-number">9.2.</span> <span class="toc-text">生产者消费者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97"><span class="toc-number">9.3.</span> <span class="toc-text">阻塞队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Executor"><span class="toc-number">9.4.</span> <span class="toc-text">Executor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">9.4.1.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BA%BF%E7%A8%8B"><span class="toc-number">9.4.2.</span> <span class="toc-text">自定义线程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">10.</span> <span class="toc-text">反射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86"><span class="toc-number">11.</span> <span class="toc-text">动态代理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IO"><span class="toc-number">12.</span> <span class="toc-text">IO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%B5%81"><span class="toc-number">12.1.</span> <span class="toc-text">字节流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81"><span class="toc-number">12.2.</span> <span class="toc-text">编码解码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="toc-number">12.3.</span> <span class="toc-text">字符流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FileReader"><span class="toc-number">12.3.1.</span> <span class="toc-text">FileReader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FileWriter"><span class="toc-number">12.3.2.</span> <span class="toc-text">FileWriter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E6%B5%81"><span class="toc-number">12.4.</span> <span class="toc-text">缓冲流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="toc-number">12.5.</span> <span class="toc-text">转换流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96-x2F-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81"><span class="toc-number">12.6.</span> <span class="toc-text">序列化&#x2F;反序列化流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E6%B5%81"><span class="toc-number">12.7.</span> <span class="toc-text">打印流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%B5%81"><span class="toc-number">12.8.</span> <span class="toc-text">压缩流</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">13.</span> <span class="toc-text">错误处理</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/java/java%E9%9B%86%E5%90%88/" title="java集合">java集合</a><time datetime="2024-01-17T13:43:24.485Z" title="发表于 2024-01-17 21:43:24">2024-01-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E5%89%8D%E7%AB%AF/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/" title="处理请求参数">处理请求参数</a><time datetime="2024-01-05T14:20:06.229Z" title="发表于 2024-01-05 22:20:06">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" title="项目部署上线">项目部署上线</a><time datetime="2024-01-05T08:08:27.706Z" title="发表于 2024-01-05 16:08:27">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/29/%E5%89%8D%E7%AB%AF2/vue3/" title="vue3">vue3</a><time datetime="2023-12-29T06:36:28.895Z" title="发表于 2023-12-29 14:36:28">2023-12-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/24/%E5%89%8D%E7%AB%AF/vue2%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" title="vue2项目开发">vue2项目开发</a><time datetime="2023-12-24T07:37:01.257Z" title="发表于 2023-12-24 15:37:01">2023-12-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2023/08/19/java/java/'
+    this.page.identifier = '/2023/08/19/java/java/'
+    this.page.title = 'java基础'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

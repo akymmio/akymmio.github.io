@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>mysql | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="mysql一些特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="https://akymmio.github.io/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="mysql一些特性">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg">
+<meta property="article:published_time" content="2023-12-13T14:54:16.637Z">
+<meta property="article:modified_time" content="2024-01-08T14:36:24.589Z">
+<meta property="article:author" content="jiaxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'mysql',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-01-08 22:36:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">mysql</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-13T14:54:16.637Z" title="发表于 2023-12-13 22:54:16">2023-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-08T14:36:24.589Z" title="更新于 2024-01-08 22:36:24">2024-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="mysql"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="&#x6307;&#x4EE4;"><a href="#&#x6307;&#x4EE4;" class="headerlink" title="&#x6307;&#x4EE4;"></a>&#x6307;&#x4EE4;</h2><p>wc -l tablename //&#x67E5;&#x770B;&#x6570;&#x636E;&#x91CF;<br>head //&#x67E5;&#x770B;&#x524D;&#x51E0;&#x6761;</p>
+<h2 id="&#x7D22;&#x5F15;&#xFF1A;"><a href="#&#x7D22;&#x5F15;&#xFF1A;" class="headerlink" title="&#x7D22;&#x5F15;&#xFF1A;"></a>&#x7D22;&#x5F15;&#xFF1A;</h2><p>&#x9AD8;&#x6548;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</p>
+<p>&#x7D22;&#x5F15;&#x7684;&#x5206;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x4E3B;&#x952E;&#x7D22;&#x5F15;</li>
+<li>&#x552F;&#x4E00;&#x7D22;&#x5F15;</li>
+<li>&#x5E38;&#x89C4;&#x7D22;&#x5F15;</li>
+<li>&#x5168;&#x6587;&#x7D22;&#x5F15;</li>
+</ul>
+<p>&#x6839;&#x636E;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF1A;</p>
+<ul>
+<li>&#x805A;&#x96C6;&#x7D22;&#x5F15; &#xFF1A; &#x53F6;&#x5B50;&#x8282;&#x70B9;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5B9E;&#x9645;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;(&#x4E8C;&#x7EA7;&#x7D22;&#x5F15; )&#xFF1A; &#x5B58;&#x50A8;&#x7684;&#x662F;&#x4E3B;&#x952E;&#x7684;&#x503C;</li>
+</ul>
+<p>B+tree&#x9AD8;&#x5EA6;:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082232050.png"></p>
+<h3 id="&#x7D22;&#x5F15;&#x6027;&#x80FD;&#x5206;&#x6790;"><a href="#&#x7D22;&#x5F15;&#x6027;&#x80FD;&#x5206;&#x6790;" class="headerlink" title="&#x7D22;&#x5F15;&#x6027;&#x80FD;&#x5206;&#x6790;"></a>&#x7D22;&#x5F15;&#x6027;&#x80FD;&#x5206;&#x6790;</h3><p>&#x67E5;&#x770B;&#x6267;&#x884C;&#x9891;&#x6B21;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show global status like &apos;com_______&apos;</span><br></pre></td></tr></table></figure>
+
+<p><strong>&#x67E5;&#x770B;&#x6162;&#x67E5;&#x8BE2;&#x65E5;&#x5FD7;</strong><br>&#x6162;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;&#x4E86;&#x6240;&#x6709;&#x77E5;&#x884C;&#x65F6;&#x95F4;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#xFF08;long_query_time:&#x9ED8;&#x8BA4;10s&#xFF09;&#x7684;&#x6240;&#x6709;sql&#x8BED;&#x53E5;&#x7684;&#x65E5;&#x5FD7;</p>
+<p>&#x5F00;&#x542F;profiling(&#x8BB0;&#x5F55;sql&#x6267;&#x884C;&#x65F6;&#x95F4;)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select @@profiling; </span><br><span class="line"></span><br><span class="line">set profiling = 1; &#x5F00;&#x542F;</span><br><span class="line"></span><br><span class="line">show profiles; &#x67E5;&#x770B;</span><br></pre></td></tr></table></figure>
+
+<p>explain &#x5206;&#x6790;sql&#x6267;&#x884C;&#x8BA1;&#x5212;<br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082233260.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082233418.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082233990.png"></p>
+<h3 id="&#x7D22;&#x5F15;&#x7684;&#x4F7F;&#x7528;"><a href="#&#x7D22;&#x5F15;&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="&#x7D22;&#x5F15;&#x7684;&#x4F7F;&#x7528;"></a>&#x7D22;&#x5F15;&#x7684;&#x4F7F;&#x7528;</h3><p>&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x4E3B;&#x952E;&#x7D22;&#x5F15;</p>
+<p>&#x7D22;&#x5F15;&#x8BED;&#x6CD5;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create [unique|fulltext] index &#x7D22;&#x5F15;&#x540D; on &#x8868;&#x540D;(&#x5B57;&#x6BB5;&#x540D;...)</span><br><span class="line"></span><br><span class="line">show index from &#x8868;&#x540D;</span><br><span class="line"></span><br><span class="line">drop index &#x7D22;&#x5F15;&#x540D; on &#x8868;&#x540D;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x7D22;&#x5F15;&#x5931;&#x6548;"><a href="#&#x7D22;&#x5F15;&#x5931;&#x6548;" class="headerlink" title="&#x7D22;&#x5F15;&#x5931;&#x6548;"></a>&#x7D22;&#x5F15;&#x5931;&#x6548;</h3><p>&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF1A;&#x9075;&#x5FAA;&#x6700;&#x5DE6;&#x6CD5;&#x5219;&#xFF08;order by&#x6309;&#x7167;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x65F6;&#x5019;&#x7684;&#x987A;&#x5E8F;,where&#x4E0D;&#x53D7;&#x7D22;&#x5F15;&#x521B;&#x5EFA;&#x7684;&#x987A;&#x5E8F;&#x9650;&#x5236; &#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x8DF3;&#x8FC7;&#x7D22;&#x5F15;&#x4E2D;&#x7684;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x8DF3;&#x8FC7;&#x67D0;&#x4E00;&#x5217;&#xFF0C;&#x7D22;&#x5F15;&#x5C06;&#x90E8;&#x5206;&#x751F;&#x6548;&#xFF08;&#x540E;&#x9762;&#x7684;&#x5B57;&#x6BB5;&#x7D22;&#x5F15;&#x5931;&#x6548;&#xFF09;</p>
+<p>&#x7D22;&#x5F15;&#x5217;&#x51FD;&#x6570;&#x8FD0;&#x7B97;&#x3001;&#x8868;&#x8FBE;&#x5F0F;</p>
+<p>&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#xFF08;&gt; &lt;&#xFF09;&#x7684;&#x53F3;&#x4FA7;&#x5217;&#x5931;&#x6548;</p>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x4E0D;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;</p>
+<p>&#x5DE6;&#x6A21;&#x7CCA;&#x5339;&#x914D;</p>
+<p>or &#x524D;&#x6709;&#x7D22;&#x5F15;&#xFF0C;&#x540E;&#x9762;&#x6CA1;&#x6709;&#x7D22;&#x5F15;</p>
+<p>&#x8D70;&#x7D22;&#x5F15;&#x4E0D;&#x5982;&#x8D70;&#x5168;&#x8868;&#x626B;&#x63CF;&#xFF08;&#x5F53;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x67E5;&#x8BE2;&#x7684;&#x6570;&#x636E;&#x5360;&#x5927;&#x591A;&#x6570;&#x65F6;&#xFF0C;&#x4F1A;&#x9009;&#x62E9;&#x8D70;&#x5168;&#x8868;&#xFF09;</p>
+<p>(&#x5E76;&#x4E0D;&#x662F;&#x8BF4;&#x7D22;&#x5F15;&#x4F1A;&#x5B8C;&#x5168;&#x5931;&#x6548;&#xFF0C;&#x800C;&#x662F;&#x7D22;&#x5F15;&#x7684;&#x9009;&#x62E9;&#x6027;&#x4F1A;&#x53D7;&#x5230;&#x5F71;&#x54CD;,&#x5177;&#x4F53;&#x7684;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x53D6;&#x51B3;&#x4E8E; MySQL &#x7684;&#x67E5;&#x8BE2;&#x4F18;&#x5316;&#x5668;&#x7684;&#x5224;&#x65AD;&#x3002;)</p>
+<h3 id="sql&#x63D0;&#x793A;"><a href="#sql&#x63D0;&#x793A;" class="headerlink" title="sql&#x63D0;&#x793A;"></a>sql&#x63D0;&#x793A;</h3><p>&#x4F18;&#x5316;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x624B;&#x6BB5;&#xFF0C;&#x5728;sql&#x8BED;&#x53E5;&#x4E2D;&#x63D2;&#x5165;&#x63D0;&#x793A;&#xFF0C;&#x8BA9;mysql&#x6309;&#x7167;&#x6211;&#x4EEC;&#x7684;&#x610F;&#x56FE;&#x53BB;&#x6267;&#x884C;</p>
+<ul>
+<li><code>use index</code>    &#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7684;&#x7D22;&#x5F15;</li>
+<li><code>ignore index</code>  &#x4E0D;&#x4F7F;&#x7528;</li>
+<li><code>force index</code>   &#x5F3A;&#x5236;&#x4F7F;&#x7528;</li>
+</ul>
+<h3 id="&#x8986;&#x76D6;&#x7D22;&#x5F15;"><a href="#&#x8986;&#x76D6;&#x7D22;&#x5F15;" class="headerlink" title="&#x8986;&#x76D6;&#x7D22;&#x5F15;"></a>&#x8986;&#x76D6;&#x7D22;&#x5F15;</h3><p>&#x8986;&#x76D6;&#x7D22;&#x5F15;&#xFF1A;&#x7D22;&#x5F15;&#x5305;&#x542B;&#x6240;&#x6709;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7684;&#x5B57;&#x6BB5;&#xFF08;&#x4E00;&#x6B21;&#x7D22;&#x5F15;&#x67E5;&#x8BE2;&#x5C31;&#x627E;&#x5230;&#x4E86;&#xFF09;</p>
+<p>(&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x8986;&#x76D6;&#x7D22;&#x5F15;&#xFF0C;&#x907F;&#x514D;select *)</p>
+<p>&#x56DE;&#x8868;&#x67E5;&#x8BE2;&#xFF1A;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#xFF0C;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x662F;&#x4E3B;&#x952E;id</p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082234144.png"></p>
+<h3 id="&#x524D;&#x7F00;&#x7D22;&#x5F15;"><a href="#&#x524D;&#x7F00;&#x7D22;&#x5F15;" class="headerlink" title="&#x524D;&#x7F00;&#x7D22;&#x5F15;"></a>&#x524D;&#x7F00;&#x7D22;&#x5F15;</h3><p>&#x5F53;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x4F1A;&#x8BA9;&#x521B;&#x5EFA;&#x7684;&#x7D22;&#x5F15;&#x5F88;&#x5927;&#xFF0C;&#x5F71;&#x54CD;&#x67E5;&#x8BE2;&#x6548;&#x7387;<br>&#x524D;&#x7F00;&#x7D22;&#x5F15;&#xFF1A;&#x53EA;&#x53D6;&#x5B57;&#x6BB5;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x4F5C;&#x4E3A;&#x7D22;&#x5F15;&#xFF0C;&#x8282;&#x7EA6;&#x7D22;&#x5F15;&#x7A7A;&#x95F4;&#xFF0C;&#x63D0;&#x9AD8;&#x7D22;&#x5F15;&#x6548;&#x7387;</p>
+<p>&#x8BED;&#x6CD5;&#xFF1A; <code>create index &#x7D22;&#x5F15;&#x540D; on &#x8868;&#x540D;(&#x5B57;&#x6BB5;&#x540D;(&#x524D;&#x7F00;&#x957F;&#x5EA6;))</code></p>
+<h3 id="&#x5355;&#x5217;&#x548C;&#x8054;&#x5408;&#x7D22;&#x5F15;"><a href="#&#x5355;&#x5217;&#x548C;&#x8054;&#x5408;&#x7D22;&#x5F15;" class="headerlink" title="&#x5355;&#x5217;&#x548C;&#x8054;&#x5408;&#x7D22;&#x5F15;"></a>&#x5355;&#x5217;&#x548C;&#x8054;&#x5408;&#x7D22;&#x5F15;</h3><p>&#xFF08;&#x590D;&#x5408;&#x7D22;&#x5F15;&#xFF09;<br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082234976.png"><br>(&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x8986;&#x76D6;&#x7D22;&#x5F15;&#xFF0C;&#x907F;&#x514D;&#x56DE;&#x8868;)</p>
+<h3 id="&#x7D22;&#x5F15;&#x8BBE;&#x8BA1;&#x539F;&#x5219;"><a href="#&#x7D22;&#x5F15;&#x8BBE;&#x8BA1;&#x539F;&#x5219;" class="headerlink" title="&#x7D22;&#x5F15;&#x8BBE;&#x8BA1;&#x539F;&#x5219;"></a>&#x7D22;&#x5F15;&#x8BBE;&#x8BA1;&#x539F;&#x5219;</h3><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082234878.png"></p>
+<h2 id="sql&#x4F18;&#x5316;"><a href="#sql&#x4F18;&#x5316;" class="headerlink" title="sql&#x4F18;&#x5316;"></a>sql&#x4F18;&#x5316;</h2><h3 id="&#x6279;&#x91CF;&#x63D2;&#x5165;"><a href="#&#x6279;&#x91CF;&#x63D2;&#x5165;" class="headerlink" title="&#x6279;&#x91CF;&#x63D2;&#x5165;"></a>&#x6279;&#x91CF;&#x63D2;&#x5165;</h3><p>&#x4F7F;&#x7528;load&#x6307;&#x4EE4;&#x8FDB;&#x884C;&#x63D2;&#x5165;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//&#x5F00;&#x542F;load</span><br><span class="line">select @@local_infile;</span><br><span class="line"></span><br><span class="line">set global local_infile = 1;</span><br><span class="line"></span><br><span class="line">//&#x9009;&#x62E9;&#x767B;&#x5F55;&#x6A21;&#x5F0F;</span><br><span class="line">mysql -u -p --local-infile</span><br><span class="line"></span><br><span class="line">//&#x6279;&#x91CF;&#x63D2;&#x5165;</span><br><span class="line">load data local infile &apos;path&apos; to table;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4E3B;&#x952E;&#x4F18;&#x5316;"><a href="#&#x4E3B;&#x952E;&#x4F18;&#x5316;" class="headerlink" title="&#x4E3B;&#x952E;&#x4F18;&#x5316;"></a>&#x4E3B;&#x952E;&#x4F18;&#x5316;</h3><p><img src="/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/image-15.png" alt="Alt text"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082140680.png"></p>
+<p>&#x4E3B;&#x952E;&#x4E71;&#x5E8F;&#x63D2;&#x5165;&#x5BFC;&#x81F4;&#xFF1A;</p>
+<ul>
+<li>&#x9875;&#x5206;&#x88C2;</li>
+<li>&#x9875;&#x5408;&#x5E76;</li>
+</ul>
+<p>&#x4E3B;&#x952E;&#x8BBE;&#x8BA1;&#x539F;&#x5219;</p>
+<ul>
+<li>&#x964D;&#x4F4E;&#x4E3B;&#x952E;&#x957F;&#x5EA6;&#xFF08;&#x4E8C;&#x7EA7;&#x7D22;&#x5F15;&#x4E2D;&#x5B58;&#x653E;&#x4E3B;&#x952E;&#xFF0C;&#x9632;&#x6B62;&#x5360;&#x7528;&#x592A;&#x591A;&#x7A7A;&#x95F4;&#xFF0C;&#x4E0D;&#x9002;&#x7528;UUID&#x7B49;&#xFF09;</li>
+<li>&#x6309;&#x7167;&#x6709;&#x5E8F;&#x3001;&#x987A;&#x5E8F;&#x63D2;&#x5165;&#xFF08;&#x81EA;&#x589E;&#x4E3B;&#x952E;&#xFF09;,&#x4E71;&#x5E8F;&#x63D2;&#x5165;&#x5BFC;&#x81F4;&#x9875;&#x5206;&#x88C2;</li>
+<li>&#x4E1A;&#x52A1;&#x64CD;&#x4F5C;&#x907F;&#x514D;&#x5BF9;&#x4E3B;&#x952E;&#x7684;&#x4FEE;&#x6539;</li>
+</ul>
+<h3 id="order-by&#x4F18;&#x5316;"><a href="#order-by&#x4F18;&#x5316;" class="headerlink" title="order by&#x4F18;&#x5316;"></a>order by&#x4F18;&#x5316;</h3><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082235021.png"><br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082235065.png"></p>
+<p>&#x67E5;&#x770B;&#x6392;&#x5E8F;&#x7F13;&#x5B58;<br><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082235215.png"></p>
+<h3 id="gropup-by&#x4F18;&#x5316;"><a href="#gropup-by&#x4F18;&#x5316;" class="headerlink" title="gropup by&#x4F18;&#x5316;"></a>gropup by&#x4F18;&#x5316;</h3><p>&#x6EE1;&#x8DB3;&#x6700;&#x5DE6;&#x524D;&#x7F00;&#x539F;&#x5219;</p>
+<p>&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5305;&#x542B;a, b, &#x548C; c&#x5B57;&#x6BB5;&#x7684;&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x5E76;&#x4E14;&#x8FD0;&#x884C;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<p>sql<br>EXPLAIN SELECT b FROM table GROUP BY b;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x67E5;&#x8BE2;&#x4E2D;&#xFF0C;&#x5C3D;&#x7BA1;&#x4F60;&#x4E0D;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x7D22;&#x5F15;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;a&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x4F60;&#x5728;GROUP BY&#x5B50;&#x53E5;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x7D22;&#x5F15;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x6BB5;b&#xFF0C;MySQL&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x5730;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x8054;&#x5408;&#x7D22;&#x5F15;&#x6765;&#x52A0;&#x901F;&#x5206;&#x7EC4;&#x64CD;&#x4F5C;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;MySQL&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x626B;&#x63CF;&#x6574;&#x4E2A;&#x8868;&#x3002;&#x8FD9;&#x5C31;&#x662F;EXPLAIN&#x8F93;&#x51FA;&#x4E2D;&#x7684;Using index&#x610F;&#x5473;&#x7740;&#x7684;&#x2014;&#x2014;MySQL&#x6B63;&#x5728;&#x5229;&#x7528;&#x7D22;&#x5F15;&#x6765;&#x67E5;&#x627E;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x5373;&#x4F7F;MySQL&#x80FD;&#x591F;&#x5229;&#x7528;&#x7D22;&#x5F15;&#x6765;&#x67E5;&#x627E;&#x6570;&#x636E;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x8868;&#x6765;&#x5B58;&#x50A8;&#x5206;&#x7EC4;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x4EE5;&#x4FBF;&#x8FD4;&#x56DE;&#x6B63;&#x786E;&#x7684;&#x5206;&#x7EC4;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5F53;&#x6D89;&#x53CA;&#x5230;&#x5206;&#x7EC4;&#x548C;&#x6392;&#x5E8F;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;MySQL&#x901A;&#x5E38;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x6240;&#x6709;&#x7684;&#x884C;&#x90FD;&#x662F;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x65B9;&#x5F0F;&#x6392;&#x5E8F;&#x7684;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;EXPLAIN&#x8F93;&#x51FA;&#x4E2D;&#x7684;Using temporary&#x4F1A;&#x51FA;&#x73B0;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<h3 id="limit-&#x4F18;&#x5316;"><a href="#limit-&#x4F18;&#x5316;" class="headerlink" title="limit &#x4F18;&#x5316;"></a>limit &#x4F18;&#x5316;</h3><p>&#x8986;&#x76D6;&#x7D22;&#x5F15;+&#x5B50;&#x67E5;&#x8BE2;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//&#x4E0D;&#x505A;&#x4F18;&#x5316;</span><br><span class="line">select * from tb_sku limit 1000000, 10;</span><br><span class="line">//&#x4F18;&#x5316;&#x540E;</span><br><span class="line">select * from table t,(select id from table limit 1000000, 10) a where t.id=a.id;</span><br></pre></td></tr></table></figure>
+
+<h3 id="count&#x4F18;&#x5316;"><a href="#count&#x4F18;&#x5316;" class="headerlink" title="count&#x4F18;&#x5316;"></a>count&#x4F18;&#x5316;</h3><p>count&#x53EA;&#x4F1A;&#x8BA1;&#x6570;&#x975E;NULL&#x503C;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082235897.png"></p>
+<h3 id="update&#x4F18;&#x5316;"><a href="#update&#x4F18;&#x5316;" class="headerlink" title="update&#x4F18;&#x5316;"></a>update&#x4F18;&#x5316;</h3><p>&#x6CA1;&#x6709;&#x7D22;&#x5F15;&#x662F;&#x8868;&#x9501;&#xFF0C;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x65F6;&#x5019;&#x8981;&#x6839;&#x636E;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x66F4;&#x65B0;</p>
+<h2 id="&#x4E8B;&#x52A1;"><a href="#&#x4E8B;&#x52A1;" class="headerlink" title="&#x4E8B;&#x52A1;"></a>&#x4E8B;&#x52A1;</h2><p><code>start transaction</code> - &#x6307;&#x4EE4;&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x4E8B;&#x52A1;&#x7684;&#x8D77;&#x59CB;&#x70B9;&#x3002;<br><code>savepoint</code> - &#x6307;&#x4EE4;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4FDD;&#x7559;&#x70B9;&#x3002;<br><code>rollback to</code> - &#x6307;&#x4EE4;&#x7528;&#x4E8E;&#x56DE;&#x6EDA;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x4FDD;&#x7559;&#x70B9;&#xFF1B;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x4FDD;&#x7559;&#x70B9;&#xFF0C;&#x5219;&#x56DE;&#x9000;&#x5230; start transaction &#x8BED;&#x53E5;&#x5904;&#x3002;<br><code>commit</code> - &#x63D0;&#x4EA4;&#x4E8B;&#x52A1;&#x3002;</p>
+<h2 id="&#x9501;"><a href="#&#x9501;" class="headerlink" title="&#x9501;"></a>&#x9501;</h2><ul>
+<li>&#x5168;&#x5C40;&#x9501;&#xFF1A;&#x9501;&#x5B9A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x8868;</li>
+<li>&#x8868;&#x7EA7;&#x9501;</li>
+<li>&#x884C;&#x7EA7;&#x9501;</li>
+</ul>
+<h3 id="&#x5168;&#x5C40;&#x9501;"><a href="#&#x5168;&#x5C40;&#x9501;" class="headerlink" title="&#x5168;&#x5C40;&#x9501;"></a>&#x5168;&#x5C40;&#x9501;</h3><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082235248.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//&#x5168;&#x5C40;&#x9501;</span><br><span class="line">flush tables with read lock </span><br><span class="line">//&#x5907;&#x4EFD;,&#x4E0D;&#x5728;mysql&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x8FD0;&#x884C;</span><br><span class="line">mysqldump (--single-transaction) -uroot -p table &gt; table.sql</span><br><span class="line">//&#x91CA;&#x653E;&#x9501;</span><br><span class="line">unlock tables</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082235504.png"></p>
+<h2 id="&#x8868;&#x7EA7;&#x9501;"><a href="#&#x8868;&#x7EA7;&#x9501;" class="headerlink" title="&#x8868;&#x7EA7;&#x9501;"></a>&#x8868;&#x7EA7;&#x9501;</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082236374.png"></p>
+<ul>
+<li>&#x8868;&#x9501;&#xFF1A;&#x9501;&#x5B9A;&#x6574;&#x4E2A;&#x8868;</li>
+<li>&#x5143;&#x6570;&#x636E;&#x9501;&#xFF1A;&#x9632;&#x6B62;DML&#x548C;DDL&#x64CD;&#x4F5C;&#x51B2;&#x7A81;</li>
+<li>&#x610F;&#x5411;&#x9501;&#xFF1A;</li>
+</ul>
+<h2 id="&#x884C;&#x7EA7;&#x9501;"><a href="#&#x884C;&#x7EA7;&#x9501;" class="headerlink" title="&#x884C;&#x7EA7;&#x9501;"></a>&#x884C;&#x7EA7;&#x9501;</h2><p><img src="https://cdn.jsdelivr.net/gh/akymmio/images/img/202401082236758.png"></p>
+<h2 id="&#x9694;&#x79BB;&#x7B49;&#x7EA7;"><a href="#&#x9694;&#x79BB;&#x7B49;&#x7EA7;" class="headerlink" title="&#x9694;&#x79BB;&#x7B49;&#x7EA7;"></a>&#x9694;&#x79BB;&#x7B49;&#x7EA7;</h2><ul>
+<li>Read Uncommitted (&#x8BFB;&#x53D6;&#x672A;&#x63D0;&#x4EA4;)<br>&#x5728;&#x8FD9;&#x79CD;&#x7EA7;&#x522B;&#x4E0B;&#xFF0C;&#x4E8B;&#x52A1;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x5230;&#x5176;&#x4ED6;&#x4E8B;&#x52A1;&#x5C1A;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x3002;<br>&#x5141;&#x8BB8;&#x201C;&#x810F;&#x8BFB;&#x201D;(Dirty Read)&#xFF0C;&#x5373;&#x4E8B;&#x52A1; A &#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x5230;&#x4E8B;&#x52A1; B &#x5C1A;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x53D8;&#x66F4;&#xFF0C;&#x5982;&#x679C;&#x4E8B;&#x52A1; B &#x6700;&#x7EC8;&#x56DE;&#x6EDA;&#xFF0C;&#x5219;&#x4E8B;&#x52A1; A &#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x3002;<br>&#x8FD9;&#x79CD;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x7ED3;&#x679C;&#x3002;</li>
+<li>Read Committed (&#x8BFB;&#x53D6;&#x5DF2;&#x63D0;&#x4EA4;)<br>&#x4E8B;&#x52A1;&#x53EA;&#x80FD;&#x8BFB;&#x53D6;&#x5230;&#x5DF2;&#x7ECF;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x3002;<br>&#x89E3;&#x51B3;&#x4E86;&#x201C;&#x810F;&#x8BFB;&#x201D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5F15;&#x5165;&#x4E86;&#x201C;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x201D;(Non-repeatable Read)&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x5728;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x5185;&#x591A;&#x6B21;&#x8BFB;&#x53D6;&#x540C;&#x4E00;&#x6761;&#x6570;&#x636E;&#x53EF;&#x80FD;&#x4F1A;&#x5F97;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002;<br>&#x8FD9;&#x79CD;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x8F83;&#x9AD8;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x573A;&#x666F;&#x3002;</li>
+<li>Repeatable Read (&#x53EF;&#x91CD;&#x8BFB;)<br>&#x4E8B;&#x52A1;&#x5728;&#x5F00;&#x59CB;&#x5230;&#x7ED3;&#x675F;&#x671F;&#x95F4;&#xFF0C;&#x5373;&#x4F7F;&#x6709;&#x5176;&#x4ED6;&#x4E8B;&#x52A1;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4E86;&#x4FEE;&#x6539;&#x5E76;&#x63D0;&#x4EA4;&#xFF0C;&#x8BE5;&#x4E8B;&#x52A1;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E8B;&#x52A1;&#x5F00;&#x59CB;&#x65F6;&#x7684;&#x6570;&#x636E;&#x72B6;&#x6001;&#x3002;<br>&#x89E3;&#x51B3;&#x4E86;&#x201C;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x201D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x201C;&#x5E7B;&#x8BFB;&#x201D;(Phantom Read)&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#x540C;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x5185;&#x4E24;&#x6B21;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x4E4B;&#x524D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x65B0;&#x884C;&#x3002;<br>&#x8FD9;&#x662F; MySQL &#x7684;&#x9ED8;&#x8BA4;&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x3002;</li>
+<li>Serializable (&#x53EF;&#x4E32;&#x884C;&#x5316;)<br>&#x63D0;&#x4F9B;&#x6700;&#x9AD8;&#x7684;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x4FDD;&#x8BC1;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4E8B;&#x52A1;&#x90FD;&#x662F;&#x4E32;&#x884C;&#x6267;&#x884C;&#x7684;&#x3002;<br>&#x89E3;&#x51B3;&#x4E86;&#x201C;&#x5E7B;&#x8BFB;&#x201D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x6700;&#x4F4E;&#xFF0C;&#x56E0;&#x4E3A;&#x4E8B;&#x52A1;&#x4E4B;&#x95F4;&#x9700;&#x8981;&#x4E25;&#x683C;&#x5730;&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x3002;<br>&#x5728;&#x8981;&#x6C42;&#x7EDD;&#x5BF9;&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x53EF;&#x80FD;&#x4F1A;&#x4F7F;&#x7528;&#x3002;</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/">https://akymmio.github.io/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/21/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF2/" title="vue2-(2)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">vue2-(2)</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/09/RabbitMQ/RabbitMQ/" title="RabbitMQ"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RabbitMQ</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/akymmio" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">索引：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">索引性能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">索引的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88"><span class="toc-number">2.3.</span> <span class="toc-text">索引失效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql%E6%8F%90%E7%A4%BA"><span class="toc-number">2.4.</span> <span class="toc-text">sql提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="toc-number">2.5.</span> <span class="toc-text">覆盖索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BC%80%E7%B4%A2%E5%BC%95"><span class="toc-number">2.6.</span> <span class="toc-text">前缀索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%88%97%E5%92%8C%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95"><span class="toc-number">2.7.</span> <span class="toc-text">单列和联合索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">2.8.</span> <span class="toc-text">索引设计原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql%E4%BC%98%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">sql优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">批量插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E4%BC%98%E5%8C%96"><span class="toc-number">3.2.</span> <span class="toc-text">主键优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#order-by%E4%BC%98%E5%8C%96"><span class="toc-number">3.3.</span> <span class="toc-text">order by优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gropup-by%E4%BC%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">gropup by优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limit-%E4%BC%98%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">limit 优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#count%E4%BC%98%E5%8C%96"><span class="toc-number">3.6.</span> <span class="toc-text">count优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#update%E4%BC%98%E5%8C%96"><span class="toc-number">3.7.</span> <span class="toc-text">update优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">4.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81"><span class="toc-number">5.</span> <span class="toc-text">锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E9%94%81"><span class="toc-number">5.1.</span> <span class="toc-text">全局锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%BA%A7%E9%94%81"><span class="toc-number">6.</span> <span class="toc-text">表级锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E7%BA%A7%E9%94%81"><span class="toc-number">7.</span> <span class="toc-text">行级锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%94%E7%A6%BB%E7%AD%89%E7%BA%A7"><span class="toc-number">8.</span> <span class="toc-text">隔离等级</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/java/java%E9%9B%86%E5%90%88/" title="java集合">java集合</a><time datetime="2024-01-17T13:43:24.485Z" title="发表于 2024-01-17 21:43:24">2024-01-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E5%89%8D%E7%AB%AF/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/" title="处理请求参数">处理请求参数</a><time datetime="2024-01-05T14:20:06.229Z" title="发表于 2024-01-05 22:20:06">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" title="项目部署上线">项目部署上线</a><time datetime="2024-01-05T08:08:27.706Z" title="发表于 2024-01-05 16:08:27">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/29/%E5%89%8D%E7%AB%AF2/vue3/" title="vue3">vue3</a><time datetime="2023-12-29T06:36:28.895Z" title="发表于 2023-12-29 14:36:28">2023-12-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/24/%E5%89%8D%E7%AB%AF/vue2%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" title="vue2项目开发">vue2项目开发</a><time datetime="2023-12-24T07:37:01.257Z" title="发表于 2023-12-24 15:37:01">2023-12-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/'
+    this.page.identifier = '/2023/12/13/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/'
+    this.page.title = 'mysql'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

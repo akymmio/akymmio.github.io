@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>java集合 | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Collection add() clear() remove() contains() isEmpty() size()  contains()&amp;#xFF1A;&amp;#x4F9D;&amp;#x8D56;&amp;#x4E8E;equals()&amp;#x65B9;&amp;#x6CD5;(&amp;#x6CA1;&amp;#x6709;&amp;#x91CD;&amp;#x5199;)&amp;#xFF0C;&amp;#x6BD4;&amp;#x8F83;&amp;#x7684;&amp;#x66">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java集合">
+<meta property="og:url" content="https://akymmio.github.io/2024/01/17/java/java%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="Collection add() clear() remove() contains() isEmpty() size()  contains()&amp;#xFF1A;&amp;#x4F9D;&amp;#x8D56;&amp;#x4E8E;equals()&amp;#x65B9;&amp;#x6CD5;(&amp;#x6CA1;&amp;#x6709;&amp;#x91CD;&amp;#x5199;)&amp;#xFF0C;&amp;#x6BD4;&amp;#x8F83;&amp;#x7684;&amp;#x66">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg">
+<meta property="article:published_time" content="2024-01-17T13:43:24.485Z">
+<meta property="article:modified_time" content="2024-01-20T04:03:00.218Z">
+<meta property="article:author" content="jiaxing">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2024/01/17/java/java%E9%9B%86%E5%90%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'java集合',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-01-20 12:03:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">java集合</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-17T13:43:24.485Z" title="发表于 2024-01-17 21:43:24">2024-01-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-20T04:03:00.218Z" title="更新于 2024-01-20 12:03:00">2024-01-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java集合"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><ul>
+<li>add()</li>
+<li>clear()</li>
+<li>remove()</li>
+<li>contains()</li>
+<li>isEmpty()</li>
+<li>size()</li>
+</ul>
+<p>contains()&#xFF1A;&#x4F9D;&#x8D56;&#x4E8E;equals()&#x65B9;&#x6CD5;(&#x6CA1;&#x6709;&#x91CD;&#x5199;)&#xFF0C;&#x6BD4;&#x8F83;&#x7684;&#x662F;&#x5730;&#x5740;</p>
+<p>&#x67E5;&#x8BE2;&#x591A;&#xFF1A;ArrayList<br>&#x589E;&#x5220;&#x591A;&#xFF1A;LinkedList<br>&#x53BB;&#x91CD;&#xFF1A;HashSet<br>&#x53BB;&#x91CD;&#x6709;&#x5E8F;&#xFF1A;LinkedHashSet<br>&#x6392;&#x5E8F;&#xFF1A;TreeSet</p>
+<p>Collections&#x96C6;&#x5408;&#x5DE5;&#x5177;&#x7C7B;<br>addAll()<br>shuffle()</p>
+<h2 id="&#x904D;&#x5386;&#x65B9;&#x5F0F;"><a href="#&#x904D;&#x5386;&#x65B9;&#x5F0F;" class="headerlink" title="&#x904D;&#x5386;&#x65B9;&#x5F0F;"></a>&#x904D;&#x5386;&#x65B9;&#x5F0F;</h2><p>&#x8FED;&#x4EE3;&#x5668;&#xFF1A;</p>
+<ul>
+<li>&#x904D;&#x5386;&#x540E;&#x6307;&#x9488;&#x4E0D;&#x4F1A;&#x590D;&#x4F4D;</li>
+<li>&#x4E0D;&#x80FD;&#x7528;&#x96C6;&#x5408;&#x7684;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x589E;&#x52A0;&#x6216;&#x5220;&#x9664;(&#x53EF;&#x4EE5;&#x7528;&#x8FED;&#x4EE3;&#x5668;&#x7684;&#x5220;&#x9664;&#x65B9;&#x6CD5;remove())</li>
+</ul>
+<p>&#x589E;&#x5F3A;for&#xFF1A;<br>&#x6240;&#x6709;&#x7684;&#x5355;&#x5217;&#x96C6;&#x5408;&#x548C;&#x6570;&#x7EC4;&#x624D;&#x80FD;&#x7528;&#x589E;&#x5F3A;for&#x904D;&#x5386;,&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x96C6;&#x5408;&#x4E2D;&#x539F;&#x672C;&#x7684;&#x6570;&#x636E;</p>
+<p>Lambda&#xFF1A;<br><code>arr.forEach(System.out::println);</code></p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D;&#xFF0C;&#x6709;&#x7D22;&#x5F15;</p>
+<p>&#x65B9;&#x6CD5;&#xFF1A;<br>add(int index,E element)<br>remove(int index)<br>set(int index,E element)<br>get(int index)</p>
+<p>remove(1) &#x662F;&#x5220;&#x9664;&#x7D22;&#x5F15;<br><strong>&#x65B9;&#x6CD5;&#x51FA;&#x73B0;&#x91CD;&#x8F7D;&#xFF0C;&#x4F18;&#x5148;&#x8C03;&#x7528;&#x5B9E;&#x53C2;&#x548C;&#x5F62;&#x53C2;&#x4E00;&#x81F4;&#x7684;&#x65B9;&#x6CD5;</strong> &#x8FD9;&#x91CC;&#x4F1A;&#x8C03;&#x7528;remove(int index)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x53EF;&#x4EE5;&#x7528;&#x624B;&#x52A8;&#x88C5;&#x7BB1;&#xFF1A;</span><br><span class="line">list.remove(Integer.valueOf(1));//&#x5220;&#x9664;&#x5143;&#x7D20;1</span><br></pre></td></tr></table></figure>
+
+<p>&#x5217;&#x8868;&#x8FED;&#x4EE3;&#x5668;<br>ListIterator<E> iterator = list.listIterator();<br>&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5143;&#x7D20;</E></p>
+<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><p>&#x53CC;&#x94FE;&#x8868;&#xFF0C;&#x9996;&#x5C3E;&#x64CD;&#x4F5C;&#x5F88;&#x5FEB;</p>
+<p>&#x65B9;&#x6CD5;<br>addFirst()<br>addLast()<br>getFirst()<br>getLast()<br>removeFirst()<br>removeLast()</p>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><ul>
+<li>HashSet &#x65E0;&#x5E8F;&#xFF0C;&#x4E0D;&#x91CD;&#x590D;&#xFF0C;&#x65E0;&#x7D22;&#x5F15;</li>
+<li>LinkedHashSet &#x6709;&#x5E8F;</li>
+<li>TreeSet &#x53EF;&#x6392;&#x5E8F;</li>
+</ul>
+<p>sat&#x4F7F;&#x7528;map&#x5B9E;&#x73B0;</p>
+<p><img src="/2024/01/17/java/java%E9%9B%86%E5%90%88/image-29.png" alt="Alt text"></p>
+<p><code>int index=(&#x6570;&#x7EC4;&#x957F;&#x5EA6;-1)&amp;&#x54C8;&#x5E0C;&#x503C;</code></p>
+<p><img src="/2024/01/17/java/java%E9%9B%86%E5%90%88/image-30.png" alt="Alt text"></p>
+<p>&#x5F53;&#x94FE;&#x8868;&#x957F;&#x5EA6;&#x5927;&#x4E8E;8&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;64&#x65F6;&#xFF0C;&#x4F1A;&#x8F6C;&#x6362;&#x4E3A;&#x7EA2;&#x9ED1;&#x6811;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(bigCount&gt;=TREEIFY_THRESHOLD-1)</span><br><span class="line">    terryfyBin(tab,hash);</span><br></pre></td></tr></table></figure>
+<p>&#x96C6;&#x5408;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x5199;hashCode&#x548C;equals</p>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>&#x5E95;&#x5C42;&#x662F;&#x7EA2;&#x9ED1;&#x6811;&#xFF0C;&#x4E0D;&#x662F;&#x54C8;&#x5E0C;&#x8868;</p>
+<p>&#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF1A;</p>
+<ul>
+<li>&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;&#x91CD;&#x5199;compareTo</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;comparator&#xFF08;&#x4F18;&#x5148;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public int compareTo(Student s) {</span><br><span class="line">    return this.age-s.age;</span><br><span class="line">}</span><br><span class="line">this&#x8868;&#x793A;&#x5F53;&#x524D;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF0C;s&#x8868;&#x793A;&#x7EA2;&#x9ED1;&#x6811;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x5143;&#x7D20;</span><br><span class="line">&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&#x8D1F;&#x6570;&#x5B58;&#x5DE6;&#x8FB9;&#xFF0C;&#x6B63;&#x6570;&#x5B58;&#x53F3;&#x8FB9;&#xFF0C;0&#x8868;&#x793A;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x820D;&#x5F03;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><p>&#x65B9;&#x6CD5;&#xFF1A;<br>put()<br>remove()<br>clear()<br>containsKey()<br>containsValue()<br>isEmpty()<br>size()</p>
+<p>put:&#x952E;&#x5B58;&#x5728;&#x4F1A;&#x8986;&#x76D6;&#xFF0C;&#x8FD4;&#x56DE;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x503C;</p>
+<p>&#x904D;&#x5386;&#xFF1A;</p>
+<ul>
+<li>&#x952E;&#x627E;&#x503C;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; keySet=map.keySet();</span><br><span class="line">for(String key:keySet){</span><br><span class="line">    System.out.println(key+&quot;:&quot;+map.get(key));</span><br><span class="line">}</span><br></pre></td></tr></table></figure></li>
+<li>&#x952E;&#x503C;&#x5BF9;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;Map.Entry&lt;Integer,String&gt;&gt; set=mp.entrySet();</span><br><span class="line">for(Map.Entry&lt;Integer,String&gt; entry:set){</span><br><span class="line">    System.out.println(entry.getKey()+&quot;:&quot;+entry.getValue());</span><br><span class="line">}</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>&#x54C8;&#x5E0C;&#x503C;<br><code>h = key.hashCode()) ^ (h &gt;&gt;&gt; 16)</code></p>
+<p>&#x5BF9;&#x5E94;&#x54C8;&#x5E0C;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#xFF1A;<br><code>(n - 1) &amp; hash = hash % n</code></p>
+<p><img src="/2024/01/17/java/java%E9%9B%86%E5%90%88/image-31.png" alt="Alt text"></p>
+<h2 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h2><h3 id="&#x7EA2;&#x9ED1;&#x6811;"><a href="#&#x7EA2;&#x9ED1;&#x6811;" class="headerlink" title="&#x7EA2;&#x9ED1;&#x6811;"></a>&#x7EA2;&#x9ED1;&#x6811;</h3><p>&#x589E;&#x5220;&#x67E5;&#x6539;&#x6027;&#x80FD;&#x90FD;&#x5F88;&#x597D;</p>
+<ul>
+<li>&#x8282;&#x70B9;&#x4E3A;&#x7EA2;&#x8272;&#x6216;&#x9ED1;&#x8272;</li>
+<li>&#x6839;&#x8282;&#x70B9;&#x4E3A;&#x9ED1;&#x8272;</li>
+<li>&#x6CA1;&#x6709;&#x5B50;&#x6216;&#x7236;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x6307;&#x9488;&#x5C5E;&#x6027;&#x4E3A;nil&#xFF0C;&#x89C6;&#x4E3A;&#x53F6;&#x8282;&#x70B9;&#xFF0C;&#x6BCF;&#x4E2A;&#x53F6;&#x5B50;&#x8282;&#x70B9;(NIL)&#x4E3A;&#x9ED1;&#x8272;</li>
+<li>&#x5BF9;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x4ECE;&#x8BE5;&#x8282;&#x70B9;&#x5230;&#x5176;&#x6240;&#x6709;&#x540E;&#x4EE3;&#x53F6;&#x8282;&#x70B9;&#x7684;&#x7B80;&#x5355;&#x8DEF;&#x5F84;&#x4E0A;&#xFF0C;&#x5747;&#x5305;&#x542B;&#x76F8;&#x540C;&#x6570;&#x76EE;&#x7684;&#x9ED1;&#x8272;&#x8282;&#x70B9;</li>
+<li>&#x4E24;&#x4E2A;&#x7EA2;&#x8272;&#x8282;&#x70B9;&#x4E0D;&#x80FD;&#x76F8;&#x8FDE;  </li>
+<li>&#x9ED8;&#x8BA4;&#x6DFB;&#x52A0;&#x7EA2;&#x8272;&#x8282;&#x70B9;</li>
+</ul>
+<p><img src="/2024/01/17/java/java%E9%9B%86%E5%90%88/image-32.png" alt="Alt text"></p>
+<p>HashMap:&#x6548;&#x7387;&#x9AD8;<br>LinkedHashMap:&#x6709;&#x5E8F;<br>TreeMap:&#x6392;&#x5E8F;</p>
+<h2 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h2><p>&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x4E3A;&#x53CC;&#x94FE;&#x8868;+&#x54C8;&#x5E0C;&#x8868;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2024/01/17/java/java%E9%9B%86%E5%90%88/">https://akymmio.github.io/2024/01/17/java/java%E9%9B%86%E5%90%88/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/01/05/%E5%89%8D%E7%AB%AF/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/" title="处理请求参数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">处理请求参数</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/08/19/java/java/" title="java基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-19</div><div class="title">java基础</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/akymmio" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Collection"><span class="toc-number">1.</span> <span class="toc-text">Collection</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">遍历方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">1.2.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.3.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">1.4.</span> <span class="toc-text">set</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TreeSet"><span class="toc-number">1.5.</span> <span class="toc-text">TreeSet</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Map"><span class="toc-number">2.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap"><span class="toc-number">2.1.</span> <span class="toc-text">HashMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TreeMap"><span class="toc-number">2.2.</span> <span class="toc-text">TreeMap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="toc-number">2.2.1.</span> <span class="toc-text">红黑树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LinkedHashMap"><span class="toc-number">2.3.</span> <span class="toc-text">LinkedHashMap</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/17/java/java%E9%9B%86%E5%90%88/" title="java集合">java集合</a><time datetime="2024-01-17T13:43:24.485Z" title="发表于 2024-01-17 21:43:24">2024-01-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E5%89%8D%E7%AB%AF/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/" title="处理请求参数">处理请求参数</a><time datetime="2024-01-05T14:20:06.229Z" title="发表于 2024-01-05 22:20:06">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/05/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" title="项目部署上线">项目部署上线</a><time datetime="2024-01-05T08:08:27.706Z" title="发表于 2024-01-05 16:08:27">2024-01-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/29/%E5%89%8D%E7%AB%AF2/vue3/" title="vue3">vue3</a><time datetime="2023-12-29T06:36:28.895Z" title="发表于 2023-12-29 14:36:28">2023-12-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/24/%E5%89%8D%E7%AB%AF/vue2%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" title="vue2项目开发">vue2项目开发</a><time datetime="2023-12-24T07:37:01.257Z" title="发表于 2023-12-24 15:37:01">2023-12-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2024/01/17/java/java%E9%9B%86%E5%90%88/'
+    this.page.identifier = '/2024/01/17/java/java%E9%9B%86%E5%90%88/'
+    this.page.title = 'java集合'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
