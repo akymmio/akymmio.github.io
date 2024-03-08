@@ -4,7 +4,7 @@
   <url>
     <loc>https://akymmio.github.io/2024/03/06/redis%E5%8E%9F%E7%90%86/redis%E5%8E%9F%E7%90%86/</loc>
     
-    <lastmod>2024-03-07</lastmod>
+    <lastmod>2024-03-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -29,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://akymmio.github.io/2024/03/05/chatGPT/%E9%A1%B9%E7%9B%AE/</loc>
-    
-    <lastmod>2024-03-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://akymmio.github.io/2023/09/16/git/git/</loc>
     
     <lastmod>2024-03-04</lastmod>
@@ -50,15 +41,6 @@
     <loc>https://akymmio.github.io/2023/09/02/Redis/redis/</loc>
     
     <lastmod>2024-03-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://akymmio.github.io/2024/03/03/%E9%A1%B9%E7%9B%AE/chatGPT/</loc>
-    
-    <lastmod>2024-03-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -410,6 +392,13 @@
   </url>
   
   <url>
+    <loc>https://akymmio.github.io/tags/java/</loc>
+    <lastmod>2024-03-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://akymmio.github.io/tags/javaweb/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -424,13 +413,6 @@
   </url>
   
   <url>
-    <loc>https://akymmio.github.io/tags/java/</loc>
-    <lastmod>2024-03-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://akymmio.github.io/tags/springBoot/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -438,14 +420,14 @@
   </url>
   
   <url>
-    <loc>https://akymmio.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://akymmio.github.io/tags/web/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://akymmio.github.io/tags/web/</loc>
+    <loc>https://akymmio.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2024-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
