@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>mio's blog | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="&amp;#x7F51;&amp;#x5173;nginx &amp;#x52A0;&amp;#x76D0;&amp;#x624B;&amp;#x52A8;&amp;#x52A0;&amp;#x76D0;&amp;#xFF1A;md5+&amp;#x968F;&amp;#x673A;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#xFF08;md5&amp;#x76F8;&amp;#x540C;&amp;#x5BC6;&amp;#x7801;&amp;#x6BCF;&amp;#x6B21;&amp;#x52A0;&amp;#x5BC6;&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mio&#39;s blog">
+<meta property="og:url" content="https://akymmio.github.io/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="&amp;#x7F51;&amp;#x5173;nginx &amp;#x52A0;&amp;#x76D0;&amp;#x624B;&amp;#x52A8;&amp;#x52A0;&amp;#x76D0;&amp;#xFF1A;md5+&amp;#x968F;&amp;#x673A;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#xFF08;md5&amp;#x76F8;&amp;#x540C;&amp;#x5BC6;&amp;#x7801;&amp;#x6BCF;&amp;#x6B21;&amp;#x52A0;&amp;#x5BC6;&amp;#x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg">
+<meta property="article:published_time" content="2024-03-19T09:32:25.198Z">
+<meta property="article:modified_time" content="2024-03-24T12:40:22.208Z">
+<meta property="article:author" content="jiaxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'mio\'s blog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-03-24 20:40:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-19T09:32:25.198Z" title="发表于 2024-03-19 17:32:25">2024-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-24T12:40:22.208Z" title="更新于 2024-03-24 20:40:22">2024-03-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>&#x7F51;&#x5173;<br>nginx</p>
+<h2 id="&#x52A0;&#x76D0;"><a href="#&#x52A0;&#x76D0;" class="headerlink" title="&#x52A0;&#x76D0;"></a>&#x52A0;&#x76D0;</h2><p>&#x624B;&#x52A8;&#x52A0;&#x76D0;&#xFF1A;md5+&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;md5&#x76F8;&#x540C;&#x5BC6;&#x7801;&#x6BCF;&#x6B21;&#x52A0;&#x5BC6;&#x90FD;&#x4F1A;&#x4E00;&#x6837;&#xFF09;</p>
+<p>&#x9A8C;&#x8BC1;&#xFF1A;&#x7528;&#x6237;&#x5BC6;&#x7801;+&#x76D0;-&gt;MD5&#x52A0;&#x5BC6;&#xFF0C;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5BC6;&#x7801;&#x6BD4;&#x5BF9;</p>
+<h2 id="&#x7F51;&#x5173;"><a href="#&#x7F51;&#x5173;" class="headerlink" title="&#x7F51;&#x5173;"></a>&#x7F51;&#x5173;</h2><p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image.png" alt="alt text"></p>
+<h2 id="&#x767B;&#x5F55;&#x6821;&#x9A8C;"><a href="#&#x767B;&#x5F55;&#x6821;&#x9A8C;" class="headerlink" title="&#x767B;&#x5F55;&#x6821;&#x9A8C;"></a>&#x767B;&#x5F55;&#x6821;&#x9A8C;</h2><p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-1.png" alt="alt text"></p>
+<p>nginx&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x5230;&#x7F51;&#x5173;&#xFF0C;&#x7F51;&#x5173;&#x6821;&#x9A8C;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#xFF0C;&#x6821;&#x9A8C;&#x901A;&#x8FC7;&#x540E;&#xFF0C;&#x7F51;&#x5173;&#x751F;&#x6210;JWT&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4FDD;&#x5B58;JWT&#xFF0C;&#x5E76;&#x5728;&#x540E;&#x7EED;&#x8BF7;&#x6C42;&#x4E2D;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x643A;&#x5E26;JWT</p>
+<p>&#x81EA;&#x5A92;&#x4F53;&#x7AEF;&#x767B;&#x5F55;&#xFF1A;<br><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-8.png" alt="alt text"></p>
+<h3 id="&#x914D;&#x7F6E;nginx"><a href="#&#x914D;&#x7F6E;nginx" class="headerlink" title="&#x914D;&#x7F6E;nginx"></a>&#x914D;&#x7F6E;nginx</h3><h2 id="&#x5782;&#x76F4;&#x5206;&#x8868;"><a href="#&#x5782;&#x76F4;&#x5206;&#x8868;" class="headerlink" title="&#x5782;&#x76F4;&#x5206;&#x8868;"></a>&#x5782;&#x76F4;&#x5206;&#x8868;</h2><p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-2.png" alt="alt text"></p>
+<h2 id="&#x67E5;&#x770B;&#x5185;&#x5BB9;"><a href="#&#x67E5;&#x770B;&#x5185;&#x5BB9;" class="headerlink" title="&#x67E5;&#x770B;&#x5185;&#x5BB9;"></a>&#x67E5;&#x770B;&#x5185;&#x5BB9;</h2><p>&#x4E0A;&#x62C9;&#xFF1A;&#x52A0;&#x8F7D;&#x66F4;&#x591A;&#x6D88;&#x606F;<br>&#x4E0B;&#x62C9;&#xFF1A;&#x52A0;&#x8F7D;&#x6700;&#x65B0;&#x7684;&#x6D88;&#x606F; </p>
+<h2 id="freemarker"><a href="#freemarker" class="headerlink" title="freemarker"></a>freemarker</h2><p>&#x200B;	FreeMarker &#x662F;&#x4E00;&#x6B3E; &#x6A21;&#x677F;&#x5F15;&#x64CE;&#xFF1A; &#x5373;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x6A21;&#x677F;&#x548C;&#x8981;&#x6539;&#x53D8;&#x7684;&#x6570;&#x636E;&#xFF0C; &#x5E76;&#x7528;&#x6765;&#x751F;&#x6210;&#x8F93;&#x51FA;&#x6587;&#x672C;(HTML&#x7F51;&#x9875;&#xFF0C;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6E90;&#x4EE3;&#x7801;&#x7B49;)&#x7684;&#x901A;&#x7528;&#x5DE5;&#x5177;&#x3002; &#x5B83;&#x4E0D;&#x662F;&#x9762;&#x5411;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;Java&#x7C7B;&#x5E93;&#xFF0C;&#x662F;&#x4E00;&#x6B3E;&#x7A0B;&#x5E8F;&#x5458;&#x53EF;&#x4EE5;&#x5D4C;&#x5165;&#x4ED6;&#x4EEC;&#x6240;&#x5F00;&#x53D1;&#x4EA7;&#x54C1;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x200B;	&#x6A21;&#x677F;&#x7F16;&#x5199;&#x4E3A;FreeMarker Template Language (FTL)&#x3002;&#x5B83;&#x662F;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x4E13;&#x7528;&#x7684;&#x8BED;&#x8A00;&#xFF0C; <em>&#x4E0D;&#x662F;</em> &#x50CF;PHP&#x90A3;&#x6837;&#x6210;&#x719F;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x3002; &#x90A3;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8981;&#x51C6;&#x5907;&#x6570;&#x636E;&#x5728;&#x771F;&#x5B9E;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x6765;&#x663E;&#x793A;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x548C;&#x4E1A;&#x52A1;&#x8FD0;&#x7B97;&#xFF0C; &#x4E4B;&#x540E;&#x6A21;&#x677F;&#x663E;&#x793A;&#x5DF2;&#x7ECF;&#x51C6;&#x5907;&#x597D;&#x7684;&#x6570;&#x636E;&#x3002;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4E13;&#x6CE8;&#x4E8E;&#x5982;&#x4F55;&#x5C55;&#x73B0;&#x6570;&#x636E;&#xFF0C; &#x800C;&#x5728;&#x6A21;&#x677F;&#x4E4B;&#x5916;&#x53EF;&#x4EE5;&#x4E13;&#x6CE8;&#x4E8E;&#x8981;&#x5C55;&#x793A;&#x4EC0;&#x4E48;&#x6570;&#x636E;&#x3002;<br><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-3.png" alt="alt text"></p>
+<h3 id="&#x8BED;&#x6CD5;"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x6CE8;&#x91CA;&#xFF1A;&lt;#-- --&gt;</span><br><span class="line">&#x63D2;&#x503C;&#xFF1A;${ }</span><br><span class="line">FTL&#x6307;&#x4EE4;&#xFF1A;&lt;/#&gt;</span><br><span class="line">&#x6587;&#x672C;&#xFF1A;&lt;#-- --&gt;</span><br><span class="line"></span><br><span class="line">&#x96C6;&#x5408;list&#xFF1A;&lt;#list&gt;</span><br><span class="line">map&#x96C6;&#x5408;&#xFF1A;${map[&apos;student1&apos;].name} &#x6216;&#x8005; ${map.student2.name}</span><br><span class="line">&#x7A7A;&#x503C;&#x5224;&#x65AD;&#xFF1A;?? </span><br><span class="line">&#x7F3A;&#x5931;&#x53D8;&#x91CF;&#xFF1A;&#xFF01;  &lt;#if name!&gt;</span><br><span class="line">&#x5D4C;&#x5957;&#x5BF9;&#x8C61;&#xFF1A; &lt;#if (student.name)!&gt;</span><br><span class="line"></span><br><span class="line">&#x5185;&#x5EFA;&#x51FD;&#x6570;</span><br><span class="line">&#x96C6;&#x5408;&#x5927;&#x5C0F;&#xFF1A;${sutdent?size}</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-4.png" alt="alt text"></p>
+<h3 id="&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;"><a href="#&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;" class="headerlink" title="&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;"></a>&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;</h3><p>&#x540D;&#x5B57;&#x4E00;&#x5B9A;&#x4E0D;&#x8981;&#x641E;&#x9519;&#x4E86;&#xFF01;</p>
+<p>list.ftl&#x6587;&#x4EF6;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Hello World!&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;&#x5E8F;&#x53F7;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&#x59D3;&#x540D;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&#x5E74;&#x9F84;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;#if student??&gt;</span><br><span class="line">        &lt;#list student as stu&gt;</span><br><span class="line">            &lt;#if stu.name=&apos;&#x5C0F;&#x7EA2;&apos;&gt;</span><br><span class="line">                &lt;tr style=&quot;color:red&quot;&gt;</span><br><span class="line">                    &lt;td&gt;${stu_index+1}&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;${stu.name}&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;${stu.age}&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;#else&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;${stu_index+1}&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;${stu.name}&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;${stu.age}&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/#if&gt;</span><br><span class="line">        &lt;/#list&gt;</span><br><span class="line">        &lt;#list stuMap?keys as key&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;${key_index+1}&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;${stuMap[key].name}&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;${stuMap[key].age}&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/#list&gt;</span><br><span class="line">    &lt;/#if&gt;</span><br><span class="line"></span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">${stuMap[&apos;student1&apos;].name}</span><br><span class="line">${stuMap[&apos;student1&apos;].age}</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">${stuMap.student2.name}</span><br><span class="line">${stuMap.student2.age}</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&#x65E5;&#x671F;&#xFF1A;${day?string(&apos;yyyy-MM-dd&apos;)}</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&#x96C6;&#x5408;&#x5927;&#x5C0F;&#xFF1A;${student?size}</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&#x5B57;&#x7B26;&#x4E32;&#x8F93;&#x51FA;&#x5927;&#x6570;&#x5B57;&#xFF1A;${int?c}</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public class FreemarkerTest {</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private Configuration configuration;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void test() throws IOException, TemplateException {</span><br><span class="line">        Template template = configuration.getTemplate(&quot;list.ftl&quot;);</span><br><span class="line">        /**</span><br><span class="line">         * &#x5408;&#x6210;&#x65B9;&#x6CD5;</span><br><span class="line">         * 1.&#x6A21;&#x578B;&#x6570;&#x636E;</span><br><span class="line">         * 2.&#x8F93;&#x51FA;&#x6D41;</span><br><span class="line">         */</span><br><span class="line">        template.process(getData(),new FileWriter(&quot;E:/list.html&quot;));</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    private Map getData(){</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt; map=new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Student student1 = new Student();</span><br><span class="line">        student1.setName(&quot;&#x5C0F;&#x660E;&quot;);</span><br><span class="line">        student1.setAge(18);</span><br><span class="line"></span><br><span class="line">        Student student2 = new Student();</span><br><span class="line">        student2.setName(&quot;&#x5C0F;&#x7EA2;&quot;);</span><br><span class="line">        student2.setAge(15);</span><br><span class="line"></span><br><span class="line">        List&lt;Student&gt; student=new ArrayList&lt;&gt;();</span><br><span class="line">        student.add(student1);</span><br><span class="line">        student.add(student2);</span><br><span class="line">        map.put(&quot;student&quot;, student);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Student&gt; stuMap=new HashMap&lt;&gt;();</span><br><span class="line">        stuMap.put(&quot;student1&quot;,student1);</span><br><span class="line">        stuMap.put(&quot;student2&quot;,student2);</span><br><span class="line"></span><br><span class="line">        map.put(&quot;stuMap&quot;, stuMap);</span><br><span class="line">        map.put(&quot;day&quot;,new Date());</span><br><span class="line">        map.put(&quot;int&quot;,1223412341234134L);</span><br><span class="line">        return map;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-5.png" alt="alt text"></p>
+<h2 id="minio&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;"><a href="#minio&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;" class="headerlink" title="minio&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;"></a>minio&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h2><p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-6.png" alt="alt text"><br>&#x5B89;&#x88C5;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker pull minio/minio</span><br><span class="line"></span><br><span class="line">docker run \</span><br><span class="line">  -d \</span><br><span class="line">  -p 9000:9000 \</span><br><span class="line">  -p 9001:9001 \</span><br><span class="line">  --name minio \</span><br><span class="line">  -v /home/minio/data:/data \</span><br><span class="line">  -e &quot;MINIO_ROOT_USER=minio&quot; \</span><br><span class="line">  -e &quot;MINIO_ROOT_PASSWORD=minio123&quot; \</span><br><span class="line">  minio/minio \</span><br><span class="line">  server /data \</span><br><span class="line">  --console-address &quot;:9001&quot;</span><br></pre></td></tr></table></figure>
+
+<p>&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">try {</span><br><span class="line">    FileInputStream fileInputStream = new FileInputStream(&quot;E:\\list.html&quot;);</span><br><span class="line">    MinioClient minioClient = MinioClient.builder().</span><br><span class="line">            credentials(&quot;minio&quot;, &quot;minio123&quot;).</span><br><span class="line">            endpoint(&quot;http://192.168.10.131:9000&quot;).</span><br><span class="line">            build();</span><br><span class="line"></span><br><span class="line">    PutObjectArgs putObjectArgs = PutObjectArgs.builder().</span><br><span class="line">            object(&quot;list.html&quot;).//&#x6587;&#x4EF6;&#x540D;&#x79F0;</span><br><span class="line">                    contentType(&quot;text/html&quot;).//&#x5185;&#x5BB9;&#x7C7B;&#x578B;</span><br><span class="line">                    bucket(&quot;leadnews&quot;).//&#x6876;&#x540D;&#x79F0;</span><br><span class="line">                    stream(fileInputStream, fileInputStream.available(), -1).</span><br><span class="line">            build();</span><br><span class="line">    minioClient.putObject(putObjectArgs);</span><br><span class="line">    } catch (Exception e) {</span><br><span class="line">        throw new RuntimeException(e);</span><br><span class="line">    }</span><br></pre></td></tr></table></figure>
+<p>&#x8BBF;&#x95EE;&#xFF1A;ip:port/bucketname/filename<br><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-7.png" alt="alt text"></p>
+<p>&#x5C06;minio&#x5C01;&#x88C5;&#x4E3A;&#x6587;&#x4EF6;&#x670D;&#x52A1;starter&#xFF0C;&#x914D;&#x7F6E;factories&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x7684;&#x5730;&#x65B9;&#x5BFC;&#x5165;</p>
+<h2 id="&#x5EF6;&#x8FDF;&#x4EFB;&#x52A1;"><a href="#&#x5EF6;&#x8FDF;&#x4EFB;&#x52A1;" class="headerlink" title="&#x5EF6;&#x8FDF;&#x4EFB;&#x52A1;"></a>&#x5EF6;&#x8FDF;&#x4EFB;&#x52A1;</h2><p>&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</p>
+<ul>
+<li>DelayQueue&#xFF0C;&#x57FA;&#x4E8E;JVM</li>
+<li>RabbitMQ&#xFF0C;&#x57FA;&#x4E8E;&#x6D88;&#x606F;&#x961F;&#x5217;</li>
+<li>Redis&#xFF0C;&#x57FA;&#x4E8E;&#x7F13;&#x5B58;</li>
+</ul>
+<p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-9.png" alt="alt text"> </p>
+<p><img src="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/image-10.png" alt="alt text"><br>&#x5B58;&#x5165;&#x6570;&#x636E;&#x5E93;&#xFF1A;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x8003;&#x8651;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x636E;&#x5E93;&#x51FA;&#x4E8E;&#x6570;&#x636E;&#x5B89;&#x5168;<br>&#x4F7F;&#x7528;&#x4E24;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF1A;&#x4EFB;&#x52A1;&#x91CF;&#x8FC7;&#x5927;&#x4E4B;&#x540E;&#xFF0C;zset&#x6027;&#x80FD;&#x4E0B;&#x964D;<br>&#x9884;&#x52A0;&#x8F7D;&#xFF1A;&#x4EFB;&#x52A1;&#x6570;&#x91CF;&#x5927;&#x65F6;&#xFF0C;&#x9632;&#x6B62;&#x963B;&#x585E;&#xFF0C;&#x5C06;&#x672A;&#x6765;&#x51E0;&#x5206;&#x949F;&#x8981;&#x6267;&#x884C;&#x7684;&#x6570;&#x636E;&#x5B58;&#x5165;&#x7F13;&#x5B58;&#x5373;&#x53EF;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/">https://akymmio.github.io/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/03/22/%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/" title="常见报错"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">常见报错</div></div></a></div><div class="next-post pull-right"><a href="/2024/03/16/RabbitMQ/RabbitMQ%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="RabbitMQ消息队列"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RabbitMQ消息队列</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/akymmio/images/mio.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/akymmio" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E7%9B%90"><span class="toc-number">1.</span> <span class="toc-text">加盐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">网关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%A0%A1%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text">登录校验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEnginx"><span class="toc-number">3.1.</span> <span class="toc-text">配置nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E5%88%86%E8%A1%A8"><span class="toc-number">4.</span> <span class="toc-text">垂直分表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AE%B9"><span class="toc-number">5.</span> <span class="toc-text">查看内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#freemarker"><span class="toc-number">6.</span> <span class="toc-text">freemarker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">6.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="toc-number">6.2.</span> <span class="toc-text">生成静态文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#minio%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.</span> <span class="toc-text">minio分布式文件系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E4%BB%BB%E5%8A%A1"><span class="toc-number">8.</span> <span class="toc-text">延迟任务</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/22/%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99/" title="常见报错">常见报错</a><time datetime="2024-03-22T12:29:40.740Z" title="发表于 2024-03-22 20:29:40">2024-03-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/" title="无题">无题</a><time datetime="2024-03-19T09:32:25.198Z" title="发表于 2024-03-19 17:32:25">2024-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/16/RabbitMQ/RabbitMQ%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="RabbitMQ消息队列">RabbitMQ消息队列</a><time datetime="2024-03-16T08:47:25.153Z" title="发表于 2024-03-16 16:47:25">2024-03-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/14/API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" title="API接口文档">API接口文档</a><time datetime="2024-03-14T06:25:22.619Z" title="发表于 2024-03-14 14:25:22">2024-03-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/Mybatis/mybatis/" title="mybatis">mybatis</a><time datetime="2024-03-13T12:47:51.746Z" title="发表于 2024-03-13 20:47:51">2024-03-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/'
+    this.page.identifier = '/2024/03/19/%E9%A1%B9%E7%9B%AE/%E6%96%B0%E9%97%BB%E9%A1%B9%E7%9B%AE/'
+    this.page.title = ''
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
