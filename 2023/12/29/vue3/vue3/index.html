@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vue3 | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Vue3 &amp;#x66F4;&amp;#x6613;&amp;#x7EF4;&amp;#x62A4; &amp;#x66F4;&amp;#x5FEB; &amp;#x66F4;&amp;#x5C0F; &amp;#x66F4;&amp;#x4F18;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x54CD;&amp;#x5E94;  API&amp;#x98CE;&amp;#x683C;  &amp;#x7EC4;&amp;#x5408;&amp;#x5F0F;API &amp;#x521B;&amp;#x5EFA;&amp;#x98">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue3">
+<meta property="og:url" content="https://akymmio.github.io/2023/12/29/vue3/vue3/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="Vue3 &amp;#x66F4;&amp;#x6613;&amp;#x7EF4;&amp;#x62A4; &amp;#x66F4;&amp;#x5FEB; &amp;#x66F4;&amp;#x5C0F; &amp;#x66F4;&amp;#x4F18;&amp;#x7684;&amp;#x6570;&amp;#x636E;&amp;#x54CD;&amp;#x5E94;  API&amp;#x98CE;&amp;#x683C;  &amp;#x7EC4;&amp;#x5408;&amp;#x5F0F;API &amp;#x521B;&amp;#x5EFA;&amp;#x98">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://akymmio.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2023-12-29T06:36:28.895Z">
+<meta property="article:modified_time" content="2024-05-21T15:18:48.029Z">
+<meta property="article:author" content="jiaxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://akymmio.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2023/12/29/vue3/vue3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-05-21 23:18:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/2.png')"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vue3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-29T06:36:28.895Z" title="发表于 2023-12-29 14:36:28">2023-12-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-21T15:18:48.029Z" title="更新于 2024-05-21 23:18:48">2024-05-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="vue3"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Vue3"><a href="#Vue3" class="headerlink" title="Vue3"></a>Vue3</h1><ul>
+<li>&#x66F4;&#x6613;&#x7EF4;&#x62A4;</li>
+<li>&#x66F4;&#x5FEB;</li>
+<li>&#x66F4;&#x5C0F;</li>
+<li>&#x66F4;&#x4F18;&#x7684;&#x6570;&#x636E;&#x54CD;&#x5E94;</li>
+</ul>
+<h2 id="API&#x98CE;&#x683C;"><a href="#API&#x98CE;&#x683C;" class="headerlink" title="API&#x98CE;&#x683C;"></a>API&#x98CE;&#x683C;</h2><p><img src="/2023/12/29/vue3/vue3/image.png" alt="Alt text"><br><img src="/2023/12/29/vue3/vue3/image-1.png" alt="Alt text"></p>
+<p><img src="/2023/12/29/vue3/vue3/image-2.png" alt="Alt text"></p>
+<h2 id="&#x7EC4;&#x5408;&#x5F0F;API"><a href="#&#x7EC4;&#x5408;&#x5F0F;API" class="headerlink" title="&#x7EC4;&#x5408;&#x5F0F;API"></a>&#x7EC4;&#x5408;&#x5F0F;API</h2><p><img src="/2023/12/29/vue3/vue3/image-4.png" alt="Alt text"></p>
+<h2 id="&#x521B;&#x5EFA;&#x9879;&#x76EE;"><a href="#&#x521B;&#x5EFA;&#x9879;&#x76EE;" class="headerlink" title="&#x521B;&#x5EFA;&#x9879;&#x76EE;"></a>&#x521B;&#x5EFA;&#x9879;&#x76EE;</h2><p>npm init vue@latest<br>npm install<br>npm run dev</p>
+<h2 id="setup"><a href="#setup" class="headerlink" title="setup"></a>setup</h2><p>&#x7EC4;&#x5408;&#x5F0F;api&#x7684;&#x5165;&#x53E3;</p>
+<ul>
+<li>beforeCreate&#x94A9;&#x5B50;&#x4E4B;&#x524D;&#x81EA;&#x52A8;&#x6267;&#x884C;</li>
+<li>&#x83B7;&#x53D6;&#x4E0D;&#x5230;this</li>
+<li>&#x6570;&#x636E;&#x548C;&#x51FD;&#x6570;&#x9700;&#x8981;return&#x624D;&#x80FD;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;</li>
+</ul>
+<p><img src="/2023/12/29/vue3/vue3/image-6.png" alt="alt text"></p>
+<p>&#x8BED;&#x6CD5;&#x7CD6;&#xFF1A;<code>&lt;script setup&gt;</code></p>
+<h2 id="&#x51FD;&#x6570;"><a href="#&#x51FD;&#x6570;" class="headerlink" title="&#x51FD;&#x6570;"></a>&#x51FD;&#x6570;</h2><p><code>vue2</code><br>function(){}<br>function:()=&gt;{}</p>
+<p><code>vue3</code></p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p>&#x54CD;&#x5E94;&#x5F0F;&#xFF1A;&#x6570;&#x636E;&#x53D8;&#x5316;&#x66F4;&#x65B0;&#x5230;&#x9875;&#x9762;</p>
+<p>&#x63A5;&#x53D7;&#x666E;&#x901A;&#x6216;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F; <strong>&#x5BF9;&#x8C61;</strong><br>&#xFF08;&#x672C;&#x8D28;&#xFF1A;&#x5728;&#x5916;&#x90E8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5BF9;&#x8C61;&#xFF0C;&#x5185;&#x90E8;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7C7B;&#x578B;&#x503C;value&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5BF9;&#x8C61;&#xFF09;</p>
+<p>script&#x4E2D;&#x8BBF;&#x95EE;&#x9700;&#x8981;<code>.value</code> &#x8BBF;&#x95EE;&#xFF0C;&#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x503C;<br>template&#x4E2D;&#x8BBF;&#x95EE;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;(&#x53BB;&#x4E86;&#x4E00;&#x5C42;)</p>
+<p>reactive()&#x53EF;&#x4EE5;&#x5305;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0D;&#x7528;.value&#x8BBF;&#x95EE;</p>
+<h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><p>&#x907F;&#x514D;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684;&#x503C;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import computed from &apos;vue&apos;</span><br><span class="line">const computState computed(()=&gt;{})</span><br></pre></td></tr></table></figure>
+
+<h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h2><p>&#x76D1;&#x542C;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x51FD;&#x6570;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const count=ref(0)</span><br><span class="line">const name=ref(&apos;&apos;)</span><br><span class="line"></span><br><span class="line">watch(count,(newValue,oldValue)=&gt;{})</span><br><span class="line">watch([count,name],(newValue,oldValue)=&gt;{})</span><br><span class="line"></span><br><span class="line">//immediate,deep&#x53C2;&#x6570;</span><br><span class="line"></span><br><span class="line">watch(count,(newValue,oldValue)=&gt;{</span><br><span class="line"></span><br><span class="line">},{</span><br><span class="line">    immediate:true//&#x4E00;&#x8FDB;&#x9875;&#x9762;&#x5C31;&#x6267;&#x884C;</span><br><span class="line">    deep:true//&#x6DF1;&#x5C42;&#x76D1;&#x89C6;</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<p>&#x6D45;&#x5C42;&#x76D1;&#x89C6;&#xFF1A;&#x76D1;&#x89C6;&#x590D;&#x6742;&#x7C7B;&#x578B;,&#x8981;&#x4FEE;&#x6539;&#x6574;&#x4E2A;value&#x624D;&#x4F1A;&#x76D1;&#x542C;&#x5230;&#xFF0C;<br>&#x6DF1;&#x5C42;&#x76D1;&#x89C6;&#xFF1A;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x5316;&#x90FD;&#x4F1A;&#x76D1;&#x542C;&#x5230;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//&#x7CBE;&#x786E;&#x76D1;&#x542C;&#xFF0C;&#xFF08;&#x6DF1;&#x5EA6;&#x4F1A;&#x76D1;&#x542C;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;</span><br><span class="line">watch(() =&gt; userInfo.value.age, (newValue) =&gt; {</span><br><span class="line">  console.log(&apos;userInfo&#x53D8;&#x5316;&#x4E86;&apos;, newValue)</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+<h2 id="&#x901A;&#x4FE1;"><a href="#&#x901A;&#x4FE1;" class="headerlink" title="&#x901A;&#x4FE1;"></a>&#x901A;&#x4FE1;</h2><p>&#x7236;&#x4F20;&#x5B50;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//&#x7236;</span><br><span class="line">const money = ref(100)</span><br><span class="line">&lt;sonCom car=&quot;&#x5B9D;&#x9A6C;&quot; :money=&quot;money&quot; &gt;&lt;/sonCom&gt;</span><br><span class="line">//&#x5B50;</span><br><span class="line">const props = defineProps({</span><br><span class="line">    car: String,</span><br><span class="line">    money:Number</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+
+<p>&#x5B50;&#x4F20;&#x7236;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//&#x5B50;</span><br><span class="line">defineEmits([&apos;&#x4E8B;&#x4EF6;&#x540D;&apos;])</span><br><span class="line">emit(&apos;&#x4E8B;&#x4EF6;&#x540D;&apos;&#xFF0C;&#x53C2;&#x6570;)</span><br><span class="line"></span><br><span class="line">//&#x7236;</span><br><span class="line">@&#x4E8B;&#x4EF6;&#x540D;=&quot;func&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/12/29/vue3/vue3/image-7.png" alt="alt text"><br>&#x6A21;&#x677F;&#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<br>&#x811A;&#x672C;&#x4E2D;&#x9700;&#x8981;&#x5E26;&#x540D;&#x5B57;</p>
+<h2 id="&#x540C;&#x6B65;"><a href="#&#x540C;&#x6B65;" class="headerlink" title="&#x540C;&#x6B65;"></a>&#x540C;&#x6B65;</h2><p>async&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E3A;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x8BE5;&#x51FD;&#x6570;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F8B;&#x5982;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x6216;&#x5B9A;&#x65F6;&#x5668;&#x7B49;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x88AB;&#x58F0;&#x660E;&#x4E3A;async&#x65F6;&#xFF0C;&#x5B83;&#x5185;&#x90E8;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x4EE5;&#x975E;&#x963B;&#x585E;&#x7684;&#x65B9;&#x5F0F;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x3002;</p>
+<p>await&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x7B49;&#x5F85;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5B83;&#x53EA;&#x80FD;&#x5728;async&#x51FD;&#x6570;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x7528;&#x4E8E;&#x7B49;&#x5F85;&#x4E00;&#x4E2A;Promise&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5F53;await&#x5173;&#x952E;&#x5B57;&#x88AB;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;Promise&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x6682;&#x505C;&#x5F53;&#x524D;async&#x51FD;&#x6570;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x7B49;&#x5F85;Promise&#x5BF9;&#x8C61;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4E00;&#x65E6;Promise&#x5BF9;&#x8C61;&#x89E3;&#x6790;&#x4E3A;&#x6210;&#x529F;&#x72B6;&#x6001;&#xFF0C;await&#x8868;&#x8FBE;&#x5F0F;&#x5C06;&#x8FD4;&#x56DE;Promise&#x5BF9;&#x8C61;&#x89E3;&#x6790;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5982;&#x679C;Promise&#x5BF9;&#x8C61;&#x88AB;&#x62D2;&#x7EDD;&#xFF0C;&#x90A3;&#x4E48;await&#x8868;&#x8FBE;&#x5F0F;&#x5C06;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x503C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x4E14;&#x53EF;&#x53D8;&#x7684; ref &#x5BF9;&#x8C61;&#x3002;ref &#x5BF9;&#x8C61;&#x5177;&#x6709;&#x6307;&#x5411;&#x5185;&#x90E8;&#x503C;&#x7684;&#x5355;&#x4E2A; property .value&#x3002;<br>&#x5728;setup&#x5185;&#x90E8;&#x4FEE;&#x6539;&#x6570;&#x636E;&#xFF0C;&#x8981;&#x7528;.value&#x624D;&#x53EF;&#x4EE5;</p>
+<h2 id="&#x8DEF;&#x7531;"><a href="#&#x8DEF;&#x7531;" class="headerlink" title="&#x8DEF;&#x7531;"></a>&#x8DEF;&#x7531;</h2><p>&#x914D;&#x7F6E;&#xFF1A;<br> <img src="/2023/12/29/vue3/vue3/image-8.png" alt="alt text"><br>&#x4F7F;&#x7528;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import { useRouter, useRoute } from &apos;vue-router&apos;</span><br><span class="line">const router = useRouter()</span><br><span class="line">const route = useRoute()</span><br></pre></td></tr></table></figure>
+
+<p>setup&#x51FD;&#x6570;&#x4E2D;&#x4E0D;&#x652F;&#x6301;this<br>&#x83B7;&#x53D6;&#x8DEF;&#x7531;&#x5668;&#xFF1A;useRouter()<br>&#x83B7;&#x53D6;&#x8DEF;&#x7531;&#x6570;&#x636E;&#xFF1A;useRoute()<br>import.meta.env.BASE_API:&#x8DEF;&#x7531;&#x524D;&#x7F00;,&#x53EF;&#x4EE5;&#x5728;config&#x4E2D;&#x914D;&#x7F6E;<code>base: &apos;/test&apos;</code>,&#x90A3;&#x4E48;&#x8BBF;&#x95EE;&#x7684;&#x524D;&#x7F00;&#x90FD;&#x4F1A;&#x5E26;&#x4E0A;/test<br>(element-ui&#x9700;&#x8981;&#x5728;&#x83DC;&#x5355;&#x9879;&#x52A0;&#x4E0A;index&#x5C5E;&#x6027;)</p>
+<h2 id="element-ui"><a href="#element-ui" class="headerlink" title="element-ui"></a>element-ui</h2><p>&#x6309;&#x9700;&#x5F15;&#x5165;&#x4E4B;&#x540E;&#xFF0C;&#x4E0D;&#x7528;&#x5BFC;&#x5165;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x7EC4;&#x4EF6;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x5BFC;&#x5165;&#x76F4;&#x63A5;&#x4F7F;&#x7528;</p>
+<h2 id="&#x8DE8;&#x5C42;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;"><a href="#&#x8DE8;&#x5C42;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;" class="headerlink" title="&#x8DE8;&#x5C42;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;"></a>&#x8DE8;&#x5C42;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;</h2><p>&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x5411;&#x4EFB;&#x610F;&#x7684;&#x5E95;&#x5C42;&#x7EC4;&#x4EF6;&#x4F20;&#x9012;&#x6570;&#x636E;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x5B9E;&#x73B0;&#x8DE8;&#x5C42;&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;<br><strong>provide/inject</strong></p>
+<p><img src="/2023/12/29/vue3/vue3/image-5.png" alt="Alt text"><br>(&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x51FD;&#x6570;,&#x4F7F;&#x5F97;&#x5B50;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x4FEE;&#x6539;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x6570;&#x636E;)</p>
+<h2 id="&#x6A21;&#x677F;&#x5F15;&#x7528;ref"><a href="#&#x6A21;&#x677F;&#x5F15;&#x7528;ref" class="headerlink" title="&#x6A21;&#x677F;&#x5F15;&#x7528;ref"></a>&#x6A21;&#x677F;&#x5F15;&#x7528;ref</h2><p>&#x6CE8;&#x610F;&#x8981;&#x5728;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5B8C;&#x6BD5;&#x540E;&#x5F15;&#x7528;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const enter = ref(null)</span><br><span class="line">&lt;&#x7EC4;&#x4EF6; ref=&quot;enter&quot;&gt;&lt;/&#x7EC4;&#x4EF6;&gt;</span><br><span class="line">enter.value.&#x5C5E;&#x6027;/&#x65B9;&#x6CD5;</span><br></pre></td></tr></table></figure>
+
+<p>&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;&#x6216;&#x65B9;&#x6CD5;&#xFF1A;<br>&#x5148;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; <strong>defineExpose({})</strong> &#x66B4;&#x9732;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x624D;&#x53EF;&#x4EE5;&#x5F15;&#x7528;</p>
+<h2 id="&#x65B0;&#x7279;&#x6027;"><a href="#&#x65B0;&#x7279;&#x6027;" class="headerlink" title="&#x65B0;&#x7279;&#x6027;"></a>&#x65B0;&#x7279;&#x6027;</h2><p>defineOptions<br>&#x7528;&#x6765;&#x5B9A;&#x4E49;options api&#x7684;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;defineOptions&#x5B9A;&#x4E49;&#x4EFB;&#x610F;&#x7684;&#x9009;&#x9879;</p>
+<p>defineModel</p>
+<h1 id="Pinia&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5E93;"><a href="#Pinia&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5E93;" class="headerlink" title="Pinia&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5E93;"></a>Pinia&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5E93;</h1><p>&#x5141;&#x8BB8;&#x8DE8;&#x7EC4;&#x4EF6;&#x6216;&#x9875;&#x9762;&#x5171;&#x4EAB;&#x72B6;&#x6001;<br><img src="/2023/12/29/vue3/vue3/image-26.png" alt="Alt text"></p>
+<p>pinia &#x89E3;&#x6784;&#x6570;&#x636E;&#x4E4B;&#x540E;&#x4F1A;&#x4E22;&#x5931;&#x54CD;&#x5E94;&#x5F0F;&#xFF08;&#x65B9;&#x6CD5;&#x4E0D;&#x4F1A;&#xFF09;<br>&#x7ED3;&#x6784;&#x6570;&#x636E;&#x9700;&#x8981;&#x518D;&#x5305;&#x4E00;&#x5C42;storeToRefs&#xFF08;&#xFF09;&#x518D;&#x8C03;&#x7528;</p>
+<h2 id="pinia&#x6301;&#x4E45;&#x5316;"><a href="#pinia&#x6301;&#x4E45;&#x5316;" class="headerlink" title="pinia&#x6301;&#x4E45;&#x5316;"></a>pinia&#x6301;&#x4E45;&#x5316;</h2><p>&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</p>
+<p>pinia&#x9ED8;&#x8BA4;&#x5185;&#x5B58;&#x5B58;&#x50A8;&#xFF0C;&#x5F53;&#x5237;&#x65B0;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E22;&#x5931;&#x6570;&#x636E;<br><strong>persist</strong> &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</p>
+<p><img src="/2023/12/29/vue3/vue3/image-27.png" alt="Alt text"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import persist from &apos;pinia-plugin-persist&apos;</span><br><span class="line">app.use(createPinia().use(persist))</span><br></pre></td></tr></table></figure>
+<p>&#x5B89;&#x88C5;&#x4E4B;&#x540E;&#x8BB0;&#x5F97;main&#x4E2D;&#x914D;&#x7F6E;:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">persist:{</span><br><span class="line">    key:&apos;test_counter&apos;, //&#x4FEE;&#x6539;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</span><br><span class="line">    paths:[&apos;count&apos;] //&#x9700;&#x8981;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6570;&#x636E;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<h1 id="&#x4EE3;&#x7801;&#x89C4;&#x8303;"><a href="#&#x4EE3;&#x7801;&#x89C4;&#x8303;" class="headerlink" title="&#x4EE3;&#x7801;&#x89C4;&#x8303;"></a>&#x4EE3;&#x7801;&#x89C4;&#x8303;</h1><p>Eslint</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">rules: {</span><br><span class="line">    &apos;prettier/prettier&apos;: [</span><br><span class="line">      &apos;warn&apos;,</span><br><span class="line">      {</span><br><span class="line">        singleQuote: true,</span><br><span class="line">        semi: false,</span><br><span class="line">        printWidth: 80,</span><br><span class="line">        endOfLine: &apos;auto&apos;</span><br><span class="line">      }</span><br><span class="line">    ], </span><br><span class="line">    &apos;vue/multi-word-component-names&apos;: [</span><br><span class="line">      &apos;warn&apos;,</span><br><span class="line">      {</span><br><span class="line">        ignores: [&apos;index&apos;]</span><br><span class="line">      }</span><br><span class="line">    ]</span><br><span class="line">  }</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="&#x62E6;&#x622A;&#x5668;"><a href="#&#x62E6;&#x622A;&#x5668;" class="headerlink" title="&#x62E6;&#x622A;&#x5668;"></a>&#x62E6;&#x622A;&#x5668;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//&#x8BF7;&#x6C42;&#x5B9E;&#x4F8B;</span><br><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">//&#x516C;&#x5171;&#x524D;&#x7F00;</span><br><span class="line">const baseURL=&apos;http://localhost:8080&apos;</span><br><span class="line">const http=axios.create({baseURL})</span><br><span class="line"></span><br><span class="line">//&#x6DFB;&#x52A0;&#x54CD;&#x5E94;&#x62E6;&#x622A;&#x5668;</span><br><span class="line">http.interceptors.response.use(</span><br><span class="line">    //&#x6210;&#x529F;&#x56DE;&#x8C03;</span><br><span class="line">    res=&gt;{</span><br><span class="line">        return res.data.data</span><br><span class="line">    },</span><br><span class="line">    err=&gt;{</span><br><span class="line">        alert(&apos;&#x670D;&#x52A1;&#x5F02;&#x5E38;&apos;)</span><br><span class="line">        //&#x5F02;&#x6B65;&#x72B6;&#x6001;&#x53D8;&#x4E3A;&#x5931;&#x8D25;&#x72B6;&#x6001;</span><br><span class="line">        return Promise.reject(err)</span><br><span class="line">    }</span><br><span class="line">)</span><br><span class="line">export default http</span><br></pre></td></tr></table></figure>
+
+<p>&#x672A;&#x767B;&#x5F55;&#x7EDF;&#x4E00;&#x5904;&#x7406;</p>
+<p>&#x5F53;&#x7528;&#x6237;&#x5C1D;&#x8BD5;&#x8BBF;&#x95EE;&#x9700;&#x8981;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x7684;&#x8D44;&#x6E90;&#x4F46;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x6B63;&#x786E;&#x7684;&#x51ED;&#x636E;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x6536;&#x5230;401&#x9519;&#x8BEF;&#xFF0C;&#x5728;&#x62E6;&#x622A;&#x5668;&#x4E2D;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x5230;login&#x9875;&#x9762;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import router from &apos;@/router&apos;</span><br><span class="line"></span><br><span class="line">&#x62E6;&#x622A;&#x5668;&#x5185;&#x90E8;&#xFF1A;</span><br><span class="line">    err=&gt;{</span><br><span class="line">        //&#x5224;&#x65AD;&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x7801;&#xFF0C;401&#x5219;&#x63D0;&#x793A;&#x672A;&#x767B;&#x5F55;&#xFF0C;&#x8DF3;&#x8F6C;&#x767B;&#x5F55;&#x754C;&#x9762;</span><br><span class="line">        if(err.response.status===401){</span><br><span class="line">            ElMessage.error(&apos;&#x672A;&#x767B;&#x5F55;&apos;)  </span><br><span class="line">            router.push(&apos;/login&apos;)</span><br><span class="line">        }</span><br><span class="line">        else{</span><br><span class="line">            ElMessage.error(&apos;&#x670D;&#x52A1;&#x5F02;&#x5E38;&apos;)</span><br><span class="line">            //&#x5F02;&#x6B65;&#x72B6;&#x6001;&#x53D8;&#x4E3A;&#x5931;&#x8D25;&#x72B6;&#x6001;</span><br><span class="line">            return Promise.reject(err)</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></table></figure>
+
+<p>&#x8DEF;&#x7531;&#x8BF7;&#x6C42;&#x62E6;&#x622A;&#x5668;&#xFF1A;&#x901A;&#x8FC7;&#x914D;&#x7F6E;config&#x5C5E;&#x6027;</p>
+<h2 id="&#x9879;&#x76EE;&#x51C6;&#x5907;"><a href="#&#x9879;&#x76EE;&#x51C6;&#x5907;" class="headerlink" title="&#x9879;&#x76EE;&#x51C6;&#x5907;"></a>&#x9879;&#x76EE;&#x51C6;&#x5907;</h2><ul>
+<li>pinia</li>
+<li>axios<ul>
+<li>axios&#x5B9E;&#x4F8B;</li>
+<li>&#x8BF7;&#x6C42;&#x62E6;&#x622A;</li>
+<li>&#x54CD;&#x5E94;&#x62E6;&#x622A;</li>
+</ul>
+</li>
+</ul>
+<h1 id="&#x6CE8;&#x610F;"><a href="#&#x6CE8;&#x610F;" class="headerlink" title="&#x6CE8;&#x610F;"></a>&#x6CE8;&#x610F;</h1><p>&#x5BFC;&#x5165;&#x95EE;&#x9898;&#xFF1A;&#x662F;&#x5426;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5927;&#x62EC;&#x53F7; {} &#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x6240;&#x5BFC;&#x5165;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x547D;&#x540D;&#x5BFC;&#x51FA;&#x8FD8;&#x662F;&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;<code>export default</code>&#x3002;&#x5BF9;&#x4E8E;&#x547D;&#x540D;&#x5BFC;&#x51FA;&#xFF08;&#x5305;&#x62EC;&#x5168;&#x90E8;&#x6216;&#x90E8;&#x5206;&#x5BFC;&#x5165;&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5927;&#x62EC;&#x53F7;&#xFF1B;&#x800C;&#x5BF9;&#x4E8E;&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5927;&#x62EC;&#x53F7;&#x3002;</p>
+<p>&#x5F53;&#x4F60;&#x5728;Vue&#x4E2D;&#x4F7F;&#x7528;ref&#x6216;Pinia&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x76F4;&#x63A5;&#x8FD9;&#x6837;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;store&#x5185;&#x90E8;&#x72B6;&#x6001;&#x7684;&#x5F15;&#x7528;&#xFF1A;</p>
+<p>const user = ref(userStore.user);<br>&#x8FD9;&#x91CC;&#x7684;user&#x5F15;&#x7528;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x4EC5;&#x4F1A;&#x5F97;&#x5230;userStore.user&#x5F53;&#x65F6;&#x7684;&#x503C;&#xFF08;&#x5728;&#x8FD9;&#x4E2A;&#x65F6;&#x523B;&#xFF0C;&#x5982;&#x679C;userStore.user&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x586B;&#x5145;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x80FD;&#x5C31;&#x662F;undefined&#x6216;&#x521D;&#x59CB;&#x503C;&#xFF09;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;ref&#x5E76;&#x4E0D;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x5730;&#x94FE;&#x63A5;&#x5230;userStore.user&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x540E;&#x7EED;userStore.user&#x7684;&#x66F4;&#x65B0;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x53CD;&#x6620;&#x5230;user&#x4E0A;&#x3002;</p>
+<p>&#x5728; Vue 3 &#x7684; Composition API &#x4E2D;&#xFF0C;ref &#x786E;&#x5B9E;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5F15;&#x7528;&#xFF0C;&#x4F46;&#x5B83;&#x53EA;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x5730;&#x7BA1;&#x7406;&#x8BE5;&#x5F15;&#x7528;&#x6307;&#x5411;&#x7684;&#x5355;&#x4E2A;&#x503C;&#x3002;&#x5F53;&#x4F60;&#x4F7F;&#x7528; ref(userStore.user) &#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5F15;&#x7528;&#x65F6;&#xFF0C;&#x4F60;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5728;&#x6355;&#x83B7; userStore.user &#x5728;&#x90A3;&#x4E00;&#x523B;&#x7684;&#x503C;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x5305;&#x88C5;&#x5668;&#x4E2D;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x54CD;&#x5E94;&#x5F0F;&#x5F15;&#x7528;&#x5E76;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5730;&#x4E0E; userStore.user &#x4FDD;&#x6301;&#x540C;&#x6B65;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5982;&#x679C; userStore.user &#x540E;&#x7EED;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;user &#x5F15;&#x7528;&#x672C;&#x8EAB;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x56E0;&#x4E3A; ref &#x53EA;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5BF9;&#x503C;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5BF9;&#x539F;&#x59CB;&#x6570;&#x636E;&#x6E90;&#x7684;&#x5F15;&#x7528;&#x3002;ref &#x7684;&#x54CD;&#x5E94;&#x6027;&#x662F;&#x57FA;&#x4E8E;&#x5B83;&#x7684;&#x503C;&#x662F;&#x5426;&#x88AB;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x57FA;&#x4E8E;&#x5B83;&#x5F15;&#x7528;&#x7684;&#x539F;&#x59CB;&#x6570;&#x636E;&#x662F;&#x5426;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x5728; Vue &#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;ref &#x548C; reactive &#x521B;&#x5EFA;&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x6570;&#x636E;&#x662F; Vue &#x5185;&#x90E8;&#x7528;&#x6765;&#x8FFD;&#x8E2A;&#x4F9D;&#x8D56;&#x548C;&#x89E6;&#x53D1;&#x66F4;&#x65B0;&#x7684;&#x673A;&#x5236;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x79CD;&#x54CD;&#x5E94;&#x5F0F;&#x673A;&#x5236;&#x662F; Vue &#x5185;&#x90E8;&#x7684;&#xFF0C;&#x5B83;&#x5E76;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x76D1;&#x542C; Vue &#x7EC4;&#x4EF6;&#x5916;&#x90E8;&#xFF08;&#x5982; userStore.user&#xFF09;&#x7684;&#x6570;&#x636E;&#x53D8;&#x5316;&#x3002;</p>
+<h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><p>&#x58F0;&#x660E;&#x53D8;&#x91CF;</p>
+<ul>
+<li>let</li>
+<li>const</li>
+</ul>
+<p>&#x89E3;&#x6784;</p>
+<p>&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;&#xFF1A;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function add(a,b=10){</span><br><span class="line">    return a+b;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#xFF1A;&#x7B80;&#x5316;&#x65B9;&#x6CD5;&#x58F0;&#x660E;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const add=()=&gt;{</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
+<p>&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const info=`&#x4F60;&#x597D;&#xFF01;${name}`</span><br></pre></td></tr></table></figure>
+
+<p>promise:<br>Promise &#x662F;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x673A;&#x5236;&#x6765;&#x5904;&#x7406;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x4F7F;&#x5F97;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x66F4;&#x52A0;&#x6613;&#x4E8E;&#x7BA1;&#x7406;&#x548C;&#x63A7;&#x5236;&#x3002;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">return new Promise((resolve,reject)=&gt;{</span><br><span class="line">    let x=101;</span><br><span class="line">    if(x%2===0){</span><br><span class="line">        resolve(x)</span><br><span class="line">    }</span><br><span class="line">    else reject(&quot;x&quot;)</span><br><span class="line">})</span><br></pre></td></tr></table></figure>
+<p>async: async &#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; Promise &#x5BF9;&#x8C61;&#x3002;&#x5F02;&#x6B65;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; await &#x5173;&#x952E;&#x5B57;&#x6765;&#x7B49;&#x5F85;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x3002;(&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x53D8;&#x6210;&#x540C;&#x6B65;&#x7B49;&#x5F85;)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">async function get(){</span><br><span class="line">    let x=101;</span><br><span class="line">    if(x%2===0){</span><br><span class="line">        return x;</span><br><span class="line">    }</span><br><span class="line">    else throw new Error(&apos;x&#x4E0D;&#x662F;&#x5076;&#x6570;&apos;)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">get().then(data=&gt;{</span><br><span class="line">    console.log(&quot;then&quot;,data)</span><br><span class="line">}).catch(err=&gt;{</span><br><span class="line">    console.log(&quot;catch&quot;,err)</span><br><span class="line">})</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="npm&#x5305;&#x7BA1;&#x7406;"><a href="#npm&#x5305;&#x7BA1;&#x7406;" class="headerlink" title="npm&#x5305;&#x7BA1;&#x7406;"></a>npm&#x5305;&#x7BA1;&#x7406;</h2><h2 id="vite&#x6784;&#x5EFA;&#x5DE5;&#x5177;"><a href="#vite&#x6784;&#x5EFA;&#x5DE5;&#x5177;" class="headerlink" title="vite&#x6784;&#x5EFA;&#x5DE5;&#x5177;"></a>vite&#x6784;&#x5EFA;&#x5DE5;&#x5177;</h2><p>&#x521B;&#x5EFA;&#x524D;&#x7AEF;&#x811A;&#x624B;&#x67B6;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2023/12/29/vue3/vue3/">https://akymmio.github.io/2023/12/29/vue3/vue3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/05/vue2/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/" title="处理请求参数"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">处理请求参数</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/24/vue2/vue2%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/" title="vue2项目开发"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue2项目开发</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue3"><span class="toc-number">1.</span> <span class="toc-text">Vue3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#API%E9%A3%8E%E6%A0%BC"><span class="toc-number">1.1.</span> <span class="toc-text">API风格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%BC%8FAPI"><span class="toc-number">1.2.</span> <span class="toc-text">组合式API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.3.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setup"><span class="toc-number">1.4.</span> <span class="toc-text">setup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref"><span class="toc-number">1.6.</span> <span class="toc-text">ref</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#computed"><span class="toc-number">1.7.</span> <span class="toc-text">computed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#watch"><span class="toc-number">1.8.</span> <span class="toc-text">watch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.9.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5"><span class="toc-number">1.10.</span> <span class="toc-text">同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-number">1.11.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#element-ui"><span class="toc-number">1.12.</span> <span class="toc-text">element-ui</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%B1%82%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">1.13.</span> <span class="toc-text">跨层组件通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8ref"><span class="toc-number">1.14.</span> <span class="toc-text">模板引用ref</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.15.</span> <span class="toc-text">新特性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pinia%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">Pinia状态管理库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pinia%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">pinia持久化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="toc-number">3.</span> <span class="toc-text">代码规范</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87"><span class="toc-number">4.1.</span> <span class="toc-text">项目准备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">5.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6"><span class="toc-number">6.</span> <span class="toc-text">ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E5%8C%85%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.</span> <span class="toc-text">npm包管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vite%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="toc-number">6.2.</span> <span class="toc-text">vite构建工具</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/24/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/" title="测试">测试</a><time datetime="2024-06-24T12:59:29.079Z" title="发表于 2024-06-24 20:59:29">2024-06-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/20/spring/spring%E4%BA%8B%E5%8A%A1/" title="spring中的事务">spring中的事务</a><time datetime="2024-05-20T14:58:18.814Z" title="发表于 2024-05-20 22:58:18">2024-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/20/spring/bean%E7%AE%A1%E7%90%86/" title="bean管理">bean管理</a><time datetime="2024-05-20T14:41:15.802Z" title="发表于 2024-05-20 22:41:15">2024-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/13/%E9%83%A8%E7%BD%B2/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" title="项目部署">项目部署</a><time datetime="2024-05-13T13:17:33.406Z" title="发表于 2024-05-13 21:17:33">2024-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/14/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/" title="前端项目">前端项目</a><time datetime="2024-04-14T13:56:27.035Z" title="发表于 2024-04-14 21:56:27">2024-04-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2023/12/29/vue3/vue3/'
+    this.page.identifier = '/2023/12/29/vue3/vue3/'
+    this.page.title = 'vue3'
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
