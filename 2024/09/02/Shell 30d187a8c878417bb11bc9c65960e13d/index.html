@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>mio's blog | mio's blog</title><meta name="author" content="jiaxing"><meta name="copyright" content="jiaxing"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ShellCreated: July 24, 2024 3:37 PMTags: languageDate: August 1, 2024 &amp;#x811A;&amp;#x672C;&amp;#x6267;&amp;#x884C;  .&#x2F;test.sh bash test.sh  &amp;#x53D8;&amp;#x91CF;&amp;#x4F7F;&amp;#x7528;&amp;#x65F6;&amp;#x9700;&amp;#x8981;&amp;#x52A0;&amp;#x4E0A;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mio&#39;s blog">
+<meta property="og:url" content="https://akymmio.github.io/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/index.html">
+<meta property="og:site_name" content="mio&#39;s blog">
+<meta property="og:description" content="ShellCreated: July 24, 2024 3:37 PMTags: languageDate: August 1, 2024 &amp;#x811A;&amp;#x672C;&amp;#x6267;&amp;#x884C;  .&#x2F;test.sh bash test.sh  &amp;#x53D8;&amp;#x91CF;&amp;#x4F7F;&amp;#x7528;&amp;#x65F6;&amp;#x9700;&amp;#x8981;&amp;#x52A0;&amp;#x4E0A;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://akymmio.github.io/image/avatar.jpg">
+<meta property="article:published_time" content="2024-09-02T14:22:33.975Z">
+<meta property="article:modified_time" content="2024-09-02T14:18:25.773Z">
+<meta property="article:author" content="jiaxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://akymmio.github.io/image/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://akymmio.github.io/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'mio\'s blog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-09-02 22:18:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="mio's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/2.png')"><nav id="nav"><span id="blog-info"><a href="/" title="mio's blog"><span class="site-name">mio's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-02T14:22:33.975Z" title="发表于 2024-09-02 22:22:33">2024-09-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-02T14:18:25.773Z" title="更新于 2024-09-02 22:18:25">2024-09-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><p>Created: July 24, 2024 3:37 PM<br>Tags: language<br>Date: August 1, 2024</p>
+<p>&#x811A;&#x672C;&#x6267;&#x884C;</p>
+<ul>
+<li>./test.sh</li>
+<li>bash test.sh</li>
+</ul>
+<h2 id="&#x53D8;&#x91CF;"><a href="#&#x53D8;&#x91CF;" class="headerlink" title="&#x53D8;&#x91CF;"></a>&#x53D8;&#x91CF;</h2><p>&#x4F7F;&#x7528;&#x65F6;&#x9700;&#x8981;&#x52A0;&#x4E0A;$&#xFF0C;&#x8D4B;&#x503C;&#x548C;$(( ))&#x4E2D;&#x4E0D;&#x7528;&#x52A0;</p>
+<ul>
+<li><p>&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$<span class="number">0</span> 		&#x5F53;&#x524D;&#x811A;&#x672C;&#x7684;&#x540D;&#x79F0;&#xFF1B;</span><br><span class="line">$n 		&#x5F53;&#x524D;&#x811A;&#x672C;&#x7684;&#x7B2C;n&#x4E2A;&#x53C2;&#x6570;,n=<span class="number">1</span>,<span class="number">2</span>,&#x2026;<span class="number">9</span>,&#x4F4D;&#x7F6E;&#x53C2;&#x6570;</span><br><span class="line">$* 		&#x5F53;&#x524D;&#x811A;&#x672C;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;(&#x6574;&#x4F53;)&#xFF0C;$@ &#x5C06;&#x53C2;&#x6570;&#x770B;&#x505A;&#x4E2A;&#x4F53;&#xFF1B;</span><br><span class="line">$<span class="comment"># 		&#x5F53;&#x524D;&#x811A;&#x672C;&#x7684;&#x53C2;&#x6570;&#x4E2A;&#x6570;(&#x4E0D;&#x5305;&#x62EC;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;)&#xFF1B;</span></span><br><span class="line">$?	  &#x663E;&#x793A;&#x6700;&#x540E;&#x547D;&#x4EE4;&#x7684;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x3002;<span class="number">0</span>&#x8868;&#x793A;&#x6267;&#x884C;&#x6210;&#x529F;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PATH  		&#x547D;&#x4EE4;&#x6240;&#x793A;&#x8DEF;&#x5F84;&#xFF0C;&#x4EE5;&#x5192;&#x53F7;&#x4E3A;&#x5206;&#x5272;&#xFF1B;</span><br><span class="line">HOME  		&#x6253;&#x5370;&#x7528;&#x6237;&#x5BB6;&#x76EE;&#x5F55;&#xFF1B;</span><br><span class="line">SHELL 		&#x663E;&#x793A;&#x5F53;&#x524D;Shell&#x7C7B;&#x578B;&#xFF1B;</span><br><span class="line">USER  		&#x6253;&#x5370;&#x5F53;&#x524D;&#x7528;&#x6237;&#x540D;&#xFF1B;</span><br><span class="line">ID    		&#x6253;&#x5370;&#x5F53;&#x524D;&#x7528;&#x6237;<span class="built_in">id</span>&#x4FE1;&#x606F;&#xFF1B;</span><br><span class="line">PWD   		&#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x5728;&#x8DEF;&#x5F84;&#xFF1B;</span><br><span class="line">HOSTNAME    &#x663E;&#x793A;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x540D;&#xFF1B;</span><br><span class="line">RANDOM      &#x968F;&#x673A;&#x751F;&#x6210;&#x4E00;&#x4E2A; <span class="number">0</span> &#x81F3; <span class="number">32767</span> &#x7684;&#x6574;&#x6570;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x7528;&#x6237;&#x53D8;&#x91CF;</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x5B9A;&#x4E49;&#xFF1A;i=<span class="number">10</span></span><br><span class="line">&#x4F7F;&#x7528;&#xFF1A;$i</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>&#x53D8;&#x91CF;&#x5220;&#x9664;&#xFF1A; <code>unset</code>  &#x53D8;&#x91CF;&#x540D;</p>
+<p>&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF1A; <code>export</code></p>
+<p>&#x53EA;&#x8BFB;&#x53D8;&#x91CF;&#xFF1A; <code>readonly</code></p>
+<h2 id="&#x6570;&#x7EC4;"><a href="#&#x6570;&#x7EC4;" class="headerlink" title="&#x6570;&#x7EC4;"></a>&#x6570;&#x7EC4;</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;</span><br><span class="line">fruits=(<span class="string">&quot;apple&quot;</span> <span class="string">&quot;banana&quot;</span> <span class="string">&quot;cherry&quot;</span>)</span><br><span class="line"></span><br><span class="line"># &#x904D;&#x5386;&#x6570;&#x7EC4;&#x5E76;&#x6253;&#x5370;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;</span><br><span class="line"><span class="keyword">for</span> fruit in <span class="string">&quot;${fruits[@]}&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    echo <span class="string">&quot;Fruit: $fruit&quot;</span></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"># &#x6253;&#x5370;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;</span><br><span class="line">echo <span class="string">&quot;Array length: ${#fruits[@]}&quot;</span></span><br><span class="line"></span><br><span class="line"># &#x4FEE;&#x6539;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;</span><br><span class="line">fruits[<span class="number">1</span>]=<span class="string">&quot;orange&quot;</span></span><br><span class="line"></span><br><span class="line"># &#x6DFB;&#x52A0;&#x65B0;&#x5143;&#x7D20;</span><br><span class="line">fruits+=(<span class="string">&quot;grape&quot;</span>)</span><br><span class="line"></span><br><span class="line">&#x957F;&#x5EA6;&#xFF1A;${#fruits[@]}  &#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#xFF1A;${#str} &#x6216; expr length <span class="string">&quot;$str&quot;</span>;</span><br><span class="line">&#x5143;&#x7D20;&#xFF1A;${fruits[@]}</span><br></pre></td></tr></table></figure>
+
+<h2 id="&#x7B26;&#x53F7;"><a href="#&#x7B26;&#x53F7;" class="headerlink" title="&#x7B26;&#x53F7;"></a>&#x7B26;&#x53F7;</h2><ul>
+<li>( ) &#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>$()</code>  &#x5C06;&#x547D;&#x4EE4;&#x8D4B;&#x503C;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;</li>
+<li><input disabled type="checkbox"> &#x6700;&#x57FA;&#x672C;&#x7684;&#x6761;&#x4EF6;&#x6D4B;&#x8BD5;&#x8BED;&#x6CD5;,&#x7528;&#x4E8E;<code>&#x6587;&#x4EF6;&#x6D4B;&#x8BD5;</code>&#x548C;<code>&#x6BD4;&#x8F83;&#x5B57;&#x7B26;&#x4E32;</code></li>
+<li>[[  ]] &#x6BD4; [ &#x548C; ] &#x66F4;&#x5F3A;&#x5927;&#xFF0C;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x66F4;&#x590D;&#x6742;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x64CD;&#x4F5C;</li>
+<li>(( ))  <code>&#x7B97;&#x672F;&#x8FD0;&#x7B97;</code> &#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x548C;&#x6BD4;&#x8F83;&#x3002;</li>
+<li><code> </code> &#x547D;&#x4EE4;&#x6267;&#x884C;</li>
+<li><h1 id="&#x6CE8;&#x91CA;"><a href="#&#x6CE8;&#x91CA;" class="headerlink" title="&#x6CE8;&#x91CA;"></a>&#x6CE8;&#x91CA;</h1></li>
+</ul>
+<p> [ &#x548C; ] &#x6216; [[]] &#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x6D4B;&#x8BD5;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x5468;&#x56F4;&#x5FC5;&#x987B;&#x6709;&#x7A7A;&#x683C;</p>
+<p>&#x5173;&#x4E8E;&#x5355;&#x53CC;&#x5F15;&#x53F7;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li><p>&#x53CC;&#x5F15;&#x53F7;&#x80FD;&#x591F;&#x8BC6;&#x522B;&#x53D8;&#x91CF;&#xFF0C;&#x53CC;&#x5F15;&#x53F7;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x8F6C;&#x4E49;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;*&#x201D;&#xFF09;</p>
+</li>
+<li><p>&#x5355;&#x5F15;&#x53F7;&#x662F;&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x53D8;&#x91CF;&#xFF0C;&#x53EA;&#x4F1A;&#x539F;&#x6837;&#x8F93;&#x51FA;&#xFF0C;&#x5355;&#x5F15;&#x53F7;&#x662F;&#x4E0D;&#x80FD;&#x8F6C;&#x4E49;&#x7684;</p>
+</li>
+<li><p>&#x6587;&#x4EF6;&#x6D4B;&#x8BD5;&#xFF1A;test &#x6216;[ ], [ -f file ] &#x68C0;&#x67E5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#x4E14;&#x4E3A;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x3002;</p>
+</li>
+<li><p>&#x5B57;&#x7B26;&#x4E32;&#x6D4B;&#x8BD5;&#xFF1A;[ &#x201C;string1&#x201D; = &#x201C;string2&#x201D; ] &#x68C0;&#x67E5;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x3002;</p>
+</li>
+<li><p>&#x7B97;&#x672F;&#x6BD4;&#x8F83;&#xFF1A;(( num1 &gt; num2 )) &#x68C0;&#x67E5; num1 &#x662F;&#x5426;&#x5927;&#x4E8E; num2&#x3002;</p>
+</li>
+</ul>
+<h2 id="&#x8FD0;&#x7B97;&#x7B26;"><a href="#&#x8FD0;&#x7B97;&#x7B26;" class="headerlink" title="&#x8FD0;&#x7B97;&#x7B26;"></a>&#x8FD0;&#x7B97;&#x7B26;</h2><h3 id="&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;"><a href="#&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;" class="headerlink" title="&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;"></a>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</h3><ul>
+<li>! &#x975E;</li>
+<li>-a &#x4E0E;</li>
+<li>-o &#x6216;</li>
+</ul>
+<p>&#x7528;&#x4E8E;[ ]</p>
+<p><code>&amp;&amp;</code>  <code>||</code> &#x8981;&#x5728; <code>[[ ]]</code>  <code>(( ))</code> &#x4E2D;&#x4F7F;&#x7528;</p>
+<h2 id="&#x53D8;&#x91CF;&#x64CD;&#x4F5C;"><a href="#&#x53D8;&#x91CF;&#x64CD;&#x4F5C;" class="headerlink" title="&#x53D8;&#x91CF;&#x64CD;&#x4F5C;${}"></a>&#x53D8;&#x91CF;&#x64CD;&#x4F5C;${}</h2><h3 id="&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;"><a href="#&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;" class="headerlink" title="&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;"></a>&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;</h3><ul>
+<li>&#xFF1B; (&#x547D;&#x4EE4;1 &#xFF1B;&#x547D;&#x4EE4;2)</li>
+<li>&amp;&amp;</li>
+<li>||</li>
+</ul>
+<h3 id="&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;"><a href="#&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;" class="headerlink" title="&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;"></a>&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;</h3><p>&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;&#x53EA;&#x652F;&#x6301;&#x6570;&#x5B57;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x9664;&#x975E;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x503C;&#x662F;&#x6570;&#x5B57;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &#x6570;&#x503C;&#x6BD4;&#x8F83;</span></span><br><span class="line">-eq&#xFF1A;&#x7B49;&#x4E8E;</span><br><span class="line">-ne&#xFF1A;&#x4E0D;&#x7B49;&#x4E8E;</span><br><span class="line">-gt&#xFF1A;&#x5927;&#x4E8E;</span><br><span class="line">-lt&#xFF1A;&#x5C0F;&#x4E8E;</span><br><span class="line">-ge&#xFF1A;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;</span><br><span class="line">-le&#xFF1A;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;</span><br><span class="line"></span><br><span class="line"><span class="comment"># &#x7528;&#x4E8E; [] [[]]</span></span><br><span class="line"><span class="comment"># == &#x3001;!=&#x3001;&gt;&#x3001;&lt;&#x3001;&gt;=&#x3001;&lt;= &#x914D;&#x5408;[[]]&#x4F7F;&#x7528;&#x9700;&#x8981;&#x7A7A;&#x683C;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;"><a href="#&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;"></a>&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;</h3><ul>
+<li><code>=</code>&#xA0;&#x6216;&#xA0;<code>==</code>&#xFF1A;&#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x3002;</li>
+<li><code>!=</code>&#xFF1A;&#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4E0D;&#x76F8;&#x7B49;&#x3002;</li>
+<li><code>z</code>&#xFF1A;&#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#x3002;</li>
+<li><code>n</code>&#xFF1A;&#x68C0;&#x67E5;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x975E;&#x7A7A;&#x3002;</li>
+</ul>
+<h3 id="&#x7B97;&#x6570;&#x8FD0;&#x7B97;"><a href="#&#x7B97;&#x6570;&#x8FD0;&#x7B97;" class="headerlink" title="&#x7B97;&#x6570;&#x8FD0;&#x7B97;"></a>&#x7B97;&#x6570;&#x8FD0;&#x7B97;</h3><p> <code>$(( ))</code> &#xFF1A; j=$((i + j))</p>
+<p>&#x4E0E; $(( )) &#x7C7B;&#x4F3C;&#xFF0C;(( )) &#x8BED;&#x6CD5;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x7B97;&#x672F;&#x8FD0;&#x7B97;</p>
+<p><strong><code>expr</code></strong>&#xA0;: val=expr 2 + 2  expr <code>$a \* $b</code>   &#x8FD0;&#x7B97;&#x7B26;&#x4E24;&#x8FB9;&#x9700;&#x8981;&#x7A7A;&#x683C;&#x3001;&#x4E00;&#x4E9B;&#x8FD0;&#x7B97;&#x7B26;&#x9700;&#x8981;&#x8F6C;&#x4E49;</p>
+<h3 id="&#x6587;&#x4EF6;&#x6D4B;&#x8BD5;&#x8FD0;&#x7B97;&#x7B26;"><a href="#&#x6587;&#x4EF6;&#x6D4B;&#x8BD5;&#x8FD0;&#x7B97;&#x7B26;" class="headerlink" title="&#x6587;&#x4EF6;&#x6D4B;&#x8BD5;&#x8FD0;&#x7B97;&#x7B26;"></a>&#x6587;&#x4EF6;&#x6D4B;&#x8BD5;&#x8FD0;&#x7B97;&#x7B26;</h3><p><img src="/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/Shell%2030d187a8c878417bb11bc9c65960e13d/Untitled.png" alt="Untitled"></p>
+<h2 id="&#x6D41;&#x7A0B;&#x63A7;&#x5236;"><a href="#&#x6D41;&#x7A0B;&#x63A7;&#x5236;" class="headerlink" title="&#x6D41;&#x7A0B;&#x63A7;&#x5236;"></a>&#x6D41;&#x7A0B;&#x63A7;&#x5236;</h2><h3 id="&#x6761;&#x4EF6;&#x8BED;&#x53E5;"><a href="#&#x6761;&#x4EF6;&#x8BED;&#x53E5;" class="headerlink" title="&#x6761;&#x4EF6;&#x8BED;&#x53E5;"></a>&#x6761;&#x4EF6;&#x8BED;&#x53E5;</h3><p><strong>if</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">number=<span class="number">100</span></span><br><span class="line"><span class="keyword">if</span> [ $number -gt <span class="number">10</span> ]; then</span><br><span class="line">    echo <span class="string">&quot;&#x6570;&#x5B57;&#x5927;&#x4E8E;10&quot;</span></span><br><span class="line">elif (( $number &gt; <span class="number">10</span> )); then</span><br><span class="line">    echo <span class="string">&quot;&#x6570;&#x5B57;&#x7B49;&#x4E8E;10&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    echo <span class="string">&quot;&#x6570;&#x5B57;&#x5C0F;&#x4E8E;10&quot;</span></span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<p><strong>for</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (( ; ; ))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> &#x53D8;&#x91CF; <span class="keyword">in</span> &#x503C;<span class="number">1</span> &#x503C;<span class="number">2</span> &#x503C;<span class="number">3</span> &#x2026;(&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7B49;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(seq <span class="number">1</span> <span class="number">10</span>); <span class="keyword">do</span></span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line"># seq &#x547D;&#x4EE4;&#x751F;&#x6210;&#x5E8F;&#x5217;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(<span class="number">0.</span><span class="number">.9</span>); <span class="keyword">do</span></span><br></pre></td></tr></table></figure>
+
+<p>while</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ ]</span><br><span class="line">do</span><br><span class="line">    <span class="comment"># commads to be executed while the condition is true</span></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="comment">#until&#x548C;while&#x5FAA;&#x73AF;&#x76F8;&#x53CD;&#xFF0C;until&#x5FAA;&#x73AF;&#x65F6;&#x53EA;&#x8981;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x5F0F;&#x4E0D;&#x6210;&#x7ACB;&#x5219;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x51FD;&#x6570;</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> &#x51FD;&#x6570;&#x540D;(){</span><br><span class="line">	#&#x53C2;&#x6570;&#x901A;&#x8FC7; $n &#x8C03;&#x7528;</span><br><span class="line">	<span class="keyword">return</span> &#x540E;&#x8DDF;&#x6570;&#x503C; <span class="title function_">n</span>(<span class="number">0</span>-<span class="number">255</span>)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">&#x51FD;&#x6570;&#x540D;() {</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">#&#x8C03;&#x7528;&#xFF1A;</span><br><span class="line">&#x51FD;&#x6570;&#x540D; &#x53C2;&#x6570;<span class="number">1</span> &#x53C2;&#x6570;<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x5728;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#x540E;&#x901A;&#x8FC7;&#xA0;<strong>$?</strong>&#xA0;&#x6765;&#x83B7;&#x5F97;&#x3002;</p>
+<p><code>$#</code> &#x53C2;&#x6570;&#x603B;&#x4E2A;&#x6570;&#xFF0C;<br><code>$*</code> &#x6240;&#x6709;&#x53C2;&#x6570;</p>
+<p>&#x7279;&#x6B8A;&#x6D41;&#x7A0B;&#x63A7;&#x5236;</p>
+<ul>
+<li>exit</li>
+<li>break</li>
+<li>continue</li>
+</ul>
+<h2 id="I-x2F-O"><a href="#I-x2F-O" class="headerlink" title="I/O"></a>I/O</h2><p>&#x8F93;&#x5165;&#xFF1A;<code>read [&#x9009;&#x9879;][&#x53D8;&#x91CF;&#x540D;]</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">read -p <span class="string">&quot;Please input a number: &quot;</span> -t <span class="number">30</span> num</span><br><span class="line">-<span class="attr">p</span>:&#x6536;&#x5165;&#x63D0;&#x793A;</span><br><span class="line">-<span class="attr">t</span>:&#x8D85;&#x65F6;&#x65F6;&#x95F4;</span><br><span class="line"><span class="attr">num</span>: &#x5B58;&#x50A8;&#x8F93;&#x5165;&#x7684;&#x53D8;&#x91CF;</span><br></pre></td></tr></table></figure>
+
+<h3 id="&#x91CD;&#x5B9A;&#x5411;"><a href="#&#x91CD;&#x5B9A;&#x5411;" class="headerlink" title="&#x91CD;&#x5B9A;&#x5411;"></a>&#x91CD;&#x5B9A;&#x5411;</h3><ul>
+<li>&#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&lt;</li>
+<li>&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;&gt;</li>
+<li>&#x8FFD;&#x52A0; &#xFF1A; &gt;&gt;</li>
+<li>&amp;&gt; : &#x6B63;&#x786E;&#x548C;&#x9519;&#x8BEF;&#x90FD;&#x8F93;&#x51FA;</li>
+</ul>
+<p> &#x4E0D;&#x8F93;&#x51FA;&#xFF1A;command &gt; dev/null</p>
+<h2 id="&#x5B57;&#x7B26;&#x5904;&#x7406;"><a href="#&#x5B57;&#x7B26;&#x5904;&#x7406;" class="headerlink" title="&#x5B57;&#x7B26;&#x5904;&#x7406;"></a>&#x5B57;&#x7B26;&#x5904;&#x7406;</h2><h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><p>&#x5B57;&#x7B26;&#x622A;&#x53D6;: <code>cut [&#x9009;&#x9879;] &#x6587;&#x4EF6;&#x540D;</code> </p>
+<p>&#x9009;&#x9879;:<br>-f  &#x5217;&#x53F7;: &#x63D0;&#x53D6;&#x7B2C;&#x51E0;&#x5217;</p>
+<p>-d &#x5206;&#x9694;&#x7B26;: &#x6309;&#x7167;&#x6307;&#x5B9A;&#x5206;&#x9694;&#x7B26;&#x5206;&#x5272;&#x5217;<br>-n &#x53D6;&#x6D88;&#x5206;&#x5272;&#x591A;&#x5B57;&#x8282;&#x5B57;&#x7B26;<br>-c &#x5B57;&#x7B26;&#x8303;&#x56F4;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d <span class="string">&quot;:&quot;</span> -f <span class="number">1</span>,<span class="number">3</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h3><p><img src="/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/Shell%2030d187a8c878417bb11bc9c65960e13d/Untitled%201.png" alt="Untitled"></p>
+<p><img src="/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/Shell%2030d187a8c878417bb11bc9c65960e13d/Untitled%202.png" alt="Untitled"></p>
+<p><img src="/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/Shell%2030d187a8c878417bb11bc9c65960e13d/Untitled%203.png" alt="Untitled"></p>
+<p>&#x53EF;&#x4EE5;&#x591A;&#x4E2A;&#x6761;&#x4EF6;{&#x52A8;&#x4F5C;}&#xFF0C;&#x591A;&#x4E2A;&#x52A8;&#x4F5C;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x7528; ; &#x5206;&#x5F00;</p>
+<h3 id="sed"><a href="#sed" class="headerlink" title="sed"></a><strong>sed</strong></h3><p>&#x6587;&#x672C;&#x9009;&#x53D6;&#x3001;&#x66FF;&#x6362;&#x3001;&#x5220;&#x9664;&#x3001;&#x65B0;&#x589E;&#x7684;&#x547D;&#x4EE4;</p>
+<p><img src="/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/Shell%2030d187a8c878417bb11bc9c65960e13d/Untitled%204.png" alt="Untitled"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sed -n  <span class="string">&apos;2p&apos;</span> student.txt </span><br><span class="line"></span><br><span class="line">sed  <span class="string">&apos;2,4d&apos;</span> student.txts</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://akymmio.github.io">jiaxing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://akymmio.github.io/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/">https://akymmio.github.io/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://akymmio.github.io" target="_blank">mio's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/image/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/09/02/Test_Plan%20d4d9fdf7b08f4b588900d5dbe31493f3/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/09/02/Regex%204047bfcf718346bc845e31e4a8ad6abd/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiaxing</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell"><span class="toc-number">1.</span> <span class="toc-text">Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.2.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.3.</span> <span class="toc-text">符号</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.1.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.1.1.</span> <span class="toc-text">逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.</span> <span class="toc-text">变量操作${}</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">2.2.1.</span> <span class="toc-text">多命令执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.2.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83"><span class="toc-number">2.2.3.</span> <span class="toc-text">字符串比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.4.</span> <span class="toc-text">算数运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%B5%8B%E8%AF%95%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.5.</span> <span class="toc-text">文件测试运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">2.3.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.3.1.</span> <span class="toc-text">条件语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-x2F-O"><span class="toc-number">2.4.</span> <span class="toc-text">I&#x2F;O</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">2.4.1.</span> <span class="toc-text">重定向</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%A4%84%E7%90%86"><span class="toc-number">2.5.</span> <span class="toc-text">字符处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cut"><span class="toc-number">2.5.1.</span> <span class="toc-text">cut</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#awk"><span class="toc-number">2.5.2.</span> <span class="toc-text">awk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sed"><span class="toc-number">2.5.3.</span> <span class="toc-text">sed</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/02/%E9%A1%B9%E7%9B%AE%2034fd01b2ad2740c1a06cc6427117d78d/" title="无题">无题</a><time datetime="2024-09-02T14:22:33.987Z" title="发表于 2024-09-02 22:22:33">2024-09-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/02/Test_Plan%20d4d9fdf7b08f4b588900d5dbe31493f3/" title="无题">无题</a><time datetime="2024-09-02T14:22:33.981Z" title="发表于 2024-09-02 22:22:33">2024-09-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/" title="无题">无题</a><time datetime="2024-09-02T14:22:33.975Z" title="发表于 2024-09-02 22:22:33">2024-09-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/02/Regex%204047bfcf718346bc845e31e4a8ad6abd/" title="无题">无题</a><time datetime="2024-09-02T14:22:33.971Z" title="发表于 2024-09-02 22:22:33">2024-09-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/02/python%20logging%200163b9879cef47008a24df815ba30756/" title="无题">无题</a><time datetime="2024-09-02T14:22:33.967Z" title="发表于 2024-09-02 22:22:33">2024-09-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By jiaxing</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  const disqus_config = function () {
+    this.page.url = 'https://akymmio.github.io/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/'
+    this.page.identifier = '/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/'
+    this.page.title = ''
+  }
+
+  const disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  btf.addModeChange('disqus', disqusReset)
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
