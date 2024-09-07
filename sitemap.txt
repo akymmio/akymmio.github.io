@@ -67,8 +67,8 @@ https://akymmio.github.io/tags/c/
 https://akymmio.github.io/tags/c-%E6%9C%8D%E5%8A%A1%E5%99%A8/
 https://akymmio.github.io/tags/java/
 https://akymmio.github.io/tags/javaweb/
-https://akymmio.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://akymmio.github.io/tags/redis/
+https://akymmio.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://akymmio.github.io/tags/web/
 https://akymmio.github.io/tags/%E5%89%8D%E7%AB%AF/
 https://akymmio.github.io/tags/springBoot/
