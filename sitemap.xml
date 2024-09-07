@@ -613,14 +613,14 @@
   </url>
   
   <url>
-    <loc>https://akymmio.github.io/tags/redis/</loc>
+    <loc>https://akymmio.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2024-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://akymmio.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://akymmio.github.io/tags/redis/</loc>
     <lastmod>2024-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
