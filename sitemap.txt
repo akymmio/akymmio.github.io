@@ -1,3 +1,4 @@
+https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/
 https://akymmio.github.io/2024/09/04/Test_Plan%20d4d9fdf7b08f4b588900d5dbe31493f3/
 https://akymmio.github.io/2024/09/02/Linux%200bb79742d9114f07bcf8417acb03cde7/
 https://akymmio.github.io/2024/09/02/Shell%2030d187a8c878417bb11bc9c65960e13d/
@@ -18,7 +19,6 @@ https://akymmio.github.io/2024/05/13/%E9%83%A8%E7%BD%B2/%E9%A1%B9%E7%9B%AE%E9%83
 https://akymmio.github.io/2023/07/29/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93/
 https://akymmio.github.io/2023/11/12/springCloud/SpringCloud/
 https://akymmio.github.io/2023/12/13/MySQL/mysql/
-https://akymmio.github.io/2023/08/09/%E7%99%BB%E5%BD%95/%E7%99%BB%E5%BD%95/
 https://akymmio.github.io/2024/03/13/Mybatis/mybatis/
 https://akymmio.github.io/2023/12/29/vue3/vue3/
 https://akymmio.github.io/2024/01/17/java/java%E9%9B%86%E5%90%88/
